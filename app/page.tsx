@@ -1,3 +1,5 @@
+import Home from "./(ui)/Home/page";
+
 export default function App() {
-  return <p>home</p>;
+  return <Home />;
 }
