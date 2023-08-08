@@ -8,21 +8,23 @@ import { HiUser } from "react-icons/hi";
 import { logo } from "../assets/index";
 const Navbar = () => {
   return (
-    <div className=" w-full flex flex-row items-center  p-2 justify-between">
-      <div className=" flex flex-row gap-3">
-        <span>Store</span>
-        <span>Collection</span>
-        <span>About</span>
+    <div className=" w-full flex items-center  text-yellow-50 justify-between h-10">
+      <div className="">
+        <span className="navBarHover">Store</span>
+        <span className="navBarHover">Collection</span>
+        <span className="navBarHover">About</span>
       </div>
-      <div>Mr Joni</div>
-      <div className=" flex flex-row gap-5">
-        <span>
+      <div>
+        <span className="logo">Mr Joni</span>
+      </div>
+      <div className=" flex flex-row">
+        <span className="navbarIcon justify-end px-1">
           <BsSearch />
         </span>
-        <span>
+        <span className="navbarIcon">
           <BsFillCartFill />
         </span>
-        <span>
+        <span className="navbarIcon">
           <HiUser />
         </span>
       </div>
