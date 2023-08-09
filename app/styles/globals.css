@@ -6,13 +6,13 @@
     @apply hover:text-amber-800 transition ease-in h-8 duration-500 text-lg;
   }
   .navbarIcon {
-    @apply hover:text-amber-800  transition duration-300 cursor-pointer  h-6 rounded-xl hover:bg-white border-2 text-lg  items-center justify-center flex w-10;
+    @apply hover:text-amber-800  transition duration-500 cursor-pointer  h-6 rounded-xl hover:bg-white border-2 text-lg  items-center justify-center flex w-10;
   }
 }
 
 @keyframes lights {
   0% {
-    color: hsl(230, 40%, 80%);
+    color: "#78290f";
     text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.2),
       0 0 0.125em hsla(320, 100%, 60%, 0.3),
       -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
@@ -20,7 +20,7 @@
   }
 
   30% {
-    color: hsl(230, 80%, 90%);
+    color: "#ff7d00";
     text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.5),
       0 0 0.125em hsla(320, 100%, 60%, 0.5),
       -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
@@ -44,7 +44,7 @@
   }
 
   100% {
-    color: hsl(230, 40%, 80%);
+    color: "#9d0208";
     text-shadow: 0 0 1em hsla(320, 100%, 50%, 0.2),
       0 0 0.125em hsla(320, 100%, 60%, 0.3),
       1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
@@ -55,5 +55,9 @@
 .logo {
   font-size: 25px;
   font-weight: 500;
+  color: "#d8e2dc";
   animation: lights 5s 750ms linear infinite;
+}
+.bg {
+  background: linear-gradient(135deg, hsl(230, 40%, 12%), hsl(230, 20%, 7%));
 }
