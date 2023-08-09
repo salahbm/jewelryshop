@@ -18,23 +18,23 @@ const Collection = () => {
       >
         <h5 className="animate-pulse  font-extrabold text-9xl tracking-[0.4em] ">
           New <br className=" pl-10" />
-          <span className=" pl-14">Collection</span>
+          <span className=" pl-16">Collection</span>
         </h5>
-        <span className="absolute top-9 w-80 left-[40%] text-md italic text-lightText">
+        <span className="absolute top-9 w-[450px] left-[50%] text-md italic text-lightText">
           some information about this collection and its features, abgagba j
           lbakg akh k gak gak some information about this collection and its
-          features,
+          features,bout this collection and its features,
         </span>
       </div>
-      <div className="w-full h-[550px] items-center justify-center flex relative font-mono">
+      <div className="w-full h-[550px] items-center justify-center flex relative font-mono overflow-hidden">
         <Image
           src={collections[currentIndex]}
           alt={`collectionPhoto-${currentIndex}`}
-          className="w-[95%] h-full object-cover  relative rounded-md ease-in duration-500 "
+          className="w-[95%] h-full object-cover  relative rounded-md  scale-100 duration-500 hover:scale-110 "
         />
-        <div className=" right-5 text-left absolute w-4/12 bg-bgTransparent text-white h-full p-2">
-          <h2 className=" text-5xl text-center text-amber-800">
-            Title of the{" "}
+        <div className=" right-8  text-left absolute w-4/12 bg-bgTransparent text-white h-full p-3 rounded-tr-md rounded-br-md">
+          <h2 className=" text-5xl text-center text-amber-800 font-bold">
+            Title of the Product
           </h2>
           <p className=" mt-4 text-base">
             <br /> 🔹 Diamond Embellishment: Adorning the chain are a stunning
@@ -47,7 +47,7 @@ const Collection = () => {
             and lavish appeal.
           </p>
         </div>
-        <div className="absolute bottom-10 right-20  flex items-center justify-between gap-2">
+        <div className="absolute bottom-10 right-20  flex items-center justify-between gap-3">
           <span className=" text-lightText">See other Collections</span>
           <button
             onClick={handleNext}
