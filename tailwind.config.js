@@ -25,7 +25,7 @@ module.exports = {
         bubbleGum: "#ff77e9",
         bermuda: "#78dcca",
         hoverBg: "#004f9a",
-        lightText: "#46474a",
+        lightText: "#d1d5db",
         blue: "#0284c7",
         green: "#008000",
       },

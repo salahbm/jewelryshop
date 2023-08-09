@@ -3,10 +3,10 @@
 @tailwind utilities;
 @layer components {
   .navBarHover {
-    @apply hover:text-amber-800 transition duration-500 cursor-pointer h-6 hover:text-lg text-[16px] w-12;
+    @apply hover:text-amber-800 transition ease-in h-8 duration-500 text-lg;
   }
   .navbarIcon {
-    @apply hover:text-amber-800  transition duration-300 cursor-pointer w-10  h-6 rounded-xl hover:bg-white border-2 text-lg  items-center justify-center flex;
+    @apply hover:text-amber-800  transition duration-300 cursor-pointer  h-6 rounded-xl hover:bg-white border-2 text-lg  items-center justify-center flex w-10;
   }
 }
 
@@ -53,8 +53,7 @@
 }
 
 .logo {
-  margin: auto;
-  font-size: 35px;
-  font-weight: 300;
+  font-size: 25px;
+  font-weight: 500;
   animation: lights 5s 750ms linear infinite;
 }
