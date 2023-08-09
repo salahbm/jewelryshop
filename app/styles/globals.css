@@ -59,8 +59,8 @@
   animation: lights 5s 750ms linear infinite;
 }
 .bg {
-  background: linear-gradient(135deg, #0d1b2a, #252422);
+  background: linear-gradient(135deg, black, #1a1423);
 }
 .homebg {
-  background: linear-gradient(135deg, #000814, #370617);
+  background: linear-gradient(135deg, #000814, #432818);
 }
