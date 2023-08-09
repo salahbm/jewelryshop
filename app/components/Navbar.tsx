@@ -9,7 +9,7 @@ const Navbar = () => {
     search: false,
   });
   return (
-    <div className="  bg flex items-center  text-lightText h-10  px-3 rounded-md my-2 w-full ">
+    <div className="  bg flex items-center  text-lightText h-10  px-3 my-2 w-full rounded-2xl">
       <div className=" w-2/3 gap-10 flex flex-row items-center justify-start">
         <span className="navBarHover">Store</span>
         <span className="navBarHover">Collection</span>

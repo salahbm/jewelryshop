@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={` bg-transparent m-3 ${open_sans.variable} font-sans`}>
+      <body className={`homebg m-3 ${open_sans.variable} font-sans`}>
         <Navbar />
         {children}
       </body>
