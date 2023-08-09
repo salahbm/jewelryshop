@@ -16,9 +16,9 @@ const Collection = () => {
         className=" text-white relative grid place-content-center my-10
       "
       >
-        <h5 className="animate-pulse  font-extrabold text-9xl tracking-[0.4em] ">
+        <h5 className="animate-pulse  font-extrabold text-9xl tracking-[0.3em] ">
           New <br className=" pl-10" />
-          <span className=" pl-16">Collection</span>
+          <span className=" pl-20">Collection</span>
         </h5>
         <span className="absolute top-9 w-[450px] left-[50%] text-md italic text-lightText">
           some information about this collection and its features, abgagba j
