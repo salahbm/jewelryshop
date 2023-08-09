@@ -1,11 +1,11 @@
 import Navbar from "./components/Navbar";
 import "./styles/globals.css";
 import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
+import { Open_Sans, Abril_Fatface } from "next/font/google";
 
 const open_sans = Open_Sans({
   subsets: ["latin"],
-  variable: "--font-montserrat",
+  variable: "--font-sans",
 });
 export const metadata: Metadata = {
   title: "Create Next App",

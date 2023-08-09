@@ -28,6 +28,7 @@ module.exports = {
         lightText: "#d8e2dc",
         blue: "#0284c7",
         green: "#008000",
+        bgTransparent: "rgba(0, 0, 0, 0.8)",
       },
 
       screens: {
