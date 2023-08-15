@@ -8,7 +8,7 @@ const HomeBanner = () => {
   const route = useRouter();
   return (
     <>
-      <Slide {...properties} cssClass="w-full rounded-lg">
+      <Slide {...properties} cssClass="w-full rounded-lg ">
         {slideImages.map((slideImage, index) => (
           <div key={index} className="  h-[250px] w-full  md:h-[500px]">
             <div
@@ -64,12 +64,12 @@ const slideImages = [
 ];
 const properties = {
   prevArrow: (
-    <button className=" w-14 border-[1px] border-cyan-50 text-lightText rounded-2xl flex items-center justify-center  top-7  hover:bg-white hover:text-amber-900 left-[500px] ml-[1200px] hover:w-16 duration-500 h-10">
+    <button className=" w-14 border-[1px] border-cyan-50 text-lightText rounded-2xl flex items-center justify-center  top-7  hover:bg-white hover:text-amber-900 left-[500px] hover:w-16 duration-500 h-10 ">
       <BsChevronDoubleLeft />
     </button>
   ),
   nextArrow: (
-    <button className=" w-14 border-[1px] border-cyan-50 text-lightText rounded-2xl flex items-center justify-center  top-7  hover:bg-white hover:text-amber-900  hover:w-16 duration-500 mr-[50px] h-10">
+    <button className=" w-14 border-[1px] border-cyan-50 text-lightText rounded-2xl flex items-center justify-center  top-7  hover:bg-white hover:text-amber-900  hover:w-16 duration-500  h-10 ">
       <BsChevronDoubleRight />
     </button>
   ),

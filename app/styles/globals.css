@@ -3,7 +3,7 @@
 @tailwind utilities;
 @layer components {
   .navBarHover {
-    @apply hover:text-amber-800 transition ease-in h-8 duration-500 text-lg;
+    @apply hover:text-amber-800 transition ease-in h-8 duration-500 text-lg flex flex-row items-center;
   }
   .navbarIcon {
     @apply hover:text-amber-800  transition duration-500 cursor-pointer  h-6 rounded-xl hover:bg-white border-2 text-lg  items-center justify-center flex w-10;
@@ -63,9 +63,8 @@
 }
 .homebg {
   background: linear-gradient(135deg, #000814, #432818);
-  width: 100%;
+
   height: 100vh;
-  overflow: hidden;
 }
 
 :root {

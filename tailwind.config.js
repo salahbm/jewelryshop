@@ -32,10 +32,9 @@ module.exports = {
       },
 
       screens: {
-        sm: "480px",
+        sm: "640px",
         md: "768px",
-        lg: "976px",
-        xl: "1440px",
+        lg: "1024px",
       },
       fontFamily: {
         sans: ["var(--font-open_sans)", ...fontFamily.sans],

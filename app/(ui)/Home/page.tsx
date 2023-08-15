@@ -5,9 +5,9 @@ import Category from "./components/Category";
 const Home = () => {
   return (
     <div>
-      {/* <HomeBanner />
+      <HomeBanner />
       <Collection />
-      <Category /> */}
+      <Category />
     </div>
   );
 };
