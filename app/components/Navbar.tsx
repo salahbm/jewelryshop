@@ -44,7 +44,7 @@ const Navbar = () => {
 
         <CiMenuFries
           className={`block cursor-pointer text-2xl lg:hidden ${
-            state.menu === "close" && "hidden"
+            state.menu === "menu" && "hidden"
           }`}
           onClick={toggleMenu}
         />
@@ -52,7 +52,7 @@ const Navbar = () => {
         {/* AiOutlineClose will be visible when menu === 'close' */}
         <AiOutlineClose
           className={`block cursor-pointer text-2xl lg:hidden ${
-            state.menu === "menu" && "hidden"
+            state.menu === "close" && "hidden"
           }`}
           onClick={toggleMenu}
         />
@@ -72,7 +72,7 @@ const Navbar = () => {
           <div className="navBarHover relative gap-2">
             <CiHeart className="text-2xl" />
             <span
-              className={`font-body  absolute  left-8 top-2 flex h-4 w-4 items-center justify-center rounded-full bg-amber-700 text-[8px] text-black md:text-xs lg:left-9 lg:top-2 ${" hidden"}`}
+              className={` absolute left-4 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-amber-700 text-[8px] text-lightText md:text-xs lg:left-4 lg:top-0 `}
             >
               {/* {likedItems.length > 0 && likedItems.length} */}423
             </span>
@@ -88,13 +88,14 @@ const Navbar = () => {
         </div>
         <div className="relative flex h-12 flex-col gap-1 rounded-full bg duration-300 lg:items-center lg:justify-center ">
           <Link href={"/Cart"}>
-            <div className="navBarHover gap-2">
+            <div className="navBarHover gap-2 ">
               <CiShoppingCart className="text-2xl" />
-              <h1 className=" -mt-1 text-base font-semibold">Cart</h1>
+
+              <p className="-mt-1 text-base font-semibold">${totalAMT}3412</p>
             </div>
           </Link>
-          <p className="-mt-2 ml-0.5 text-[10px]">${totalAMT}3412</p>
-          <span className="font-body  absolute  left-4 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-amber-700 text-[8px] text-lightText md:text-xs lg:left-10 lg:top-0">
+
+          <span className="font-body  absolute  left-4 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-amber-700 text-[8px] text-lightText md:text-xs lg:top-2 md:right-3">
             {/* {productData.length > 0 ? productData.length : 0} */}123
           </span>
         </div>
@@ -103,11 +104,11 @@ const Navbar = () => {
             placeholder="Search everything here"
             type="text"
             className={`mx-4 h-7 ${
-              state.search ? "w-60 lg:w-full " : "w-0 pointer-events-none"
+              state.search ? "w-full " : "w-0 "
             } rounded-full border-[1px] border-black  px-4 text-base text-black outline-none duration-700 focus-visible:border-black lg:h-full `}
           />
 
-          <span className="absolute right-5 top-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-amber-700 text-black lg:top-1 lg:h-8 lg:w-8 lg:text-xl">
+          <span className="absolute right-5 top-0.5 flex h-6 w-6 items-center justify-center rounded-full hover:bg-amber-700 text-lightText outline lg:top-1 lg:h-8 lg:w-8 lg:text-xl cursor-pointer">
             <BsSearch
               onClick={() =>
                 setState((prev) => ({ ...prev, search: !state.search }))
