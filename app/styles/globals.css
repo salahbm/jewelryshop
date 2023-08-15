@@ -53,10 +53,10 @@
 }
 
 .logo {
-  font-size: 25px;
+  font-size: 35px;
   font-weight: 500;
   color: "#d8e2dc";
-  animation: lights 5s 750ms linear infinite;
+  animation: lights 4s 750ms linear infinite;
 }
 .bg {
   background: linear-gradient(135deg, black, #1a1423);

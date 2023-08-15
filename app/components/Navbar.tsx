@@ -12,7 +12,7 @@ type E = {
 };
 const Navbar = () => {
   const [state, setState] = useState({
-    menu: "menu",
+    menu: "close",
     search: false,
   });
   const [totalAMT, setTotalAMT] = useState("");
@@ -36,10 +36,10 @@ const Navbar = () => {
   // }, [productData]);
 
   return (
-    <div className=" z-[1] w-full bg text-white rounded-2xl relative">
-      <div className="flex items-center justify-between px-4 opacity-100">
+    <div className=" z-[1] w-full  text-white  relative">
+      <div className="flex items-center bg px-4 lg:justify-center justify-between rounded-2xl lg:bg-none">
         <Link href="/">
-          <div className="logo w-1/2 md:w-0 ">Mr.Joni</div>
+          <div className="logo italic">Mr.Joni</div>
         </Link>
 
         <CiMenuFries
@@ -58,9 +58,9 @@ const Navbar = () => {
         />
       </div>
       <div
-        className={`absolute  gap-1 px-3 rounded-b-2xl w-full bg ${
-          state.menu === "menu" ? "visible  opacity-100" : "hidden opacity-0"
-        }  lg:h-30 z-[1] transition-all duration-500 ease-in lg:static lg:z-auto lg:mx-auto lg:flex lg:w-auto lg:items-center lg:justify-between lg:gap-10 lg:px-5 lg:opacity-100`}
+        className={`absolute  gap-1 px-3 rounded-2xl w-full bg ${
+          state.menu === "menu" ? "visible  opacity-100" : " opacity-0 "
+        }  lg:h-30 z-[1] duration-700 lg:static lg:z-auto lg:mx-auto lg:flex lg:w-auto lg:items-center lg:justify-between lg:gap-10 lg:px-5 lg:opacity-100`}
       >
         <div className="navBarHover">
           <p className="text-base font-semibold">Shop</p>
@@ -77,21 +77,16 @@ const Navbar = () => {
               {/* {likedItems.length > 0 && likedItems.length} */}423
             </span>
 
-            <h1 className=" -mt-1 text-base font-semibold">Liked items</h1>
+            <h1 className=" text-base font-semibold">Liked items</h1>
           </div>
         </Link>
-        <div className="navBarHover gap-2">
-          <CiUser className="text-2xl" />
-          <div>
-            <h1 className=" -mt-1 text-base font-semibold">Account</h1>
-          </div>
-        </div>
+
         <div className="relative flex h-12 flex-col gap-1 rounded-full bg duration-300 lg:items-center lg:justify-center ">
           <Link href={"/Cart"}>
             <div className="navBarHover gap-2 ">
               <CiShoppingCart className="text-2xl" />
 
-              <p className="-mt-1 text-base font-semibold">${totalAMT}3412</p>
+              <p className="text-base font-semibold">${totalAMT}3412</p>
             </div>
           </Link>
 
@@ -99,16 +94,22 @@ const Navbar = () => {
             {/* {productData.length > 0 ? productData.length : 0} */}123
           </span>
         </div>
-        <div className="relative flex h-10 flex-1">
+        <div className="navBarHover gap-2">
+          <CiUser className="text-2xl" />
+          <div>
+            <h1 className=" text-base font-semibold">Account</h1>
+          </div>
+        </div>
+        <div className="relative flex h-8 flex-1">
           <input
             placeholder="Search everything here"
             type="text"
             className={`mx-4 h-7 ${
-              state.search ? "w-full " : "w-0 "
+              state.search ? "w-full " : "w-full md:w-0 "
             } rounded-full border-[1px] border-black  px-4 text-base text-black outline-none duration-700 focus-visible:border-black lg:h-full `}
           />
 
-          <span className="absolute right-5 top-0.5 flex h-6 w-6 items-center justify-center rounded-full hover:bg-amber-700 text-lightText outline lg:top-1 lg:h-8 lg:w-8 lg:text-xl cursor-pointer">
+          <span className="absolute right-5 top-0.5 flex h-6 w-6 items-center justify-center rounded-full hover:bg-amber-700 text-lightText outline lg:top-1 lg:h-6 lg:w-6 lg:text-xl cursor-pointer">
             <BsSearch
               onClick={() =>
                 setState((prev) => ({ ...prev, search: !state.search }))
