@@ -39,7 +39,7 @@ const Navbar = () => {
     <div className=" z-[1] w-full  text-white  relative">
       <div className="flex items-center bg px-4 lg:justify-center justify-between rounded-2xl lg:bg-none">
         <Link href="/">
-          <div className="logo italic">Mr.Joni</div>
+          <div className="logo italic font-mono">Mr.Joni</div>
         </Link>
 
         <CiMenuFries
