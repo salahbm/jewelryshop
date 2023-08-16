@@ -58,8 +58,10 @@ const Navbar = () => {
         />
       </div>
       <div
-        className={`absolute  gap-1 px-3 rounded-2xl w-full bg ${
-          state.menu === "menu" ? "visible  opacity-100" : " opacity-0 "
+        className={`absolute   gap-1 px-3 rounded-2xl w-full bg ${
+          state.menu === "menu"
+            ? "visible  opacity-100"
+            : " opacity-0 pointer-events-none"
         }  lg:h-30 z-[1] duration-700 lg:static lg:z-auto lg:mx-auto lg:flex lg:w-auto lg:items-center lg:justify-between lg:gap-10 lg:px-5 lg:opacity-100`}
       >
         <div className="navBarHover">
@@ -96,17 +98,15 @@ const Navbar = () => {
         </div>
         <div className="navBarHover gap-2">
           <CiUser className="text-2xl" />
-          <div>
-            <h1 className=" text-base font-semibold">Account</h1>
-          </div>
+          <h1 className=" text-base font-semibold">Account</h1>
         </div>
-        <div className="relative flex h-8 flex-1">
+        <div className="relative  h-8 flex justify-end ">
           <input
             placeholder="Search everything here"
             type="text"
             className={`mx-4 h-7 ${
-              state.search ? "w-full " : "w-full md:w-0 "
-            } rounded-full border-[1px] border-black  px-4 text-base text-black outline-none duration-700 focus-visible:border-black lg:h-full `}
+              state.search ? " w-full" : "w-full  md:w-0 scale-x-0"
+            } rounded-full border-[1px] border-black  px-4 text-base text-black outline-none duration-700  ease-in-out lg:h-full `}
           />
 
           <span className="absolute right-5 top-0.5 flex h-6 w-6 items-center justify-center rounded-full hover:bg-amber-700 text-lightText outline lg:top-1 lg:h-6 lg:w-6 lg:text-xl cursor-pointer">

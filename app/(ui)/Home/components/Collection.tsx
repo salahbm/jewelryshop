@@ -1,6 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import { coll1, coll2, diamond, fColl, fColl1 } from "../../../assets/index";
+import {
+  coll1,
+  coll2,
+  diamond,
+  fColl,
+  fColl1,
+} from "../../../../public/assets/index";
 import Image from "next/image";
 import { PiArrowFatLinesRightFill } from "react-icons/pi";
 const Collection = () => {
