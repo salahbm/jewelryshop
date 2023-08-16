@@ -1,5 +1,13 @@
 import React from "react";
 import styles from "./component.module.css";
+import Image from "next/image";
+import {
+  coll1,
+  collectionItems,
+  handmade,
+  necklace,
+  ring,
+} from "@/public/assets";
 
 const Category = () => {
   return (
@@ -10,55 +18,43 @@ const Category = () => {
       <div className={styles.heroSection}>
         <div className={styles.cardGrid}>
           <a className={styles.card} href="#">
-            <div
-              className={styles.cardBackground}
-              style={{
-                backgroundImage:
-                  "url(https://images.unsplash.com/photo-1557177324-56c542165309?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)",
-              }}
-            ></div>
+            <Image className={styles.cardBackground} src={ring} alt="ring " />
             <div className={styles.cardContent}>
-              <p className={styles.cardCategory}>Category</p>
+              <p className={styles.cardCategory}>#4312</p>
+              <h3 className={styles.cardHeading}>Shop Rings</h3>
+            </div>
+          </a>
+          <a className={styles.card} href="#">
+            <Image
+              src={coll1}
+              alt="necklace"
+              className={styles.cardBackground}
+            />
+            <div className={styles.cardContent}>
+              <p className={styles.cardCategory}>#1234</p>
               <h3 className={styles.cardHeading}>Example Card Heading</h3>
             </div>
           </a>
           <a className={styles.card} href="#">
-            <div
+            <Image
+              src={handmade}
+              alt="handmade"
               className={styles.cardBackground}
-              style={{
-                backgroundImage:
-                  "url(https://images.unsplash.com/photo-1557187666-4fd70cf76254?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)",
-              }}
-            ></div>
+            />
             <div className={styles.cardContent}>
-              <p className={styles.cardCategory}>Category</p>
-              <h3 className={styles.cardHeading}>Example Card Heading</h3>
+              <p className={styles.cardCategory}>#422</p>
+              <h3 className={styles.cardHeading}>Shop Handmade Items</h3>
             </div>
           </a>
           <a className={styles.card} href="#">
-            <div
+            <Image
+              src={collectionItems}
+              alt="necklace"
               className={styles.cardBackground}
-              style={{
-                backgroundImage:
-                  "url(https://images.unsplash.com/photo-1556680262-9990363a3e6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)",
-              }}
-            ></div>
+            />
             <div className={styles.cardContent}>
-              <p className={styles.cardCategory}>Category</p>
-              <h3 className={styles.cardHeading}>Example Card Heading</h3>
-            </div>
-          </a>
-          <a className={styles.card} href="#">
-            <div
-              className={styles.cardBackground}
-              style={{
-                backgroundImage:
-                  "url(https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)",
-              }}
-            ></div>
-            <div className={styles.cardContent}>
-              <p className={styles.cardCategory}>Category</p>
-              <h3 className={styles.cardHeading}>Example Card Heading</h3>
+              <p className={styles.cardCategory}>#1223</p>
+              <h3 className={styles.cardHeading}>Shop All Items</h3>
             </div>
           </a>
         </div>

@@ -4,7 +4,7 @@ import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { useRouter } from "next/navigation";
 import { BsChevronDoubleLeft, BsChevronDoubleRight } from "react-icons/bs";
-import { coll1, coll2, fColl1 } from "@/public/assets/index";
+import { banner1, banner2, banner3 } from "@/public/assets/index";
 import Image from "next/image";
 const HomeBanner = () => {
   const route = useRouter();
@@ -43,15 +43,15 @@ const HomeBanner = () => {
 };
 const slideImages = [
   {
-    url: coll1,
+    url: banner1,
     button: "/",
   },
   {
-    url: coll2,
+    url: banner2,
     button: "/34234",
   },
   {
-    url: fColl1,
+    url: banner3,
     button: "/fsdfsdfsd",
   },
 ];
