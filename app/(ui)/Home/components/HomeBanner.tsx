@@ -13,9 +13,9 @@ const HomeBanner = () => {
     <>
       <Slide {...properties} cssClass="w-full rounded-lg my-4 ">
         {slideImages.map((slideImage, index) => (
-          <div key={index} className="relative">
+          <div key={index} className="relative h-[250px] w-full  md:h-[500px]">
             <Image
-              className=" bg-no-repeat object-cover cursor-move h-[250px] w-full  md:h-[500px]"
+              className=" bg-no-repeat object-cover cursor-auto w-full h-full "
               src={slideImage.url}
               alt="img"
             />

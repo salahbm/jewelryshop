@@ -1,12 +1,10 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-
+import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import { CiUser, CiShoppingCart, CiHeart, CiMenuFries } from "react-icons/ci";
-
 import Link from "next/link";
+
 type E = {
   name: string;
 };
@@ -83,7 +81,7 @@ const Navbar = () => {
           </div>
         </Link>
 
-        <div className="relative flex h-12 flex-col gap-1 rounded-full bg duration-300 lg:items-center lg:justify-center ">
+        <div className="relative flex h-12 flex-col gap-1 rounded-full  duration-300 lg:items-center lg:justify-center ">
           <Link href={"/Cart"}>
             <div className="navBarHover gap-2 ">
               <CiShoppingCart className="text-2xl" />
@@ -100,15 +98,14 @@ const Navbar = () => {
           <CiUser className="text-2xl" />
           <h1 className=" text-base font-semibold">Account</h1>
         </div>
-        <div className="relative  h-8 flex justify-end ">
+        <div className="relative  h-8  justify-end ">
           <input
             placeholder="Search everything here"
             type="text"
             className={`mx-4 h-7 ${
-              state.search ? " w-full" : "w-full  md:w-0 scale-x-0"
+              state.search ? " w-full" : "w-full  md:w-0 "
             } rounded-full border-[1px] border-black  px-4 text-base text-black outline-none duration-700  ease-in-out lg:h-full `}
           />
-
           <span className="absolute right-5 top-0.5 flex h-6 w-6 items-center justify-center rounded-full hover:bg-amber-700 text-lightText outline lg:top-1 lg:h-6 lg:w-6 lg:text-xl cursor-pointer">
             <BsSearch
               onClick={() =>

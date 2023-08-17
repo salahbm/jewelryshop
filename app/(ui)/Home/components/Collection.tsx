@@ -40,7 +40,7 @@ const Collection = () => {
           <h2 className=" lg:text-5xl text-center text-amber-800 font-bold text-2xl">
             Title of the Product
           </h2>
-          <p className=" mt-1 lg:text-base text-xs overflow-hidden max-h-[25em] lg:max-h-max ">
+          <p className=" mt-1 lg:text-base text-xs overflow-hidden max-h-[25em] lg:max-h-max italic ">
             <br /> 🔹 Diamond Embellishment: Adorning the chain are a stunning
             array of hand-set lab-created diamonds, expertly faceted to unleash
             an unparalleled play of light. The diamonds are carefully selected
