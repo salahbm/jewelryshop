@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import "./styles/globals.css";
 import type { Metadata } from "next";
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={`homebg m-3 ${open_sans.variable} font-sans`}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -11,6 +11,9 @@ import banner2 from "./banner2.png";
 import banner3 from "./banner3.png";
 import handmade from "./handmade.jpg";
 import collectionItems from "./collectionItems.jpg";
+import diamondsshop from "./diamondsshop.png";
+import footer from "./footer.png";
+import ourwork from "./ourwork.png";
 
 export {
   logo,
@@ -26,4 +29,7 @@ export {
   banner1,
   banner2,
   banner3,
+  diamondsshop,
+  ourwork,
+  footer,
 };

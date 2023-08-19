@@ -32,7 +32,7 @@ const Category = () => {
             />
             <div className={styles.cardContent}>
               <p className={styles.cardCategory}>#1234</p>
-              <h3 className={styles.cardHeading}>Example Card Heading</h3>
+              <h3 className={styles.cardHeading}>Shop the Necklace</h3>
             </div>
           </a>
           <a className={styles.card} href="#">
