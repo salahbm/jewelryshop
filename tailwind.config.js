@@ -29,6 +29,9 @@ module.exports = {
         blue: "#0284c7",
         green: "#008000",
         bgTransparent: "rgba(0, 0, 0, 0.6)",
+        Black: "#000000",
+        Red: "#800000",
+        gYellow: "#e2d34a",
       },
 
       screens: {

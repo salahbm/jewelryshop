@@ -104,7 +104,7 @@ const Navbar = () => {
               state.search ? " w-full" : "w-0 "
             } rounded-full border-[1px] border-black  px-4 text-base text-black outline-none duration-700  ease-in-out lg:h-full `}
           />
-          <button className="absolute right-3 top-0.5  flex  h-6 w-6 items-center justify-center rounded-full hover:bg-amber-700 hover:text-lightText   lg:top-0.5 lg:h-6 lg:w-6 lg:text-xl cursor-pointer text-amber-800 ">
+          <button className="absolute right-3 top-0.5  flex  h-6 w-6 items-center justify-center rounded-full hover:bg-gYellow hover:text-Black lg:top-0.5 lg:h-6 lg:w-6 lg:text-xl cursor-pointer text-amber-800 ">
             <BsSearch
               onClick={() =>
                 setState((prev) => ({ ...prev, search: !state.search }))

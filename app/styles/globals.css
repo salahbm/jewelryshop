@@ -3,10 +3,10 @@
 @tailwind utilities;
 @layer components {
   .navBarHover {
-    @apply hover:text-amber-800 transition ease-in h-8 duration-500 text-lg flex flex-row items-center;
+    @apply hover:text-gYellow transition ease-in h-8 duration-500 text-lg flex flex-row items-center;
   }
   .navbarIcon {
-    @apply hover:text-amber-800  transition duration-500 cursor-pointer  h-6 rounded-xl hover:bg-white border-2 text-lg  items-center justify-center flex w-10;
+    @apply hover:text-gYellow  transition duration-500 cursor-pointer  h-6 rounded-xl hover:bg-white border-2 text-lg  items-center justify-center flex w-10;
   }
 }
 
@@ -59,10 +59,10 @@
   animation: lights 4s 750ms linear infinite;
 }
 .bg {
-  background: linear-gradient(90deg, black, #1a1423);
+  background: linear-gradient(90deg, black, #800000);
 }
 .homebg {
-  background: linear-gradient(135deg, #000814, #432818);
+  background: linear-gradient(135deg, #000814, #800000);
 
   height: 100vh;
 }

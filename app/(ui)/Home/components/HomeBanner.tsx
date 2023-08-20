@@ -46,16 +46,16 @@ const HomeBanner = () => {
 };
 const slideImages = [
   {
-    url: "https://images.unsplash.com/photo-1580828343064-fde4fc206bc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1742&q=80",
+    url: "https://images-aka.zales.com/category/articles/vday-jewelry/767X365_Articles_2.jpg",
 
     button: "/",
   },
   {
-    url: "https://i.pinimg.com/originals/4f/d2/cd/4fd2cd196b6fcd75f124ea89a350cd57.jpg",
+    url: "https://cdn5.vectorstock.com/i/1000x1000/34/59/premium-jewelry-style-sale-banner-template-vector-19833459.jpg",
     button: "/34234",
   },
   {
-    url: "https://zeevector.com/wp-content/uploads/Jewellery-Banner-Design-Background@zeevector.png",
+    url: "https://www.familysavings.com/wp-content/uploads/2022/04/jcp-m-day-jewelry.png",
     button: "/fsdfsdfsd",
   },
 ];
