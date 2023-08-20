@@ -23,10 +23,9 @@ const Collection = () => {
           New <br className="pl-10" />
           <span className="pl-20">Collection</span>
         </h5>
-        <span className="absolute md:top-9 md:w-[450px] md:left-[50%] lg:text-xl italic text-lightText  top-1 right-[10%] w-[200px] text-xs overflow-hidden max-h-[2.8em] lg:max-h-max">
-          some information about this collection and its features some
-          information about this collection and its features,bout this
-          collection and its features,
+        <span className="absolute md:top-9 md:w-[450px] md:left-[50%] lg:text-xl italic text-yellow-500  top-1 right-[10%] w-[200px] text-xs overflow-hidden max-h-[2.8em] lg:max-h-max">
+          Dive into luxury with our new jewelry collection, where timeless
+          elegance meets modern allure. Elevate your style today!
         </span>
       </div>
 

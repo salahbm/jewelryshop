@@ -10,12 +10,21 @@ import banner1 from "./banner1.png";
 import banner2 from "./banner2.png";
 import banner3 from "./banner3.png";
 import handmade from "./handmade.jpg";
+import bracelet from "./bracelet.jpeg";
+import bracelet1 from "./bracelet1.jpeg";
+import collection from "./collection.jpeg";
+import earring1 from "./earring.jpeg";
+import ring3 from "./ring.jpeg";
+import ring1 from "./ring1.jpeg";
+import ring2 from "./ring2.jpeg";
 import collectionItems from "./collectionItems.jpg";
+import earring from "./earring.jpg";
 import diamondsshop from "./diamondsshop.png";
 import footer from "./footer.png";
 import ourwork from "./ourwork.png";
 
 export {
+  earring,
   logo,
   coll1,
   coll2,
@@ -32,4 +41,11 @@ export {
   diamondsshop,
   ourwork,
   footer,
+  bracelet,
+  bracelet1,
+  collection,
+  ring1,
+  ring2,
+  ring3,
+  earring1,
 };

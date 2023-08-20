@@ -31,7 +31,7 @@ module.exports = {
         bgTransparent: "rgba(0, 0, 0, 0.6)",
         Black: "#000000",
         Red: "#800000",
-        gYellow: "#e2d34a",
+        gYellow: "#FFEA00",
       },
 
       screens: {

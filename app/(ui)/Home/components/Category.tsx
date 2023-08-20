@@ -1,13 +1,7 @@
 import React from "react";
 import styles from "./component.module.css";
 import Image from "next/image";
-import {
-  coll1,
-  collectionItems,
-  handmade,
-  necklace,
-  ring,
-} from "@/public/assets";
+import { bracelet, coll1, earring, handmade, ring } from "@/public/assets";
 
 const Category = () => {
   return (
@@ -21,7 +15,7 @@ const Category = () => {
             <Image className={styles.cardBackground} src={ring} alt="ring " />
             <div className={styles.cardContent}>
               <p className={styles.cardCategory}>#4312</p>
-              <h3 className={styles.cardHeading}>Shop Rings</h3>
+              <h3 className={styles.cardHeading}> Rings</h3>
             </div>
           </a>
           <a className={styles.card} href="#">
@@ -32,29 +26,29 @@ const Category = () => {
             />
             <div className={styles.cardContent}>
               <p className={styles.cardCategory}>#1234</p>
-              <h3 className={styles.cardHeading}>Shop the Necklace</h3>
+              <h3 className={styles.cardHeading}> Necklace</h3>
             </div>
           </a>
           <a className={styles.card} href="#">
             <Image
-              src={handmade}
+              src={bracelet}
               alt="handmade"
               className={styles.cardBackground}
             />
             <div className={styles.cardContent}>
               <p className={styles.cardCategory}>#422</p>
-              <h3 className={styles.cardHeading}>Shop Handmade Items</h3>
+              <h3 className={styles.cardHeading}>Bracelet</h3>
             </div>
           </a>
           <a className={styles.card} href="#">
             <Image
-              src={collectionItems}
-              alt="necklace"
+              src={earring}
+              alt="earring"
               className={styles.cardBackground}
             />
             <div className={styles.cardContent}>
               <p className={styles.cardCategory}>#1223</p>
-              <h3 className={styles.cardHeading}>Shop All Items</h3>
+              <h3 className={styles.cardHeading}>Ear-Rings</h3>
             </div>
           </a>
         </div>

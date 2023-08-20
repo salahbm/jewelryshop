@@ -70,7 +70,7 @@ const Navbar = () => {
           <div className="navBarHover relative gap-2">
             <CiHeart className="text-2xl" />
             <span
-              className={` absolute left-4 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-amber-700 text-[8px] text-lightText md:text-xs lg:left-4 lg:top-0 `}
+              className={` absolute left-4 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-gYellow text-[8px] text-Red md:text-xs lg:left-4 lg:top-0 `}
             >
               {/* {likedItems.length > 0 && likedItems.length} */}43
             </span>
@@ -88,7 +88,7 @@ const Navbar = () => {
             </div>
           </Link>
 
-          <span className="font-body  absolute  left-4 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-amber-700 text-[8px] text-lightText md:text-xs lg:top-2 md:right-3">
+          <span className="font-body  absolute  left-4 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-gYellow text-[8px] text-Red md:text-xs lg:top-2 md:right-3">
             {/* {productData.length > 0 ? productData.length : 0} */}12
           </span>
         </div>
@@ -104,7 +104,7 @@ const Navbar = () => {
               state.search ? " w-full" : "w-0 "
             } rounded-full border-[1px] border-black  px-4 text-base text-black outline-none duration-700  ease-in-out lg:h-full `}
           />
-          <button className="absolute right-3 top-0.5  flex  h-6 w-6 items-center justify-center rounded-full hover:bg-gYellow hover:text-Black lg:top-0.5 lg:h-6 lg:w-6 lg:text-xl cursor-pointer text-amber-800 ">
+          <button className="absolute right-3 top-0.5  flex  h-6 w-6 items-center justify-center rounded-full  hover:text-gYellow lg:top-0.5 lg:h-6 lg:w-6 lg:text-xl cursor-pointer text-Red ">
             <BsSearch
               onClick={() =>
                 setState((prev) => ({ ...prev, search: !state.search }))

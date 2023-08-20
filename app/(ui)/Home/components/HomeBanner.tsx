@@ -16,7 +16,7 @@ const HomeBanner = () => {
         {slideImages.map((slideImage, index) => (
           <div key={index} className="relative  ">
             <div
-              className="h-[250px] w-full  md:h-[500px] lg:h-[600px] bg-no-repeat object-cover"
+              className="h-[250px] w-full  md:h-[500px] lg:h-[600px] bg-no-repeat bg-cover"
               style={{
                 backgroundImage: `url(${slideImage.url})`,
               }}
@@ -26,13 +26,13 @@ const HomeBanner = () => {
               <div className="">
                 <button
                   onClick={() => route.push(slideImage?.button)}
-                  className="absolute bottom-7 h-5 md:h-10 rounded-2xl border-[1px] md:text-sm text-xs font-semibold text-black md:bottom-7 md:w-24 w-20  hover:bg-slate-50 transition duration-500 cursor-pointer md:left-10 left-4 hover:text-amber-900 border-black"
+                  className="absolute bottom-7 h-5 md:h-10 rounded-2xl border-[1px] md:text-sm text-xs font-semibold text-Red md:bottom-7 md:w-24 w-20  hover:bg-Black transition duration-500 cursor-pointer md:left-10 left-4 hover:text-gYellow border-Red hover:border-gYellow"
                 >
                   Order Now
                 </button>
                 <button
                   onClick={() => route.push(slideImage?.button)}
-                  className="absolute bottom-7 h-5 md:h-10 rounded-2xl border-[1px] md:text-sm text-xs font-semibold text-black md:bottom-7 md:w-24 w-20 hover:bg-slate-50 transition duration-500 cursor-pointer md:left-36 left-28 hover:text-amber-900 border-black"
+                  className="absolute bottom-7 h-5 md:h-10 rounded-2xl border-[1px] md:text-sm text-xs font-semibold text-Red md:bottom-7 md:w-24 w-20 hover:bg-Black transition duration-500 cursor-pointer md:left-36 left-28 hover:text-gYellow border-Red hover:border-gYellow"
                 >
                   Details
                 </button>
@@ -46,16 +46,16 @@ const HomeBanner = () => {
 };
 const slideImages = [
   {
-    url: "https://images-aka.zales.com/category/articles/vday-jewelry/767X365_Articles_2.jpg",
+    url: "https://theartofpandora.com/wp-content/uploads/2020/06/HK-summer-sale.jpg",
 
     button: "/",
   },
   {
-    url: "https://cdn5.vectorstock.com/i/1000x1000/34/59/premium-jewelry-style-sale-banner-template-vector-19833459.jpg",
+    url: "https://i0.wp.com/davidcraigjewelers.com/wp-content/uploads/2014/08/soak-up-summer-jewelry-sale.jpg?fit=1000%2C400&ssl=1",
     button: "/34234",
   },
   {
-    url: "https://www.familysavings.com/wp-content/uploads/2022/04/jcp-m-day-jewelry.png",
+    url: "https://hips.hearstapps.com/hmg-prod/images/heidi-horten-jewelry-6422129ac1c2b.jpg",
     button: "/fsdfsdfsd",
   },
 ];
