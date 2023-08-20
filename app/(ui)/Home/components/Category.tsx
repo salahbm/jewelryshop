@@ -1,14 +1,22 @@
 import React from "react";
 import styles from "./component.module.css";
 import Image from "next/image";
-import { bracelet, coll1, earring, handmade, ring } from "@/public/assets";
+import {
+  bracelet,
+  bracelet1,
+  bracelet2,
+  coll1,
+  earring2,
+  handmade,
+  ring,
+} from "@/public/assets";
 
 const Category = () => {
   return (
-    <div>
-      <h5 className="text-white font-extrabold lg:text-9xl tracking-[0.3em] md:text-8xl text-4xl text-center my-10">
+    <div className="">
+      <h1 className="text-white font-extrabold lg:text-9xl tracking-[0.3em] md:text-8xl text-4xl text-center my-10">
         Category Look
-      </h5>
+      </h1>
       <div className={styles.heroSection}>
         <div className={styles.cardGrid}>
           <a className={styles.card} href="#">
@@ -31,7 +39,7 @@ const Category = () => {
           </a>
           <a className={styles.card} href="#">
             <Image
-              src={bracelet}
+              src={bracelet2}
               alt="handmade"
               className={styles.cardBackground}
             />
@@ -42,7 +50,7 @@ const Category = () => {
           </a>
           <a className={styles.card} href="#">
             <Image
-              src={earring}
+              src={earring2}
               alt="earring"
               className={styles.cardBackground}
             />
