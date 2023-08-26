@@ -15,15 +15,14 @@ const HomeBanner = () => {
       <Slide {...properties} cssClass="w-full rounded-lg my-4 ">
         {slideImages.map((slideImage, index) => (
           <div key={index} className="relative  ">
-            <div
-              className="h-[250px] w-full  md:h-[500px] lg:h-[600px] bg-no-repeat bg-cover"
-              style={{
-                backgroundImage: `url(${slideImage.url})`,
-              }}
+            <img
+              src={slideImage.url}
+              alt="image"
+              className="h-[250px] w-full  md:h-[500px] lg:h-[600px] bg-no-repeat bg-cover pointer-events-none"
             />
 
             {slideImage?.button.length > 1 && (
-              <div className="">
+              <div>
                 <button
                   onClick={() => route.push(slideImage?.button)}
                   className="absolute bottom-7 h-5 md:h-10 rounded-2xl border-[1px] md:text-sm text-xs font-semibold text-Red md:bottom-7 md:w-24 w-20  hover:bg-Black transition duration-500 cursor-pointer md:left-10 left-4 hover:text-gYellow border-Red hover:border-gYellow"

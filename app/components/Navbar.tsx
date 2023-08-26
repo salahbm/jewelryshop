@@ -83,7 +83,6 @@ const Navbar = () => {
           <Link href={"/Cart"}>
             <div className="navBarHover gap-2 ">
               <CiShoppingCart className="text-2xl" />
-
               <p className="text-base font-semibold">$312</p>
             </div>
           </Link>

@@ -30,7 +30,7 @@ module.exports = {
         green: "#008000",
         bgTransparent: "rgba(0, 0, 0, 0.6)",
         Black: "#000000",
-        Red: "#800000",
+        Red: "#900000",
         gYellow: "#FFEA00",
       },
 
