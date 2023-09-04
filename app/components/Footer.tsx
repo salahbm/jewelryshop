@@ -65,13 +65,15 @@ const FooterSMBTN = ({
   return (
     <div
       onClick={Press}
-      className="border-2 border-yellow-500 rounded-3xl flex justify-center items-center px-2 cursor-pointer gap-1 w-24  relative"
+      className="group border-2 border-yellow-500 rounded-3xl flex justify-center items-center px-2 cursor-pointer gap-1 w-24 h-7 relative"
     >
-      <p className="text-yellow-500  hover:opacity-0 duration-300">{title}</p>
+      <p className="text-yellow-500 opacity-100 duration-300 group-hover:opacity-0">
+        {title}
+      </p>
       <span
         className={`${
           title === "Instagram" ? "text-red-600" : "text-blue"
-        } hover:absolute hover:left-0 hover:top-0 duration-300`}
+        } absolute left-1/2 transform -translate-x-1/2 top-1 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100`}
       >
         {children}
       </span>

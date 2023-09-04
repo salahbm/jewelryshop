@@ -23,7 +23,7 @@ const OurWork = () => {
     // <div>
     <div className={classes.gallery}>
       {ourWork.map((work, index) => (
-        <div className={`${classes.galleryItem} `} key={index}>
+        <div className={`${classes.galleryItem} cursor-move`} key={index}>
           <Image className={classes.galleryImg} src={work.img} alt="img" />
         </div>
       ))}
