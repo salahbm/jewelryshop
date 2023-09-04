@@ -1,7 +1,11 @@
 "use client";
-import Image from "next/image";
 import React from "react";
-import { AiOutlineArrowRight } from "react-icons/ai";
+import {
+  AiOutlineArrowRight,
+  AiFillInstagram,
+  AiFillFacebook,
+  AiFillMessage,
+} from "react-icons/ai";
 const Footer = () => {
   return (
     <div className="p-2">
@@ -23,29 +27,54 @@ const Footer = () => {
         </div>
       </div>
 
-      <div>
-        {/* <SMButton title={"Instagram"} onClick={() => console.log("insta")} /> */}
+      <div className="flex items-center justify-between px-20 my-10">
+        <p className="text-white w-1/2">MrJoni All Rights are Reserved</p>
+        <div className="flex items-center justify-between w-1/3">
+          <FooterSMBTN
+            Press={() => console.log("insta")}
+            title="Facebook"
+            children={<AiFillFacebook />}
+          />
+          <FooterSMBTN
+            Press={() => console.log("insta")}
+            title="Instagram"
+            children={<AiFillInstagram />}
+          />
+          <FooterSMBTN
+            Press={() => console.log("insta")}
+            title="Telegram"
+            children={<AiFillMessage />}
+          />
+        </div>
       </div>
     </div>
   );
 };
-const SMButton = (
-  title:
-    | string
-    | number
-    | boolean
-    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-    | Iterable<React.ReactNode>
-    | React.ReactPortal
-    | React.PromiseLikeOfReactNode
-    | null
-    | undefined,
-  onClick: React.MouseEventHandler<HTMLDivElement> | undefined
-) => {
+
+export default Footer;
+
+const FooterSMBTN = ({
+  Press,
+  title,
+  children,
+}: {
+  Press: () => void;
+  title: string;
+  children: any;
+}) => {
   return (
-    <div onClick={onClick} className="">
-      <p>{title}</p>
+    <div
+      onClick={Press}
+      className="border-2 border-yellow-500 rounded-3xl flex justify-center items-center px-2 cursor-pointer gap-1 w-24  relative"
+    >
+      <p className="text-yellow-500  hover:opacity-0 duration-300">{title}</p>
+      <span
+        className={`${
+          title === "Instagram" ? "text-red-600" : "text-blue"
+        } hover:absolute hover:left-0 hover:top-0 duration-300`}
+      >
+        {children}
+      </span>
     </div>
   );
 };
-export default Footer;

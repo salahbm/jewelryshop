@@ -89,3 +89,25 @@
   line-height: 1.4;
   word-spacing: 100vw;
 }
+/* our work css */
+
+.gallery {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  margin-block: 20px;
+  overflow-y: none;
+}
+.galleryItem {
+  scroll-snap-align: right;
+  min-width: 70%;
+  height: 350px;
+  overflow-y: none;
+}
+.galleryImgd {
+  width: 100%;
+  object-fit: cover;
+  overflow-y: none;
+}
