@@ -1,10 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import { CiUser, CiShoppingCart, CiHeart, CiMenuFries } from "react-icons/ci";
 import Link from "next/link";
-
+import { useSelector } from "react-redux";
 type E = {
   name: string;
 };
@@ -13,7 +13,7 @@ const Navbar = () => {
     menu: "close",
     search: false,
   });
-
+  const [totalAMT, setTotalAMT] = useState("");
   const toggleMenu = () => {
     setState((prev) => ({
       ...prev,
@@ -21,17 +21,18 @@ const Navbar = () => {
     }));
   };
 
-  // const productData = useSelector((state: any) => state.shop.productData);
-  // const likedItems = useSelector((state: any) => state.shop.likedItem);
-  // useEffect(() => {
-  //   let price = 0;
+  const productData = useSelector((state: any) => state.shop.productData);
 
-  //   productData.map((item: any) => {
-  //     price += item.price * item.quantity;
-  //     return price;
-  //   });
-  //   setTotalAMT(price.toFixed(2));
-  // }, [productData]);
+  // const likedItems = useSelector((state: any) => state.shop.likedItem);
+  useEffect(() => {
+    let price = 0;
+
+    productData.map((item: any) => {
+      price += item.price * item.quantity;
+      return price;
+    });
+    setTotalAMT(price.toFixed(2));
+  }, [productData]);
 
   return (
     <div className=" z-[1] w-full  text-white  relative ">
@@ -83,12 +84,12 @@ const Navbar = () => {
           <Link href={"/Cart"}>
             <div className="navBarHover gap-2 ">
               <CiShoppingCart className="text-2xl" />
-              <p className="text-base font-semibold">$312</p>
+              <p className="text-base font-semibold">${totalAMT}</p>
             </div>
           </Link>
 
           <span className="font-body  absolute  left-4 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-gYellow text-[8px] text-Red md:text-xs lg:top-2 md:right-3">
-            {/* {productData.length > 0 ? productData.length : 0} */}12
+            {productData.length > 0 ? productData.length : 0}
           </span>
         </div>
         <div className="navBarHover gap-2">

@@ -5,7 +5,9 @@ import "./styles/globals.css";
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import { Provider } from "react-redux";
-import { store } from "@/redux/store";
+import { store, persistor } from "@/redux/store";
+import { PersistGate } from "redux-persist/integration/react";
+
 const open_sans = Open_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -22,13 +24,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Provider store={store}>
-        <body className={`homebg m-3 ${open_sans.variable} font-sans`}>
-          <Navbar />
-          {children}
-          <Footer />
-        </body>
-      </Provider>
+      <body className={`homebg m-3 ${open_sans.variable} font-sans`}>
+        <Provider store={store}>
+          <PersistGate loading={"loading"} persistor={persistor}>
+            <Navbar />
+            {children}
+            <Footer />
+          </PersistGate>
+        </Provider>
+      </body>
     </html>
   );
 }

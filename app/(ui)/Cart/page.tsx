@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState, FC } from "react";
 import classes from "./cart.module.css";
-
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
@@ -12,7 +11,7 @@ import {
   minusQuantity,
   resetCart,
   deleteItem,
-} from "@/app/redux/shopSlice";
+} from "@/redux/shopSlice";
 const CartPage = () => {
   const dispatch = useDispatch();
   const productData = useSelector((state: any) => state.shop.productData);

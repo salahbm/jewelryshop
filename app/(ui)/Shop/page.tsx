@@ -6,12 +6,12 @@ import Image from "next/image";
 import { GoPlus } from "react-icons/go";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
-// import { addToCart } from "../redux/shopSlice";
-// import toast, { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 // import { likedProducts } from "../redux/shopSlice";
 import { CiHeart } from "react-icons/ci";
+import { addToCart } from "@/redux/shopSlice";
 const Products = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   return (
     <div className="grid grid-cols-3 gap-4 px-4 py-6 lg:grid-cols-4 ">
@@ -37,10 +37,10 @@ const Products = () => {
           <div className="flex  justify-center px-2 py-4 ">
             <div className="flex  justify-between gap-3 py-2">
               <button
-                // onClick={() =>
-                //   dispatch(addToCart(item)) &&
-                //   toast.success(`${item.title.substring(0, 15)}... added`)
-                // }
+                onClick={() =>
+                  dispatch(addToCart(item)) &&
+                  toast.success(`${item.title.substring(0, 15)}... added`)
+                }
                 className=" text-20 flex h-5 w-10 items-center justify-center rounded-full bg-green text-[10px]  text-white duration-300 hover:bg-slate-400 md:h-7  md:w-20 md:text-[15px] lg:h-9 lg:w-20"
               >
                 <span className=" ">
