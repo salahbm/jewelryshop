@@ -23,7 +23,7 @@ const Navbar = () => {
 
   const productData = useSelector((state: any) => state.shop.productData);
 
-  // const likedItems = useSelector((state: any) => state.shop.likedItem);
+  const likedItems = useSelector((state: any) => state.shop.likedItem);
   useEffect(() => {
     let price = 0;
 
@@ -48,7 +48,6 @@ const Navbar = () => {
           onClick={toggleMenu}
         />
 
-        {/* AiOutlineClose will be visible when menu === 'close' */}
         <AiOutlineClose
           className={`block cursor-pointer text-2xl lg:hidden ${
             state.menu === "close" && "hidden"
@@ -57,8 +56,8 @@ const Navbar = () => {
         />
       </div>
       <div
-        className={`absolute   gap-1 px-3 rounded-2xl w-full bg ${
-          state.menu === "menu" ? "  opacity-100" : " opacity-0"
+        className={`absolute   gap-1 px-3 rounded-2xl w-full navBg ${
+          state.menu === "menu" ? "  opacity-100" : " opacity-0 hidden"
         }  lg:h-30  duration-700 lg:static lg:z-auto lg:mx-auto lg:flex lg:w-auto lg:items-center lg:justify-between lg:gap-10 lg:px-5 lg:opacity-100`}
       >
         <Link className="navBarHover" href={"/Shop"}>
@@ -73,7 +72,7 @@ const Navbar = () => {
             <span
               className={` absolute left-4 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-gYellow text-[8px] text-Red md:text-xs lg:left-4 lg:top-0 `}
             >
-              {/* {likedItems.length > 0 && likedItems.length} */}43
+              {likedItems.length > 0 && likedItems.length}
             </span>
 
             <h1 className=" text-base font-semibold">Liked items</h1>
@@ -100,7 +99,7 @@ const Navbar = () => {
           <input
             placeholder="Search everything here"
             type="text"
-            className={`mx-2 h-7 ${
+            className={`mx-2  h-7 ${
               state.search ? " w-full" : "w-0 "
             } rounded-full border-[1px] border-black  px-4 text-base text-black outline-none duration-700  ease-in-out lg:h-full `}
           />

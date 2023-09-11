@@ -5,13 +5,17 @@ import { ProductData } from "@/app/constant/productData";
 import Image from "next/image";
 import { GoPlus } from "react-icons/go";
 import Link from "next/link";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import toast, { Toaster } from "react-hot-toast";
-// import { likedProducts } from "../redux/shopSlice";
-import { CiHeart } from "react-icons/ci";
+import { likedProducts, unlikeItem } from "../../redux/shopSlice";
+import { AiFillHeart } from "react-icons/ai";
 import { addToCart } from "@/app/redux/shopSlice";
 const Products = () => {
   const dispatch = useDispatch();
+  const likedItems = useSelector((state: any) => state.shop.likedItem);
+  const isLiked = likedItems.find((product: any) => {
+    return product._id;
+  });
 
   return (
     <div className="grid grid-cols-3 gap-4 px-4 py-6 lg:grid-cols-4 ">
@@ -30,9 +34,16 @@ const Products = () => {
             />
           </div>
           <button
-          // onClick={() => dispatch(likedProducts(item))}
+            onClick={() =>
+              isLiked
+                ? dispatch(unlikeItem(item._id))
+                : dispatch(likedProducts(item._id))
+            }
+            className={`  absolute right-1 top-1 text-3xl ${
+              isLiked === item._id ? "text-yellow-500" : "text-white"
+            }`}
           >
-            <CiHeart className={`text-2x  absolute right-1 top-1 text-3xl`} />
+            <AiFillHeart />
           </button>
           <div className="flex  justify-center px-2 py-4 ">
             <div className="flex  justify-between gap-3 py-2">
@@ -81,7 +92,7 @@ const Products = () => {
           </div>
         </div>
       ))}
-      {/* <Toaster
+      <Toaster
         reverseOrder={false}
         position="top-center"
         toastOptions={{
@@ -91,7 +102,7 @@ const Products = () => {
             color: "#FFFF",
           },
         }}
-      /> */}
+      />
     </div>
   );
 };

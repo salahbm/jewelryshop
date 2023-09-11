@@ -82,7 +82,7 @@ const CartPage = () => {
           <HiOutlineShoppingCart size={100} />
           <p className={classes.price}>It is empty</p>
 
-          <Link href="/" style={{ marginTop: "70%" }}>
+          <Link href="/Shop" style={{ marginTop: "70%" }}>
             <button className={classes.button1}>Shop more</button>
           </Link>
         </div>

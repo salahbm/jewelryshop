@@ -4,10 +4,12 @@ import { createSlice } from "@reduxjs/toolkit";
 interface ShopInterface {
   productData: StoreItem[];
   userInfo: null | userInfo;
+  likedItem: StoreItem[];
 }
 const initialState: ShopInterface = {
   productData: [],
   userInfo: null,
+  likedItem: [],
 };
 
 export const shopSlice = createSlice({
@@ -52,8 +54,35 @@ export const shopSlice = createSlice({
     resetCart: (state) => {
       state.productData = [];
     },
+    likedProducts: (state, action) => {
+      const likedItemExist = state.likedItem.find(
+        (item: StoreItem) => item._id === action.payload._id
+      );
+
+      if (likedItemExist) {
+        return;
+      } else {
+        state.likedItem.push(action.payload);
+      }
+    },
+    unlikeItem: (state, action) => {
+      state.likedItem = state.likedItem.filter(
+        (item) => item._id !== action.payload
+      );
+    },
+    resetLikedItems: (state) => {
+      state.likedItem = [];
+    },
   },
 });
-export const { addToCart, plusQuantity, minusQuantity, deleteItem, resetCart } =
-  shopSlice.actions;
+export const {
+  addToCart,
+  plusQuantity,
+  minusQuantity,
+  deleteItem,
+  resetCart,
+  likedProducts,
+  resetLikedItems,
+  unlikeItem,
+} = shopSlice.actions;
 export default shopSlice.reducer;

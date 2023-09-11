@@ -1,13 +1,14 @@
 "use client";
 import React from "react";
 import classes from "./likedProducts.module.css";
-
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 import Link from "next/link";
 import { useSelector, useDispatch } from "react-redux";
-import { CiHeart } from "react-icons/ci";
+import { AiFillHeart } from "react-icons/ai";
+import { unlikeItem, resetLikedItems } from "@/app/redux/shopSlice";
 
+import { StoreItem } from "@/app/type";
 const LikedProducts = () => {
   const dispatch = useDispatch();
   const likedItem = useSelector((state: any) => state.shop.likedItem);
@@ -19,7 +20,7 @@ const LikedProducts = () => {
           Total Liked Items: {likedItem.length}
         </p>
         <button
-          //   onClick={() => dispatch(resetLikedItems())}
+          onClick={() => dispatch(resetLikedItems())}
           className="flex flex-row items-center  justify-center rounded-md border border-gray-500 bg-red-300 px-2"
         >
           <h1>Clear All liked Items</h1>
@@ -28,15 +29,13 @@ const LikedProducts = () => {
       </div>
       {likedItem.length > 0 ? (
         <div className=" grid  grid-cols-3 ">
-          {likedItem.map((product: any, index: number) => (
+          {likedItem.map((product: StoreItem, index: number) => (
             <div key={index}>
               <div className=" relative h-[200px]  w-[200px] rounded-md border border-gray-400">
                 <img src={product.image} alt="Product image" />
-                <button
-                // onClick={() => dispatch(unlikeItem(product))}
-                >
-                  <CiHeart
-                    className={`text-2x  absolute right-1 top-1 text-3xl`}
+                <button onClick={() => dispatch(unlikeItem(product._id))}>
+                  <AiFillHeart
+                    className={`text-2x  absolute right-1 top-1 text-3xl text-Red `}
                   />
                 </button>
               </div>
@@ -55,7 +54,7 @@ const LikedProducts = () => {
           <HiOutlineShoppingCart size={100} style={{ marginTop: "20%" }} />
           <p className={classes.price}>It is empty</p>
 
-          <Link href="/" style={{ marginTop: "70%" }}>
+          <Link href="/Shop" style={{ marginTop: "70%" }}>
             <button className={classes.button1}>Shop more</button>
           </Link>
         </div>
