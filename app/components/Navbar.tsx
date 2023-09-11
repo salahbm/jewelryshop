@@ -5,15 +5,16 @@ import { AiOutlineClose } from "react-icons/ai";
 import { CiUser, CiShoppingCart, CiHeart, CiMenuFries } from "react-icons/ci";
 import Link from "next/link";
 import { useSelector } from "react-redux";
-type E = {
-  name: string;
-};
+import { usePathname } from "next/navigation";
+
 const Navbar = () => {
   const [state, setState] = useState({
     menu: "close",
     search: false,
   });
   const [totalAMT, setTotalAMT] = useState("");
+  const location = usePathname();
+
   const toggleMenu = () => {
     setState((prev) => ({
       ...prev,
@@ -32,7 +33,14 @@ const Navbar = () => {
       return price;
     });
     setTotalAMT(price.toFixed(2));
-  }, [productData]);
+
+    if (location === "/Shop" || "/LikedItems" || "/Cart") {
+      setState((prev) => ({
+        ...prev,
+        menu: "close",
+      }));
+    }
+  }, [productData, location]);
 
   return (
     <div className=" z-[1] w-full  text-white  relative ">

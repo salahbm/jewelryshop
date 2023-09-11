@@ -10,7 +10,7 @@ import {
 const Footer = () => {
   return (
     <div className="p-2 w-full">
-      <h2 className="text-white font-mono font-extrabold w-full md:text-8xl  text-2xl mb-8 text-center">
+      <h2 className="text-white font-mono font-extrabold w-full md:text-6xl lg:text-8xl  text-2xl mb-8 text-center">
         Get The Last Information From Us
       </h2>
       <div className="flex justify-between items-center lg:px-20 placeholder:px-3">
