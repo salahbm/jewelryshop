@@ -13,8 +13,8 @@ import { addToCart } from "@/app/redux/shopSlice";
 const Products = () => {
   const dispatch = useDispatch();
   const likedItems = useSelector((state: any) => state.shop.likedItem);
-  const isLiked = likedItems.find((product: any) => {
-    return product._id;
+  const isLiked = likedItems.some((product: any) => {
+    return product;
   });
 
   return (
@@ -35,16 +35,19 @@ const Products = () => {
           </div>
           <button
             onClick={() =>
-              isLiked
+              likedItems.some((product: any) => product._id === item._id)
                 ? dispatch(unlikeItem(item._id))
-                : dispatch(likedProducts(item._id))
+                : dispatch(likedProducts(item))
             }
-            className={`  absolute right-1 top-1 text-3xl ${
-              isLiked === item._id ? "text-yellow-500" : "text-white"
+            className={`absolute right-1 top-1 text-3xl ${
+              likedItems.some((product: any) => product._id === item._id)
+                ? "text-yellow-500"
+                : "text-white"
             }`}
           >
             <AiFillHeart />
           </button>
+
           <div className="flex  justify-center px-2 py-4 ">
             <div className="flex  justify-between gap-3 py-2">
               <button

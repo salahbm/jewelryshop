@@ -51,7 +51,7 @@ const CartPage = () => {
                 </div>
                 <IoMdClose
                   size={20}
-                  onClick={() => dispatch(deleteItem(product))}
+                  onClick={() => dispatch(deleteItem(product._id))}
                 />
               </div>
               <div className=" flex flex-row items-center justify-between">

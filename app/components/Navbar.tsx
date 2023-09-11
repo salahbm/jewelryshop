@@ -72,7 +72,7 @@ const Navbar = () => {
             <span
               className={` absolute left-4 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-gYellow text-[8px] text-Red md:text-xs lg:left-4 lg:top-0 `}
             >
-              {likedItems.length > 0 && likedItems.length}
+              {likedItems.length > 0 ? likedItems.length : 0}
             </span>
 
             <h1 className=" text-base font-semibold">Liked items</h1>
