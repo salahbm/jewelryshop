@@ -27,21 +27,26 @@ const shuffle = (arr: string[]): string[] =>
 const OnHand: React.FC = () => (
   <div className={styles.app}>
     <header className="text-white">
-      <h1>Infinite Scroll Animation</h1>
-      <p>CSS only, content independent, bi-directional, customizable</p>
+      <h5 className="italic font-extrabold lg:text-7xl tracking-[0.2em] md:text-8xl text-4xl text-center mb-5 ">
+        Our Work
+        <p className="lg:text-5xl text-3xl">on Customers Hands</p>
+      </h5>
     </header>
     <div className={styles["tag-list"]}>
       {[...new Array(ROWS)].map((_, i) => (
         <div
           className={styles["loop-slider"]}
           style={{
-            "--duration": `${random(DURATION - 5000, DURATION + 5000)}ms`,
+            "--duration": `${random(
+              DURATION - 5000,
+              DURATION + 5000
+            )}ms` as any,
             "--direction": i % 2 ? "reverse" : "normal",
           }}
           key={i}
         >
           <div className={styles.inner}>
-            {shuffle(TAGS)
+            {shuffle(TAGS as any)
               .slice(0, TAGS_PER_ROW)
               .map((item: any, index: number) => (
                 <div className={styles.tag} key={index}>
@@ -50,7 +55,7 @@ const OnHand: React.FC = () => (
                     alt="image"
                     className=" rounded-full w-[70px] h-[70px]"
                   />
-                  <span className=" justify-end flex"> {item.text}</span>
+                  <span> {item.text}</span>
                 </div>
               ))}
           </div>

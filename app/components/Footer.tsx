@@ -4,12 +4,13 @@ import {
   AiOutlineArrowRight,
   AiFillInstagram,
   AiFillFacebook,
+  AiOutlineWhatsApp,
 } from "react-icons/ai";
-import { BiLogoTelegram } from "react-icons/bi";
+
 const Footer = () => {
   return (
     <div className="p-2 w-full">
-      <h2 className="text-white font-mono font-extrabold w-full md:text-8xl  text-2xl mb-8">
+      <h2 className="text-white font-mono font-extrabold w-full md:text-8xl  text-2xl mb-8 text-center">
         Get The Last Information From Us
       </h2>
       <div className="flex justify-between items-center lg:px-20 placeholder:px-3">
@@ -31,15 +32,15 @@ const Footer = () => {
         <p className="text-white  text-sm md:text-2xl mb-2">
           MrJoni All Rights are Reserved
         </p>
-        <div className="flex items-center justify-between gap-8 ">
+        <div className="flex items-center justify-between gap-2 md:gap-10 ">
           <FooterSMBTN Press={() => console.log("insta")} title="Facebook">
             <AiFillFacebook />
           </FooterSMBTN>
           <FooterSMBTN Press={() => console.log("insta")} title="Instagram">
             <AiFillInstagram />
           </FooterSMBTN>
-          <FooterSMBTN Press={() => console.log("insta")} title="Telegram">
-            <BiLogoTelegram />
+          <FooterSMBTN Press={() => console.log("insta")} title="Whatsapp">
+            <AiOutlineWhatsApp />
           </FooterSMBTN>
         </div>
       </div>
@@ -61,18 +62,24 @@ const FooterSMBTN = ({
   return (
     <div
       onClick={Press}
-      className={`group rounded-3xl flex justify-center items-center px-2 cursor-pointer gap-1 w-24 h-7 relative border-2 border-yellow-500 hover:border-0`}
+      className={`group rounded-3xl flex justify-center items-center px-2 cursor-pointer gap-1 relative border-2 border-yellow-500 hover:border-0`}
     >
       <p className="text-yellow-500 opacity-100 duration-300 group-hover:opacity-0">
         {title}
       </p>
       <span
         className={`${
-          title === "Instagram" ? "text-red-600" : "text-blue"
-        } absolute left-1/2 transform -translate-x-1/2 top-0 opacity-0 transition-opacity duration-500 pointer-events-none group-hover:opacity-100 border-2 rounded-3xl w-24 h-7 text-2xl flex justify-center items-center ${
+          title === "Instagram"
+            ? "text-red-600"
+            : title === "Facebook"
+            ? "text-blue"
+            : "text-green"
+        } absolute left-1/2 transform -translate-x-1/2  opacity-0 transition-opacity duration-500 pointer-events-none group-hover:opacity-100 border-2 rounded-3xl w-20 h-7 text-2xl flex justify-center items-center ${
           title === "Instagram"
             ? "group-hover:border-red-600"
-            : "group-hover:border-blue"
+            : title === "Facebook"
+            ? "group-hover:border-blue"
+            : "group-hover:border-green"
         }`}
       >
         {children}

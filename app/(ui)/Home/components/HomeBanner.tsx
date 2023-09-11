@@ -60,13 +60,13 @@ const slideImages = [
 ];
 const properties = {
   prevArrow: (
-    <button className="hidden">
-      <BsChevronDoubleLeft />
+    <button className="md:hidden">
+      <BsChevronDoubleLeft className="text-Red" />
     </button>
   ),
   nextArrow: (
-    <button className=" hidden ">
-      <BsChevronDoubleRight />
+    <button className=" md:hidden ">
+      <BsChevronDoubleRight className="text-Red" />
     </button>
   ),
 };

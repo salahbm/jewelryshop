@@ -16,14 +16,21 @@
   margin-block: 10px;
 }
 
-@media (min-width: 400px) {
+/* ? @media (min-width: 960px) {
+} */
+@media (max-width: 420px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+}
+@media (min-width: 421px) and (max-width: 779px) {
   .cardGrid {
     grid-template-columns: repeat(2, 1fr);
     height: 80%;
   }
 }
-
-@media (min-width: 960px) {
+@media (min-width: 780px) {
   .cardGrid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -85,7 +92,6 @@
 
 .cardHeading {
   color: var(--text-lighter);
-  font-size: 1.9rem;
   text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
   line-height: 1.4;
   word-spacing: 100vw;
@@ -104,14 +110,16 @@
 .galleryItem {
   scroll-snap-align: right;
   min-width: 80%;
-  height: 500px;
+  height: 200px;
 
-  @media (max-width: 390px) {
+  @media (min-width: 420px) {
     height: 250px;
   }
-
+  @media (min-width: 421px) and (max-width: 779px) {
+    height: 350px;
+  }
   @media (min-width: 780px) {
-    height: 500px;
+    height: 450px;
   }
 }
 
@@ -123,7 +131,6 @@
 /* Our Clients On Hand page*/
 
 .app {
-  /* min-width: 100vw; */
   width: 100%;
   min-height: 40vh;
   display: flex;
@@ -171,7 +178,6 @@
   align-items: center;
   gap: 10px;
   color: #e2e8f0;
-  /* background-color: #334155; */
   border-color: #ffd700;
   border-width: 1px;
   border-radius: 50px;

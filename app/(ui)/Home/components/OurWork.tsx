@@ -22,10 +22,10 @@ const OurWork = () => {
   return (
     <div>
       <div className="text-white  items-center justify-center p-10">
-        <h5 className="italic font-extrabold lg:text-7xl tracking-[0.2em] md:text-8xl text-4xl text-center mb-5 ">
+        <h5 className="italic font-extrabold lg:text-7xl tracking-[0.2em] md:text-6xl text-4xl mb-5  ">
           Our Work in Process
         </h5>
-        <p className=" lg:text-xl italic text-yellow-500   text-xs text-right">
+        <p className=" lg:text-xl italic text-yellow-500   text-sm   text-right">
           Dive into luxury with our new jewelry collection, where timeless
           elegance meets modern allure. Elevate your style today!
         </p>
