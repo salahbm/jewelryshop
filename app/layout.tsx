@@ -5,7 +5,7 @@ import "./styles/globals.css";
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import { Provider } from "react-redux";
-import { store, persistor } from "@/redux/store";
+import { store, persistor } from "@/app/redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 
 const open_sans = Open_Sans({

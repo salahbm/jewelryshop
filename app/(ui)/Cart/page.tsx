@@ -11,7 +11,7 @@ import {
   minusQuantity,
   resetCart,
   deleteItem,
-} from "@/redux/shopSlice";
+} from "@/app/redux/shopSlice";
 const CartPage = () => {
   const dispatch = useDispatch();
   const productData = useSelector((state: any) => state.shop.productData);
@@ -39,7 +39,7 @@ const CartPage = () => {
           {productData.map((product: any, index: number) => (
             <div key={index}>
               <div className="flex flex-row items-center justify-between">
-                <div className="flex flex-row items-center justify-between text-lg">
+                <div className="flex flex-row items-center justify-between text-lg text-white">
                   <CiCirclePlus
                     onClick={() => dispatch(plusQuantity(product))}
                   />
@@ -79,7 +79,7 @@ const CartPage = () => {
             alignItems: "center",
           }}
         >
-          <HiOutlineShoppingCart size={100} style={{ marginTop: "20%" }} />
+          <HiOutlineShoppingCart size={100} />
           <p className={classes.price}>It is empty</p>
 
           <Link href="/" style={{ marginTop: "70%" }}>

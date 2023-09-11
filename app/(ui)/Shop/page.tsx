@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import toast, { Toaster } from "react-hot-toast";
 // import { likedProducts } from "../redux/shopSlice";
 import { CiHeart } from "react-icons/ci";
-import { addToCart } from "@/redux/shopSlice";
+import { addToCart } from "@/app/redux/shopSlice";
 const Products = () => {
   const dispatch = useDispatch();
 
