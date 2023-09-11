@@ -1,4 +1,3 @@
-import logo from "./logo.png";
 import coll1 from "./coll1.jpg";
 import coll2 from "./coll2.jpg";
 import fColl from "./fColl.jpg";
@@ -21,12 +20,7 @@ import ring1 from "./ring1.jpeg";
 import ring2 from "./ring2.jpeg";
 import collectionItems from "./collectionItems.jpg";
 
-import diamondsshop from "./diamondsshop.png";
-import footer from "./footer.png";
-import ourwork from "./ourwork.png";
-
 export {
-  logo,
   coll1,
   coll2,
   fColl,
@@ -39,9 +33,6 @@ export {
   banner1,
   banner2,
   banner3,
-  diamondsshop,
-  ourwork,
-  footer,
   bracelet,
   bracelet1,
   collection,

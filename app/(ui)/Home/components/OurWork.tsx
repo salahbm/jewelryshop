@@ -1,4 +1,4 @@
-import { diamond, fColl, fColl1, ourwork, ring } from "@/public/assets";
+import { coll2, fColl, fColl1, ring } from "@/public/assets";
 import classes from "./component.module.css";
 import React from "react";
 import Image from "next/image";
@@ -14,7 +14,7 @@ const ourWork = [
     img: ring,
   },
   {
-    img: diamond,
+    img: coll2,
   },
 ];
 
@@ -22,7 +22,7 @@ const OurWork = () => {
   return (
     <div>
       <div className="text-white  items-center justify-center p-10">
-        <h5 className="italic font-extrabold lg:text-8xl tracking-[0.2em] md:text-8xl text-4xl  ">
+        <h5 className="italic font-extrabold lg:text-7xl tracking-[0.2em] md:text-8xl text-4xl text-center mb-5 ">
           Our Work in Process
         </h5>
         <p className=" lg:text-xl italic text-yellow-500   text-xs text-right">

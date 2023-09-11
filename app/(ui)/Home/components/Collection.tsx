@@ -19,12 +19,12 @@ const Collection = () => {
   };
   return (
     <div>
-      <div className="text-white  flex items-center justify-center relative mb-6">
+      <div className="text-white  flex items-center justify-center relative mb-6 w-full">
         <h5 className="animate-pulse font-extrabold lg:text-9xl tracking-[0.3em] md:text-8xl text-4xl">
-          New <br className="pl-10" />
-          <span className="pl-20">Collection</span>
+          New <br className="" />
+          <span className="">Collection</span>
         </h5>
-        <span className="absolute md:top-9 md:w-[450px] md:left-[50%] lg:text-xl italic text-yellow-500  top-1 right-[10%] w-[200px] text-xs overflow-hidden max-h-[2.8em] lg:max-h-max">
+        <span className="absolute md:top-9  lg:text-xl italic text-yellow-500  top-1 right-[10%] w-[200px] md:w-[400px] text-xs overflow-hidden max-h-[2.8em] lg:max-h-max">
           Dive into luxury with our new jewelry collection, where timeless
           elegance meets modern allure. Elevate your style today!
         </span>

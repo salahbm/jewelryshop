@@ -31,7 +31,7 @@ const Footer = () => {
         <p className="text-white  text-sm md:text-2xl mb-2">
           MrJoni All Rights are Reserved
         </p>
-        <div className="flex items-center justify-between gap-10 ">
+        <div className="flex items-center justify-between gap-8 ">
           <FooterSMBTN Press={() => console.log("insta")} title="Facebook">
             <AiFillFacebook />
           </FooterSMBTN>

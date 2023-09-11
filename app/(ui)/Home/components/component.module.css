@@ -94,7 +94,6 @@
 
 .gallery {
   display: flex;
-  align-items: center;
   column-gap: 20px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -104,11 +103,15 @@
 }
 .galleryItem {
   scroll-snap-align: right;
-  min-width: 70%;
-  max-height: 500px;
+  min-width: 80%;
+  height: 500px;
 
-  @media (max-width: 767px) {
-    max-height: 180px;
+  @media (max-width: 390px) {
+    height: 250px;
+  }
+
+  @media (min-width: 780px) {
+    height: 500px;
   }
 }
 
