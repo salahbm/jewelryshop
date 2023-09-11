@@ -16,9 +16,10 @@
   margin-block: 10px;
 }
 
-@media (min-width: 380px) {
+@media (min-width: 400px) {
   .cardGrid {
     grid-template-columns: repeat(2, 1fr);
+    height: 80%;
   }
 }
 
@@ -104,14 +105,19 @@
 .galleryItem {
   scroll-snap-align: right;
   min-width: 70%;
-  height: 500px;
+  max-height: 500px;
+
+  @media (max-width: 767px) {
+    max-height: 180px;
+  }
 }
+
 .galleryImgd {
   width: 100%;
   object-fit: cover;
 }
 
-/* Our Clients */
+/* Our Clients On Hand page*/
 
 .app {
   /* min-width: 100vw; */

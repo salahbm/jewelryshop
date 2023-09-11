@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./component.module.css";
 import Image from "next/image";
-const TAGS: { text: string; imageUrl: string }[] = [
+const TAGS = [
   { text: "HTML", imageUrl: "https://picsum.photos/id/34/200/300" },
   { text: "CSS", imageUrl: "https://picsum.photos/id/67/200/300" },
   { text: "JavaScript", imageUrl: "https://picsum.photos/id/342/200/300" },
@@ -24,7 +24,7 @@ const random = (min: number, max: number): number =>
 const shuffle = (arr: string[]): string[] =>
   [...arr].sort(() => 0.5 - Math.random());
 
-const App: React.FC = () => (
+const OnHand: React.FC = () => (
   <div className={styles.app}>
     <header className="text-white">
       <h1>Infinite Scroll Animation</h1>
@@ -63,4 +63,4 @@ const App: React.FC = () => (
   </div>
 );
 
-export default App;
+export default OnHand;

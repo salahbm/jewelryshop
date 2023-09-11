@@ -8,9 +8,9 @@ import {
 import { BiLogoTelegram } from "react-icons/bi";
 const Footer = () => {
   return (
-    <div className="p-2">
+    <div className="p-2 w-full">
       <h2 className="text-white font-mono font-extrabold w-full md:text-8xl  text-2xl mb-8">
-        Get The Last Information <br /> From Us
+        Get The Last Information From Us
       </h2>
       <div className="flex justify-between items-center lg:px-20 placeholder:px-3">
         <span className=" w-1/2 md:w-1/3  lg:text-xl italic text-yellow-500  text-xs overflow-hidden ">
@@ -27,9 +27,11 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-between px-20 my-10">
-        <p className="text-white w-1/2">MrJoni All Rights are Reserved</p>
-        <div className="flex items-center justify-between w-1/3">
+      <div className="flex items-center justify-between flex-col md:flex-row py-5">
+        <p className="text-white  text-sm md:text-2xl mb-2">
+          MrJoni All Rights are Reserved
+        </p>
+        <div className="flex items-center justify-between gap-10 ">
           <FooterSMBTN Press={() => console.log("insta")} title="Facebook">
             <AiFillFacebook />
           </FooterSMBTN>
