@@ -24,7 +24,7 @@ const Collection = () => {
           New <br className="" />
           <span className="">Collection</span>
         </h5>
-        <span className="absolute md:top-9  lg:text-xl italic text-yellow-500  top-1 right-[10%] w-[200px] md:w-[400px] text-xs overflow-hidden max-h-[2.8em] lg:max-h-max">
+        <span className="absolute md:top-9  lg:text-xl italic text-yellow-500  top-1 right-[5%] w-[200px] md:w-[400px] text-xs overflow-hidden max-h-[2.8em] lg:max-h-max">
           Dive into luxury with our new jewelry collection, where timeless
           elegance meets modern allure. Elevate your style today!
         </span>
