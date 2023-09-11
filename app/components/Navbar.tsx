@@ -60,9 +60,9 @@ const Navbar = () => {
           state.menu === "menu" ? "  opacity-100" : " opacity-0"
         }  lg:h-30  duration-700 lg:static lg:z-auto lg:mx-auto lg:flex lg:w-auto lg:items-center lg:justify-between lg:gap-10 lg:px-5 lg:opacity-100`}
       >
-        <div className="navBarHover">
+        <Link className="navBarHover" href={"/Shop"}>
           <p className="text-base font-semibold">Shop</p>
-        </div>
+        </Link>
         <div className="navBarHover">
           <p className="text-base font-semibold">About</p>
         </div>

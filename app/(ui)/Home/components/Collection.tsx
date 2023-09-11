@@ -1,17 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import {
-  coll1,
-  coll2,
-  collection,
-  diamond,
-  fColl,
-  fColl1,
-} from "../../../../public/assets/index";
+import { banner3, diamond } from "../../../../public/assets/index";
 import Image from "next/image";
 import { PiArrowFatLinesRightFill } from "react-icons/pi";
 const Collection = () => {
-  const collections = [collection, diamond];
+  const collections = [banner3, diamond];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
