@@ -13,11 +13,17 @@ const TAGS = [
   { text: "Emily Clark", imageUrl: "https://picsum.photos/id/212/200/300" },
   { text: "Daniel Lee", imageUrl: "https://picsum.photos/id/8/200/300" },
   { text: "Olivia White", imageUrl: "https://picsum.photos/id/56/200/300" },
+  { text: "Mike Brown", imageUrl: "https://picsum.photos/id/237/200/300" },
+  { text: "Sara Wilson", imageUrl: "https://picsum.photos/id/2/200/300" },
+  { text: "Tom Anderson", imageUrl: "https://picsum.photos/id/6/200/300" },
+  { text: "Emily Clark", imageUrl: "https://picsum.photos/id/212/200/300" },
+  { text: "Daniel Lee", imageUrl: "https://picsum.photos/id/8/200/300" },
+  { text: "Olivia White", imageUrl: "https://picsum.photos/id/56/200/300" },
 ];
 
 const DURATION: number = 10000;
 const ROWS: number = 2;
-const TAGS_PER_ROW: number = 100;
+const TAGS_PER_ROW: number = 30;
 
 const random = (min: number, max: number): number =>
   Math.floor(Math.random() * (max - min)) + min;

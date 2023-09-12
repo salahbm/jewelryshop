@@ -40,7 +40,7 @@ const CartPage = () => {
           {productData.map((product: StoreItem, index: number) => (
             <div
               key={index}
-              className="relative my-5 border-2 border-yellow-400 rounded-lg p-1 min-h-[160px] md:min-h-[200px] "
+              className="relative my-5 border-2 border-white rounded-lg p-1 min-h-[160px] md:min-h-[200px] "
             >
               <p className="text-white text-center text-xl  md:text-2xl whitespace-nowrap">
                 {product.title}
@@ -55,17 +55,27 @@ const CartPage = () => {
                 </div>
 
                 <div className="w-1/3 flex flex-col justify-between gap-5 items-center">
-                  <div className="flex flex-row items-center justify-end  text-xl md:text-2xl text-white">
-                    <button onClick={() => dispatch(plusQuantity(product))}>
+                  <div className="flex flex-row items-center justify-end  text-xl md:text-3xl ">
+                    <button
+                      onClick={() => dispatch(plusQuantity(product))}
+                      className="text-lime-500 "
+                    >
                       <CiCirclePlus />
                     </button>
 
-                    <span style={{ marginInline: 5 }}>{product.quantity}</span>
-                    <button onClick={() => dispatch(minusQuantity(product))}>
+                    <span className="mx-2 text-yellow-100">
+                      {product.quantity}
+                    </span>
+                    <button
+                      onClick={() => dispatch(minusQuantity(product))}
+                      className=" text-orange-700"
+                    >
                       <CiCircleMinus />
                     </button>
                   </div>
-
+                  <p className="text-center text-yellow-50">
+                    {product.description}
+                  </p>
                   <div className=" flex flex-col items-center  text-white">
                     <span className="">Each: ${product.price}</span>
                     <p className="">Total: ${eachTotalPrice(product)}</p>

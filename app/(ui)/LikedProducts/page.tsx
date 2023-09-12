@@ -28,7 +28,7 @@ const LikedProducts = () => {
         </button>
       </div>
       {likedItem.length > 0 ? (
-        <div className=" grid  grid-cols-2 items-center gap-10 md:grid-cols-4">
+        <div className=" grid  grid-cols-2 items-center gap-10 md:grid-cols-3 lg:grid-cols-4">
           {likedItem.map((product: StoreItem, index: number) => (
             <div key={index}>
               <div className="  relative rounded-md border min-h-24 min-w-24 border-yellow-700">

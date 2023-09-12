@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { ProductData } from "@/app/constant/productData";
-// import { Item } from "@/type";
+
 import Image from "next/image";
 import { GoPlus } from "react-icons/go";
 import Link from "next/link";
@@ -13,18 +13,23 @@ import { addToCart } from "@/app/redux/shopSlice";
 const Products = () => {
   const dispatch = useDispatch();
   const likedItems = useSelector((state: any) => state.shop.likedItem);
-  const isLiked = likedItems.some((product: any) => {
-    return product;
-  });
 
   return (
-    <div className="grid grid-cols-3 gap-4 px-4 py-6 lg:grid-cols-4 ">
+    <div className="grid grid-cols-3 gap-6 px-4 py-6 lg:grid-cols-4 ">
       {ProductData.map((item: any, index: number) => (
         <div
           key={index}
-          className="lg-6 group relative border-[1px] border-gray-200"
+          className="lg-6 group relative border-[1px] border-yellow-600 rounded-lg p-2"
         >
-          <div className="h-[200px] w-full overflow-hidden p-1 lg:h-[350px] ">
+          <div className="flex flex-col px-2 md:gap-3">
+            <p className=" line-clamp-2 w-[100px] text-[10px] font-bold text-white lg:w-full lg:text-lg">
+              {item.title}
+            </p>
+            <p className="line-clamp-2 w-[100px] text-[10px] font-thin text-gray-100 lg:w-full   lg:text-xs">
+              {item.description}
+            </p>
+          </div>
+          <div className="h-[200px] w-full overflow-hidden p-1  ">
             <Image
               width={200}
               height={200}
@@ -55,7 +60,7 @@ const Products = () => {
                   dispatch(addToCart(item)) &&
                   toast.success(`${item.title.substring(0, 15)}... added`)
                 }
-                className=" text-20 flex h-5 w-10 items-center justify-center rounded-full bg-green text-[10px]  text-white duration-300 hover:bg-slate-400 md:h-7  md:w-20 md:text-[15px] lg:h-9 lg:w-20"
+                className=" text-20 flex h-5 w-10 items-center justify-center rounded-full bg-lime-500 text-[10px]  text-white duration-300 hover:bg-slate-400 md:h-7  md:w-20 md:text-[15px] lg:h-9 lg:w-20"
               >
                 <span className=" ">
                   <GoPlus />
@@ -68,7 +73,7 @@ const Products = () => {
                   query: { product: JSON.stringify(item) },
                 }}
               >
-                <button className="flex h-5 w-11 items-center justify-center  rounded-full bg-midnight text-[10px] text-white duration-300 hover:bg-slate-200 md:h-7 md:w-20 md:text-[15px] lg:h-9 lg:w-20">
+                <button className="flex h-5 w-11 items-center justify-center  rounded-full bg-yellow-500 text-[10px] text-Red duration-300 hover:bg-yellow-200 md:h-7 md:w-20 md:text-[15px] lg:h-9 lg:w-20">
                   <span>
                     <GoPlus />
                   </span>
@@ -78,19 +83,11 @@ const Products = () => {
             </div>
           </div>
           <div className=" flex flex-col items-center gap-1 px-2 md:flex-row lg:flex-row lg:gap-3 ">
-            <p className="font-base text-[10px]  font-medium text-green lg:text-lg">
+            <p className="font-base text-[10px]  font-medium text-lime-300 lg:text-[16px]">
               Now ${item.price}
             </p>
-            <p className=" text-[12px]  text-gray-500 line-through decoration-[1px] md:text-lg">
+            <p className=" text-[8px]  text-gray-100 line-through decoration-[1px] lg:text-[14px]">
               ${item.oldPrice}
-            </p>
-          </div>
-          <div className="flex flex-col gap-1 px-2 md:gap-3">
-            <p className=" line-clamp-2 w-[100px] text-[10px] font-bold text-black lg:w-full lg:text-lg">
-              {item.title}
-            </p>
-            <p className="line-clamp-2 w-[100px] text-[10px] font-thin text-gray-400 lg:w-full   lg:text-sm">
-              {item.description}
             </p>
           </div>
         </div>
