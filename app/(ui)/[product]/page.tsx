@@ -9,7 +9,7 @@ import {
   plusQuantity,
   minusQuantity,
 } from "@/app/redux/shopSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import toast, { Toaster } from "react-hot-toast";
 import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
 import { StoreItem } from "@/app/type";
@@ -32,17 +32,21 @@ const ProductsDetail = () => {
     }
   }, [pathme]);
 
+  const productData = useSelector((state: any) => state.shop.productData);
   return (
     <div className="">
-      <div className="  max-w-full mx-auto flex flex-col items-center py-2 md:flex-row">
-        <div className="   m-2   w-1/2 rounded-md border border-gray-500 lg:w-2/3 h-2/4">
+      <div className="w-full mx-auto flex flex-col items-center py-2 md:flex-row h-1/2 ">
+        <div className="   m-2   w-full rounded-md border border-gray-500 lg:w-2/4 md:w-2/4  ">
           <img
             src={product?.image}
             alt="productIMage"
-            className="  h-full w-full object-contain"
+            className="   w-full object-contain rounded-md"
           />
         </div>
-        <div className="flex h-2/4 w-full flex-col gap-1 px-4 lg:w-1/2">
+        <div className="   m-2   w-1/3 rounded-md border border-gray-500 lg:w-1/12  h-full  ">
+          <p>gsdgsdfg</p>
+        </div>
+        <div className="flex h-2/3 w-full flex-col gap-1 px-4 lg:w-2/4 md:w-2/4">
           <p className=" flex flex-col gap-6 rounded-md border border-gray-400 px-2 py-4 font-bold   ">
             {product?.title}
           </p>
@@ -69,10 +73,22 @@ const ProductsDetail = () => {
                 ${product?.oldPrice}
               </p>
             </div>
-            <div className="flex flex-row items-center justify-between text-2xl">
-              <CiCirclePlus onClick={() => dispatch(plusQuantity(product))} />
+            <div className="flex flex-row items-center justify-between text-2xl text-white">
+              <CiCirclePlus
+                onClick={() =>
+                  dispatch(plusQuantity(product)) &&
+                  toast.success(`${product?.title.substring(0, 20)} is added`)
+                }
+              />
 
-              <span>{product?.quantity}</span>
+              <span>
+                {
+                  productData.find(
+                    (item: StoreItem) => item._id === product?._id
+                  )?.quantity
+                }
+              </span>
+
               <CiCircleMinus onClick={() => dispatch(minusQuantity(product))} />
               <button
                 onClick={() =>

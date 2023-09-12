@@ -32,11 +32,18 @@ const LikedProducts = () => {
           {likedItem.map((product: StoreItem, index: number) => (
             <div key={index}>
               <div className="  relative rounded-md border min-h-24 min-w-24 border-yellow-700">
-                <img
-                  src={product.image}
-                  alt="Product image"
-                  className="object-fill w-full h-full rounded-md "
-                />
+                <Link
+                  href={{
+                    pathname: `product${product._id}`,
+                    query: { product: JSON.stringify(product) },
+                  }}
+                >
+                  <img
+                    src={product.image}
+                    alt="Product image"
+                    className="object-fill w-full h-full rounded-md "
+                  />
+                </Link>
                 <button onClick={() => dispatch(unlikeItem(product._id))}>
                   <AiFillHeart
                     className={`text-2x  absolute right-1 top-1 text-xl md:text-3xl text-yellow-500 `}
