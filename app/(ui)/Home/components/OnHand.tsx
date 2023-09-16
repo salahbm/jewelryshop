@@ -21,8 +21,8 @@ const TAGS = [
   { text: "Olivia White", imageUrl: "https://picsum.photos/id/56/200/300" },
 ];
 
-const DURATION: number = 10000;
-const ROWS: number = 2;
+const DURATION: number = 60000;
+const ROWS: number = 3;
 const TAGS_PER_ROW: number = 30;
 
 const random = (min: number, max: number): number =>
