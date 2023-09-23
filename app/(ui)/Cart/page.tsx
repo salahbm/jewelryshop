@@ -13,6 +13,7 @@ import {
   deleteItem,
 } from "@/app/redux/shopSlice";
 import { StoreItem } from "@/app/type";
+import CreditCardForm from "./components/CreditCardFormat";
 const CartPage = () => {
   const dispatch = useDispatch();
   const productData = useSelector((state: any) => state.shop.productData);
@@ -107,6 +108,7 @@ const CartPage = () => {
           </Link>
         </div>
       )}
+      <CreditCardForm />
     </div>
   );
 };
