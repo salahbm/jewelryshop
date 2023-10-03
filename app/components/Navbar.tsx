@@ -6,7 +6,7 @@ import { CiUser, CiShoppingCart, CiHeart, CiMenuFries } from "react-icons/ci";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import { usePathname } from "next/navigation";
-
+import { signIn, signOut, useSession } from "next-auth/react";
 const Navbar = () => {
   const [state, setState] = useState({
     menu: "close",
@@ -41,7 +41,11 @@ const Navbar = () => {
       }));
     }
   }, [productData, location]);
+  const { data: session } = useSession();
 
+  console.log("====================================");
+  console.log(session);
+  console.log("====================================");
   return (
     <div className=" z-[1] w-full  text-white  relative ">
       <div className="flex items-center bg px-4 lg:justify-center justify-between rounded-2xl lg:bg-none">
@@ -99,7 +103,7 @@ const Navbar = () => {
             {productData.length > 0 ? productData.length : 0}
           </span>
         </div>
-        <div className="navBarHover gap-2">
+        <div className="navBarHover gap-2" onClick={() => signIn()}>
           <CiUser className="text-2xl" />
           <h1 className=" text-base font-semibold">Account</h1>
         </div>
