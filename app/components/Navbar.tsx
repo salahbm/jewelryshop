@@ -102,7 +102,7 @@ const Navbar = () => {
         </div>
         <Link href={"/Account"}>
           {userInfo ? (
-            <div className="gap-1 navBarHover">
+            <div className="gap-1 navBarHover ">
               <Image
                 src={userInfo?.image}
                 width={40}
@@ -111,7 +111,7 @@ const Navbar = () => {
                 className="rounded-full"
               />
               <div className="flex flex-col items-center">
-                <p>Welcome</p>
+                <p className="hidden sm:block">Welcome</p>
                 <p>{userInfo?.name}</p>
               </div>
             </div>
