@@ -73,6 +73,12 @@ export const shopSlice = createSlice({
     resetLikedItems: (state) => {
       state.likedItem = [];
     },
+    addUser: (state, action) => {
+      state.userInfo = action.payload;
+    },
+    removeUser: (state) => {
+      state.userInfo = null;
+    },
   },
 });
 export const {
@@ -84,5 +90,7 @@ export const {
   likedProducts,
   resetLikedItems,
   unlikeItem,
+  addUser,
+  removeUser,
 } = shopSlice.actions;
 export default shopSlice.reducer;
