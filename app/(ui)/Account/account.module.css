@@ -1,0 +1,55 @@
+/* account.module.css */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.userInfo {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.userInfo h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.orderedProducts,
+.onProcessProducts {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.orderedProducts h2,
+.onProcessProducts h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* account.module.css */
+/* ... Other styles ... */
+
+.orderedProductsList,
+.onProcessProductsList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.orderedProductsList li,
+.onProcessProductsList li {
+  margin: 5px 0;
+}
