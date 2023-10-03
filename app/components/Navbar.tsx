@@ -6,6 +6,7 @@ import { CiUser, CiShoppingCart, CiHeart, CiMenuFries } from "react-icons/ci";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const Navbar = () => {
   const [state, setState] = useState({
@@ -23,7 +24,7 @@ const Navbar = () => {
   };
 
   const productData = useSelector((state: any) => state.shop.productData);
-
+  const userInfo = useSelector((state: any) => state.shop.userInfo);
   const likedItems = useSelector((state: any) => state.shop.likedItem);
   useEffect(() => {
     let price = 0;
@@ -100,10 +101,26 @@ const Navbar = () => {
           </span>
         </div>
         <Link href={"/Account"}>
-          <div className="navBarHover gap-2">
-            <CiUser className="text-2xl" />
-            <h1 className=" text-base font-semibold">Account</h1>
-          </div>
+          {userInfo ? (
+            <div className="gap-1 navBarHover">
+              <Image
+                src={userInfo?.image}
+                width={40}
+                height={40}
+                alt="user pic"
+                className="rounded-full"
+              />
+              <div className="flex flex-col items-center">
+                <p>Welcome</p>
+                <p>{userInfo?.name}</p>
+              </div>
+            </div>
+          ) : (
+            <div className="navBarHover gap-2">
+              <CiUser className="text-2xl" />
+              <h1 className=" text-base font-semibold">Account</h1>
+            </div>
+          )}
         </Link>
         <div className="h-7 relative my-2 flex justify-end ">
           <input

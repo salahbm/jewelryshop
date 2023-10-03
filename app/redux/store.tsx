@@ -11,8 +11,10 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+const timestamp = Date.now();
+const uniqueKey = `Shop_${timestamp}`;
 const persistConfig = {
-  key: "root",
+  key: uniqueKey,
   version: 1,
   storage,
 };
