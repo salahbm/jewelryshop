@@ -50,7 +50,7 @@ const CartPage = () => {
             </button>
           </div>
           <div className="lg:flex flex-row justify-around gap-5 items-center">
-            <div className="md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 ">
+            {/* <div className="md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 ">
               {productData.map((product: StoreItem, index: number) => (
                 <div
                   key={index}
@@ -106,13 +106,15 @@ const CartPage = () => {
                   </button>
                 </div>
               ))}
-            </div>
+            </div> */}
             <div className="lg:w-2/6 w-full ">
               <div className=" p-4  border border-zinc-400 rounded-md flex flex-col gap-4 bg-yellow-50  lg:min-h-[600px]  ">
                 <div className="w-full flex flex-col gap-4 border-b border-b-zinc-200 pb-4">
-                  <button className="bg-blue-500 cursor-pointer w-full h-10 rounded-full font-semibold duration-300 opacity-50 text-2xl">
-                    Continue to checkout
-                  </button>
+                  <Link href={"./Checkout"}>
+                    <button className="bg-blue-500 cursor-pointer w-full h-10 rounded-full font-semibold duration-300 opacity-50 text-2xl">
+                      Continue to checkout
+                    </button>
+                  </Link>
                   <p className="text-lg text-center text-red-500 -mt-4 font-semibold">
                     Please sign in for checkout
                   </p>
@@ -170,7 +172,7 @@ const CartPage = () => {
                   </p>
                 </div>
               </div>
-              <CreditCardForm />
+              {/* <CreditCardForm /> */}
             </div>
           </div>
         </div>
