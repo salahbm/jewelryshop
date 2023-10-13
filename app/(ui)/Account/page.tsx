@@ -8,6 +8,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "@/app/redux/shopSlice";
 import Link from "next/link";
 import AddJewelryItem from "../AddItem/page";
+import Deposits from "../Dashboard/components/Deposits";
+import Dashboard from "../Dashboard/page";
+import { Typography } from "@mui/material";
 const Account: React.FC = () => {
   const dispatch = useDispatch();
   const { data: session } = useSession();
@@ -26,9 +29,14 @@ const Account: React.FC = () => {
   }, [dispatch, session]);
   const userInfo = useSelector((state: any) => state.shop.userInfo);
   return (
-    <section className="flex flex-col gap-6 text-white text-3xl items-center justify-center">
+    <section className="flex flex-col gap-6 text-white text-3xl items-center justify-center min-h-screen">
       <p>{userInfo?.name}</p>
       <Image src={userInfo?.image} width={200} height={200} alt="user pic" />
+      <Link href={"./Dashboard"}>
+        <Typography variant="h5" color={"primary"} fontWeight={"bold"}>
+          Admin Page
+        </Typography>
+      </Link>
       <button onClick={signIn}>
         <h1 className="text-white">LogIn</h1>
       </button>

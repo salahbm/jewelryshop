@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer components {
   .navBarHover {
     @apply hover:text-gYellow transition ease-in h-8 duration-500 text-lg flex flex-row items-center;
