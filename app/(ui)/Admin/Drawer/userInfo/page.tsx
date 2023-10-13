@@ -10,7 +10,7 @@ import { styled, Theme } from "@mui/material/styles";
 import Tab from "@mui/material/Tab";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import PersonOutline from "@mui/icons-material/PersonOutline";
-import TabAccount from "./TabAccount";
+import TabAccount from "../components/TabAccount";
 
 const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
   "& .MuiTabs-indicator": {

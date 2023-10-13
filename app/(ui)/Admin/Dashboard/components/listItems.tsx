@@ -17,12 +17,14 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItemButton>
-    <ListItemButton style={{ color: "white" }}>
-      <ListItemIcon>
-        <ShoppingCartIcon htmlColor="#FFFF" />
-      </ListItemIcon>
-      <ListItemText primary="Orders" />
-    </ListItemButton>
+    <Link href="../../Drawer/(user)/userInfo">
+      <ListItemButton style={{ color: "white" }}>
+        <ListItemIcon>
+          <ShoppingCartIcon htmlColor="#FFFF" />
+        </ListItemIcon>
+        <ListItemText primary="Orders" />
+      </ListItemButton>
+    </Link>
     <Link href="../../Drawer/(user)/userList">
       <ListItemButton style={{ color: "white" }}>
         <ListItemIcon>
