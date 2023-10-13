@@ -17,6 +17,7 @@ import Chart from "./components/Chart";
 import Deposits from "./components/Deposits";
 import Orders from "./components/Orders";
 import { mainListItems } from "./components/listItems";
+import UserList from "../../user/list";
 
 const drawerWidth: number = 240;
 
@@ -61,7 +62,6 @@ export default function Dashboard() {
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: "flex", marginBlock: 1 }}>
         <CssBaseline />
-
         <Drawer variant="permanent" open={open}>
           <Toolbar
             sx={{
@@ -131,6 +131,7 @@ export default function Dashboard() {
               </Grid>
             </Grid>
           </Container>
+          <UserList />
         </Box>
       </Box>
     </ThemeProvider>

@@ -32,7 +32,7 @@ const Account: React.FC = () => {
     <section className="flex flex-col gap-6 text-white text-3xl items-center justify-center min-h-screen">
       <p>{userInfo?.name}</p>
       <Image src={userInfo?.image} width={200} height={200} alt="user pic" />
-      <Link href={"./Dashboard"}>
+      <Link href={"./Admin/Dashboard"}>
         <Typography variant="h5" color={"primary"} fontWeight={"bold"}>
           Admin Page
         </Typography>
@@ -43,9 +43,6 @@ const Account: React.FC = () => {
       <h1 className="text-white" onClick={signOut}>
         Logout
       </h1>
-      <Link href={`../AddItem`}>
-        <h1>Add Item</h1>
-      </Link>
     </section>
   );
 };

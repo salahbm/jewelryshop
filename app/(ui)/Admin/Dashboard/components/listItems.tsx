@@ -7,6 +7,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PeopleIcon from "@mui/icons-material/People";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import Wallpaper from "@mui/icons-material/Wallpaper";
+import Link from "next/link";
 
 export const mainListItems = (
   <React.Fragment>
@@ -22,12 +23,14 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Orders" />
     </ListItemButton>
-    <ListItemButton style={{ color: "white" }}>
-      <ListItemIcon>
-        <PeopleIcon htmlColor="#FFFF" />
-      </ListItemIcon>
-      <ListItemText primary="Customers" />
-    </ListItemButton>
+    <Link href={"@/app/(ui)/user/list"}>
+      <ListItemButton style={{ color: "white" }}>
+        <ListItemIcon>
+          <PeopleIcon htmlColor="#FFFF" />
+        </ListItemIcon>
+        <ListItemText primary="Customers" />
+      </ListItemButton>
+    </Link>
     <ListItemButton style={{ color: "white" }}>
       <ListItemIcon>
         <BarChartIcon htmlColor="#FFFF" />
