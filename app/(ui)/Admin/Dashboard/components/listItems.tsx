@@ -7,44 +7,66 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PeopleIcon from "@mui/icons-material/People";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import Wallpaper from "@mui/icons-material/Wallpaper";
-import Link from "next/link";
 
-export const mainListItems = (
-  <React.Fragment>
-    <ListItemButton style={{ color: "white" }}>
-      <ListItemIcon>
-        <DashboardIcon htmlColor="#FFFF" />
-      </ListItemIcon>
-      <ListItemText primary="Dashboard" />
-    </ListItemButton>
-    <Link href="../../Drawer/(user)/userInfo">
-      <ListItemButton style={{ color: "white" }}>
+function MainListItems({
+  getDrawerName,
+}: {
+  getDrawerName: (value: string) => void;
+}) {
+  function passDrawerName(value: string) {
+    getDrawerName(value);
+  }
+  return (
+    <React.Fragment>
+      <ListItemButton
+        style={{ color: "white" }}
+        onClick={() => passDrawerName("dashboard")}
+      >
+        <ListItemIcon>
+          <DashboardIcon htmlColor="#FFFF" />
+        </ListItemIcon>
+        <ListItemText primary="Dashboard" />
+      </ListItemButton>
+
+      <ListItemButton
+        style={{ color: "white" }}
+        onClick={() => passDrawerName("orders")}
+      >
         <ListItemIcon>
           <ShoppingCartIcon htmlColor="#FFFF" />
         </ListItemIcon>
         <ListItemText primary="Orders" />
       </ListItemButton>
-    </Link>
-    <Link href="../../Drawer/(user)/userList">
-      <ListItemButton style={{ color: "white" }}>
+
+      <ListItemButton
+        style={{ color: "white" }}
+        onClick={() => passDrawerName("customers")}
+      >
         <ListItemIcon>
           <PeopleIcon htmlColor="#FFFF" />
         </ListItemIcon>
         <ListItemText primary="Customers" />
       </ListItemButton>
-    </Link>
 
-    <ListItemButton style={{ color: "white" }}>
-      <ListItemIcon>
-        <BarChartIcon htmlColor="#FFFF" />
-      </ListItemIcon>
-      <ListItemText primary="Reports" />
-    </ListItemButton>
-    <ListItemButton style={{ color: "white" }}>
-      <ListItemIcon>
-        <Wallpaper htmlColor="#FFFF" />
-      </ListItemIcon>
-      <ListItemText primary="Website photos" />
-    </ListItemButton>
-  </React.Fragment>
-);
+      <ListItemButton
+        style={{ color: "white" }}
+        onClick={() => passDrawerName("reports")}
+      >
+        <ListItemIcon>
+          <BarChartIcon htmlColor="#FFFF" />
+        </ListItemIcon>
+        <ListItemText primary="Reports" />
+      </ListItemButton>
+      <ListItemButton
+        style={{ color: "white" }}
+        onClick={() => passDrawerName("webPhoto")}
+      >
+        <ListItemIcon>
+          <Wallpaper htmlColor="#FFFF" />
+        </ListItemIcon>
+        <ListItemText primary="Website photos" />
+      </ListItemButton>
+    </React.Fragment>
+  );
+}
+export default MainListItems;

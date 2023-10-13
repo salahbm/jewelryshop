@@ -1,4 +1,4 @@
-// ** React Imports
+"use client";
 import { useState, useEffect, MouseEvent, useCallback } from "react";
 
 // ** Next Imports
@@ -303,7 +303,7 @@ const columns: GridColDef[] = [
   },
 ];
 
-const UserList = () => {
+const ShopOrderList = () => {
   // ** State
   const [role, setRole] = useState<string>("");
   const [data, setData] = useState<any[]>([]);
@@ -411,4 +411,4 @@ const UserList = () => {
   );
 };
 
-export default UserList;
+export default ShopOrderList;

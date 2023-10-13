@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import KeyboardDoubleArrowLeft from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import KeyboardDoubleArrowRight from "@mui/icons-material/KeyboardDoubleArrowRight";
 import Box from "@mui/material/Box";
@@ -16,7 +16,9 @@ import { ThemeProvider, createTheme, styled } from "@mui/material/styles";
 import Chart from "./components/Chart";
 import Deposits from "./components/Deposits";
 import Orders from "./components/Orders";
-import { mainListItems } from "./components/listItems";
+import MainListItems from "./components/listItems";
+import ShopOrderList from "../shop/page";
+import UserList from "../userList/page";
 
 const drawerWidth: number = 240;
 
@@ -52,9 +54,13 @@ const Drawer = styled(MuiDrawer, {
 const defaultTheme = createTheme();
 
 export default function Dashboard() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = useState(true);
+  const [drawerValue, setDrawerValue] = useState<string>("dashboard");
   const toggleDrawer = () => {
     setOpen(!open);
+  };
+  const getDrawerName = (value: string) => {
+    setDrawerValue(value);
   };
 
   return (
@@ -80,9 +86,8 @@ export default function Dashboard() {
           </Toolbar>
           <Divider />
           <List component="nav">
-            {mainListItems}
+            <MainListItems getDrawerName={getDrawerName} />
             <Divider sx={{ my: 1 }} />
-            {/* {secondaryListItems} */}
           </List>
         </Drawer>
         <Box
@@ -95,40 +100,52 @@ export default function Dashboard() {
         >
           <Toolbar />
           <Container maxWidth="lg">
-            <Grid container spacing={1}>
-              {/* Chart */}
-              <Grid item xs={12} lg={9} mb={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    height: 300,
-                  }}
-                >
-                  <Chart />
-                </Paper>
+            {drawerValue === "dashboard" ? (
+              <Grid container spacing={1}>
+                {/* Chart */}
+                <Grid item xs={12} lg={9} mb={3}>
+                  <Paper
+                    sx={{
+                      p: 2,
+                      display: "flex",
+                      flexDirection: "column",
+                      height: 300,
+                    }}
+                  >
+                    <Chart />
+                  </Paper>
+                </Grid>
+                {/* Recent Deposits */}
+                <Grid item xs={12} lg={3} mb={3}>
+                  <Paper
+                    sx={{
+                      p: 2,
+                      display: "flex",
+                      flexDirection: "column",
+                      height: 300,
+                    }}
+                  >
+                    <Deposits />
+                  </Paper>
+                </Grid>
+                {/* Recent Orders */}
+                <Grid item xs={12}>
+                  <Paper
+                    sx={{ p: 2, display: "flex", flexDirection: "column" }}
+                  >
+                    <Orders />
+                  </Paper>
+                </Grid>
               </Grid>
-              {/* Recent Deposits */}
-              <Grid item xs={12} lg={3} mb={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    height: 300,
-                  }}
-                >
-                  <Deposits />
-                </Paper>
-              </Grid>
-              {/* Recent Orders */}
-              <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-                  <Orders />
-                </Paper>
-              </Grid>
-            </Grid>
+            ) : drawerValue === "orders" ? (
+              <ShopOrderList />
+            ) : drawerValue === "customers" ? (
+              <UserList />
+            ) : drawerValue === "reports" ? (
+              <p>reports</p>
+            ) : drawerValue === "webPhoto" ? (
+              <p>Photo</p>
+            ) : null}
           </Container>
         </Box>
       </Box>
