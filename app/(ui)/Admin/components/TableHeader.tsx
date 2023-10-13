@@ -2,7 +2,7 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-
+import FileUpload from "@mui/icons-material/FileUpload";
 // ** Icon Imports
 
 interface TableHeaderProps {
@@ -18,35 +18,30 @@ const TableHeader = (props: TableHeaderProps) => {
   return (
     <Box
       sx={{
-        p: 5,
-        pb: 3,
         display: "flex",
-        flexWrap: "wrap",
         alignItems: "center",
         justifyContent: "space-between",
+        flexDirection: "row",
+        padding: 2,
       }}
     >
-      {/* <Button
+      <TextField
+        fullWidth
+        size="small"
+        value={value}
         sx={{ mr: 4, mb: 2 }}
-        color='secondary'
-        variant='outlined'
-        startIcon={<Icon icon='mdi:export-variant' fontSize={20} />}
+        placeholder="Search User"
+        onChange={(e) => handleFilter(e.target.value)}
+      />
+
+      <Button
+        sx={{ mr: 4, mb: 2 }}
+        color="secondary"
+        variant="outlined"
+        startIcon={<FileUpload />}
       >
         Export
-      </Button> */}
-      <Box sx={{ display: "flex", flexWrap: "wrap", alignItems: "center" }}>
-        <TextField
-          size="small"
-          value={value}
-          sx={{ mr: 4, mb: 2 }}
-          placeholder="Search User"
-          onChange={(e) => handleFilter(e.target.value)}
-        />
-
-        {/* <Button sx={{ mb: 2 }} onClick={toggle} variant='contained'>
-          Add User
-        </Button> */}
-      </Box>
+      </Button>
     </Box>
   );
 };

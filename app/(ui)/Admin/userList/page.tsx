@@ -28,6 +28,8 @@ import CardContent from "@mui/material/CardContent";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Delete from "@mui/icons-material/Delete";
+
+import ShopHeader from "../components/shopHeader";
 import TableHeader from "../components/TableHeader";
 
 interface CellType {
@@ -303,7 +305,7 @@ const columns: GridColDef[] = [
   },
 ];
 
-const UserList = () => {
+const ShopOrderList = () => {
   // ** State
   const [role, setRole] = useState<string>("");
   const [data, setData] = useState<any[]>([]);
@@ -350,43 +352,14 @@ const UserList = () => {
   // }, []);
 
   return (
-    <Grid container spacing={6}>
-      <Grid item xs={12}>
-        <p> 회원 관리 / 회원 리스트</p>
-      </Grid>
-      <Grid item xs={12}>
+    <Grid container>
+      <Grid item lg={13}>
         <Card>
           <CardContent>
-            <Grid container spacing={6}>
-              <Grid item sm={1} xs={6}>
-                <p style={{ fontSize: "large", fontWeight: "bold" }}>
-                  검색옵션
-                </p>
-              </Grid>
-              <Grid item sm={4} xs={12}>
-                <FormControl fullWidth>
-                  <InputLabel id="marketing-select">
-                    마케팅 동의 옵션
-                  </InputLabel>
-                  <Select
-                    fullWidth
-                    value={role}
-                    id="select-marketing"
-                    label="Select Marketing"
-                    labelId="marketing-select"
-                    onChange={handleRoleChange}
-                    inputProps={{ placeholder: "마켓팅 동의 옵션" }}
-                  >
-                    <MenuItem value="">전체</MenuItem>
-                    <MenuItem value="agree_marketing">
-                      마케팅 수신 동의
-                    </MenuItem>
-                    <MenuItem value="disagree-marketing">
-                      마케팅 수신 미동의
-                    </MenuItem>
-                  </Select>
-                </FormControl>
-              </Grid>
+            <Grid item>
+              <Typography variant="h5" fontWeight={"bold"} color={"#900000"}>
+                Customers List
+              </Typography>
             </Grid>
           </CardContent>
           <Divider />
@@ -411,4 +384,4 @@ const UserList = () => {
   );
 };
 
-export default UserList;
+export default ShopOrderList;
