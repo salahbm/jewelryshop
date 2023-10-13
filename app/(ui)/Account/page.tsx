@@ -8,8 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "@/app/redux/shopSlice";
 import Link from "next/link";
 import AddJewelryItem from "../AddItem/page";
-import Deposits from "../Dashboard/components/Deposits";
-import Dashboard from "../Dashboard/page";
+import Deposits from "../Admin/Dashboard/components/Deposits";
+import Dashboard from "../Admin/Dashboard/page";
 import { Typography } from "@mui/material";
 const Account: React.FC = () => {
   const dispatch = useDispatch();
