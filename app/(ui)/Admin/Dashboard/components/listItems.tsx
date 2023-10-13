@@ -23,7 +23,7 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Orders" />
     </ListItemButton>
-    <Link href={"@/app/(ui)/user/list"}>
+    <Link href="../../Drawer/(user)/userList">
       <ListItemButton style={{ color: "white" }}>
         <ListItemIcon>
           <PeopleIcon htmlColor="#FFFF" />
@@ -31,6 +31,7 @@ export const mainListItems = (
         <ListItemText primary="Customers" />
       </ListItemButton>
     </Link>
+
     <ListItemButton style={{ color: "white" }}>
       <ListItemIcon>
         <BarChartIcon htmlColor="#FFFF" />
@@ -45,33 +46,3 @@ export const mainListItems = (
     </ListItemButton>
   </React.Fragment>
 );
-
-// export const secondaryListItems = (
-//   <React.Fragment>
-//     <ListSubheader
-//       component="div"
-//       inset
-//       style={{ backgroundColor: "#9000", color: "white" }}
-//     >
-//       Saved reports
-//     </ListSubheader>
-//     <ListItemButton>
-//       <ListItemIcon>
-//         <AssignmentIcon htmlColor="#FFFF" />
-//       </ListItemIcon>
-//       <ListItemText primary="Current month" />
-//     </ListItemButton>
-//     <ListItemButton>
-//       <ListItemIcon>
-//         <AssignmentIcon htmlColor="#FFFF" />
-//       </ListItemIcon>
-//       <ListItemText primary="Last quarter" />
-//     </ListItemButton>
-//     <ListItemButton>
-//       <ListItemIcon>
-//         <AssignmentIcon htmlColor="#FFFF" />
-//       </ListItemIcon>
-//       <ListItemText primary="Year-end sale" />
-//     </ListItemButton>
-//   </React.Fragment>
-// );
