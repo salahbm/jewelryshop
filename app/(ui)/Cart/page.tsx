@@ -50,7 +50,7 @@ const CartPage = () => {
             </button>
           </div>
           <div className="lg:flex flex-row justify-around gap-5 items-center">
-            {/* <div className="md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 ">
+            <div className="md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 ">
               {productData.map((product: StoreItem, index: number) => (
                 <div
                   key={index}
@@ -106,7 +106,7 @@ const CartPage = () => {
                   </button>
                 </div>
               ))}
-            </div> */}
+            </div>
             <div className="lg:w-2/6 w-full ">
               <div className=" p-4  border border-zinc-400 rounded-md flex flex-col gap-4 bg-yellow-50  lg:min-h-[600px]  ">
                 <div className="w-full flex flex-col gap-4 border-b border-b-zinc-200 pb-4">

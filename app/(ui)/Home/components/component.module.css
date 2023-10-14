@@ -100,13 +100,14 @@
 
 .gallery {
   display: flex;
-  column-gap: 20px;
-  overflow-x: auto;
+  gap: 20px;
+  overflow-x: scroll; /* Enable horizontal scrolling */
   scroll-snap-type: x mandatory;
-  margin-block: 20px;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
+  margin-top: 20px;
+  width: 100%; /* Adjust the width based on your design */
+  /* Additional styles as needed */
 }
+
 .gallery::-webkit-scrollbar {
   width: 0.1rem; /* Adjust the width as needed */
 }
@@ -114,7 +115,7 @@
   background-color: transparent; /* Hide the scroll indicator handle */
 }
 .galleryItem {
-  scroll-snap-align: right;
+  scroll-snap-align: start;
   min-width: 75%;
   height: 300px;
 
