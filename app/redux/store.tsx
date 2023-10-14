@@ -14,7 +14,7 @@ import storage from "redux-persist/lib/storage";
 const timestamp = Date.now();
 const uniqueKey = `Shop_${timestamp}`;
 const persistConfig = {
-  key: uniqueKey,
+  key: "uniqueKey",
   version: 1,
   storage,
 };
