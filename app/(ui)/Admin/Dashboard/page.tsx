@@ -54,7 +54,7 @@ const Drawer = styled(MuiDrawer, {
 const defaultTheme = createTheme();
 
 export default function Dashboard() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [drawerValue, setDrawerValue] = useState<string>("dashboard");
   const toggleDrawer = () => {
     setOpen(!open);
@@ -67,7 +67,7 @@ export default function Dashboard() {
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: "flex", marginBlock: 1 }}>
         <CssBaseline />
-        <Drawer variant="permanent" open={open}>
+        <Drawer variant="permanent" open={open} style={{ zIndex: 1 }}>
           <Toolbar
             sx={{
               display: "flex",

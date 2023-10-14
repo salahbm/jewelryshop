@@ -2,12 +2,18 @@
 import React, { useState, useEffect } from "react";
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
-import { CiUser, CiShoppingCart, CiHeart, CiMenuFries } from "react-icons/ci";
+import {
+  CiUser,
+  CiShoppingCart,
+  CiHeart,
+  CiMenuFries,
+  CiShop,
+} from "react-icons/ci";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-
+import { PiNewspaper } from "react-icons/pi";
 const Navbar = () => {
   const [state, setState] = useState({
     menu: "close",
@@ -44,7 +50,7 @@ const Navbar = () => {
   }, [productData, location]);
 
   return (
-    <div className=" z-[1] w-full  text-white  relative ">
+    <div className=" z-[999] w-full  text-white  relative ">
       <div className="flex items-center bg px-4 lg:justify-center justify-between rounded-2xl lg:bg-none">
         <Link href="/">
           <div className="logo italic font-mono">Mr.Joni</div>
@@ -65,16 +71,40 @@ const Navbar = () => {
         />
       </div>
       <div
-        className={`absolute   gap-1 px-3 rounded-2xl w-full navBg ${
+        className={`absolute justify-between items-center  gap-1 px-3 rounded-2xl w-full navBg ${
           state.menu === "menu" ? "  opacity-100" : " opacity-0 hidden"
         }  lg:h-30  duration-700 lg:static lg:z-auto lg:mx-auto lg:flex lg:w-auto lg:items-center lg:justify-between lg:gap-10 lg:px-5 lg:opacity-100`}
       >
         <Link className="navBarHover" href={"/Shop"}>
+          <CiShop className="text-2xl" />
           <p className="text-base font-semibold">Shop</p>
         </Link>
         <div className="navBarHover">
+          <PiNewspaper className="text-2xl" />
           <p className="text-base font-semibold">About</p>
         </div>
+        <Link href={"/Account"} className="navBarHover ">
+          {userInfo ? (
+            <div>
+              <Image
+                src={userInfo?.image}
+                width={40}
+                height={40}
+                alt="user pic"
+                className="rounded-full"
+              />
+              <div className="flex flex-col items-center">
+                <p className="hidden sm:block">Welcome</p>
+                <p>{userInfo?.name}</p>
+              </div>
+            </div>
+          ) : (
+            <div className="flex flex-row items-center">
+              <CiUser className="text-2xl" />
+              <h1 className=" text-base font-semibold">Account</h1>
+            </div>
+          )}
+        </Link>
         <Link href={"/LikedProducts"}>
           <div className="navBarHover relative gap-2">
             <CiHeart className="text-2xl" />
@@ -100,28 +130,7 @@ const Navbar = () => {
             {productData.length > 0 ? productData.length : 0}
           </span>
         </div>
-        <Link href={"/Account"}>
-          {userInfo ? (
-            <div className="gap-1 navBarHover ">
-              <Image
-                src={userInfo?.image}
-                width={40}
-                height={40}
-                alt="user pic"
-                className="rounded-full"
-              />
-              <div className="flex flex-col items-center">
-                <p className="hidden sm:block">Welcome</p>
-                <p>{userInfo?.name}</p>
-              </div>
-            </div>
-          ) : (
-            <div className="navBarHover gap-2">
-              <CiUser className="text-2xl" />
-              <h1 className=" text-base font-semibold">Account</h1>
-            </div>
-          )}
-        </Link>
+
         <div className="h-7 relative my-2 flex justify-end ">
           <input
             placeholder="Search everything here"

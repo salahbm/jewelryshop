@@ -57,10 +57,7 @@ const OnHand: React.FC = () => (
         <div
           className={styles["loop-slider"]}
           style={{
-            "--duration": `${random(
-              DURATION - 5000,
-              DURATION + 5000
-            )}ms` as any,
+            "--duration": `${random(DURATION - 5000, DURATION + 5000)}ms`,
             "--direction": i % 2 ? "reverse" : "normal",
           }}
           key={i}
