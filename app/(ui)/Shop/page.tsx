@@ -3,15 +3,37 @@ import React, { useState } from "react";
 import { ProductData } from "@/app/constant/productData";
 
 import Image from "next/image";
-import { GoPlus } from "react-icons/go";
+import { IoIosCart, IoIosEye } from "react-icons/io";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import toast, { Toaster } from "react-hot-toast";
 import { likedProducts, unlikeItem } from "../../redux/shopSlice";
 import { AiFillHeart } from "react-icons/ai";
 import { addToCart } from "@/app/redux/shopSlice";
+import {
+  Card,
+  CssBaseline,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  Paper,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+import KeyboardDoubleArrowLeft from "@mui/icons-material/KeyboardDoubleArrowLeft";
+import KeyboardDoubleArrowRight from "@mui/icons-material/KeyboardDoubleArrowRight";
+import MainListItems from "../Admin/Dashboard/components/listItems";
 const Products = () => {
   const dispatch = useDispatch();
+  const [open, setOpen] = useState(false);
+  const [drawerValue, setDrawerValue] = useState<string>("dashboard");
+  const toggleDrawer = () => {
+    setOpen(!open);
+  };
+  const getDrawerName = (value: string) => {
+    setDrawerValue(value);
+  };
   const likedItems = useSelector((state: any) => state.shop.likedItem);
   // Define pagination state
   const itemsPerPage = 12; // Number of items to display per page
@@ -35,86 +57,109 @@ const Products = () => {
   };
 
   return (
-    <div className="flex flex-row ml-2">
+    <div className="flex flex-row ml-2 p-2 justify-between gap-2 min-h-screen">
       {/* drawer */}
-      <div className=" w-1/5">
-        <p className="text-white">Drawer</p>
+
+      <div
+        className={`${
+          open ? "w-2/6" : "xl:w-100px w-[40px]"
+        }  bg-yellow-500 rounded-lg p-1 z-[1] `}
+      >
+        <Toolbar
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+          }}
+        >
+          <IconButton onClick={toggleDrawer}>
+            {open ? (
+              <KeyboardDoubleArrowLeft htmlColor="#333" />
+            ) : (
+              <KeyboardDoubleArrowRight htmlColor="#333" />
+            )}
+          </IconButton>
+        </Toolbar>
+        <Divider />
+        <List component="nav">
+          <Typography>some value</Typography>
+          <Divider sx={{ my: 1 }} />
+        </List>
       </div>
+
       {/* Products */}
-      <div className=" w-5/6">
-        <div className=" ">
+      <div className={open ? "w-5/6 " : "w-full "}>
+        <div className="grid  xl:grid-cols-3  md:grid-cols-3 grid-cols-2 place-items-center ">
           {displayedProducts.map((item: any, index: number) => (
             <div
               key={index}
-              className="lg-6 group relative border-[1px] border-yellow-50 rounded-lg p-2"
+              className=" group relative rounded-lg p-0.5 bg-yellow-50 m-1  xl:max-w-[350px] md:max-w-[180px] max-w-[130px]"
             >
-              <div className="flex flex-col px-2 gap-1 mb-1">
-                <p className=" line-clamp-2 w-[100px] text-[10px] font-bold text-white lg:w-full lg:text-lg whitespace-nowrap">
-                  {item.title}
-                </p>
-                <p className="line-clamp-2 w-[100px] text-[10px] font-thin text-gray-50 lg:w-full   lg:text-[12px] italic font-mono whitespace-nowrap">
-                  {item.description}
-                </p>
-              </div>
-              <div className="h-[200px] w-full overflow-hidden p-1  ">
+              <div className="h-4/6 w-full overflow-hidden  ">
                 <Image
                   width={200}
                   height={200}
                   src={item.image}
                   alt="itemImage"
-                  className="h-full w-full scale-100 object-contain duration-300 group-hover:scale-110"
+                  className="h-full w-full scale-100 object-contain duration-300 group-hover:scale-105 rounded-lg"
                 />
               </div>
-              <button
-                onClick={() =>
-                  likedItems.some((product: any) => product._id === item._id)
-                    ? dispatch(unlikeItem(item._id))
-                    : dispatch(likedProducts(item))
-                }
-                className={`absolute right-1 top-1 text-3xl ${
-                  likedItems.some((product: any) => product._id === item._id)
-                    ? "text-yellow-500"
-                    : "text-white"
-                }`}
-              >
-                <AiFillHeart />
-              </button>
+              <div className="h-2/6">
+                <div className="flex flex-col px-2 gap-1 mb-1">
+                  <p className=" line-clamp-2 w-[100px] text-[10px] font-bold text-black lg:w-full lg:text-lg whitespace-nowrap">
+                    {item.title}
+                  </p>
+                  <p className="line-clamp-2 w-[100px] text-[10px] font-thin  text-gray-600 lg:w-full   lg:text-[12px] italic font-mono whitespace-nowrap">
+                    {item.description}
+                  </p>
+                </div>
 
-              <div className="flex  justify-center px-2 py-4 flex-col items-center md:flex-row">
-                <div className="flex  justify-between gap-3 py-2 flex-col items-center md:flex-row">
-                  <button
-                    onClick={() =>
-                      dispatch(addToCart(item)) &&
-                      toast.success(`${item.title.substring(0, 15)}... added`)
-                    }
-                    className=" text-20 flex h-5 w-10 items-center justify-center rounded-full bg-lime-500 text-[10px]  text-white duration-300 hover:bg-slate-400 md:h-7  md:w-20 md:text-[15px] lg:h-9 lg:w-18"
-                  >
-                    <span className=" ">
-                      <GoPlus />
-                    </span>
-                    Add
-                  </button>
+                <button
+                  onClick={() =>
+                    likedItems.some((product: any) => product._id === item._id)
+                      ? dispatch(unlikeItem(item._id))
+                      : dispatch(likedProducts(item))
+                  }
+                  className={`absolute right-1 top-1 text-3xl ${
+                    likedItems.some((product: any) => product._id === item._id)
+                      ? "text-yellow-500"
+                      : "text-white"
+                  }`}
+                >
+                  <AiFillHeart />
+                </button>
+                <CssBaseline />
+                <div className="flex  justify-between flex-col items-center md:flex-row">
                   <div className=" flex flex-col items-center gap-1 px-2 md:flex-row lg:flex-row lg:gap-3 ">
                     <p className="font-base text-[10px]  font-medium text-lime-300 lg:text-[16px]">
                       Now ${item.price}
                     </p>
-                    <p className=" text-[8px]  text-gray-50 line-through decoration-[1px] lg:text-[14px]">
+                    <p className=" text-[8px]  text-gray-40 line-through decoration-[1px] lg:text-[14px]">
                       ${item?.oldPrice}
                     </p>
                   </div>
-                  <Link
-                    href={{
-                      pathname: `product${item._id}`,
-                      query: { product: JSON.stringify(item) },
-                    }}
-                  >
-                    <button className="flex h-5 w-11 items-center justify-center  rounded-full bg-gray-50 text-[10px] text-Red duration-300 hover:bg-yellow-50 md:h-7 md:w-20 md:text-[15px] lg:h-9 lg:w-16">
-                      <span>
-                        <GoPlus />
-                      </span>
-                      Details
+                  <div className="flex  justify-between gap-3 py-2 flex-col items-center md:flex-row">
+                    <button
+                      onClick={() =>
+                        dispatch(addToCart(item)) &&
+                        toast.success(`${item.title.substring(0, 15)}... added`)
+                      }
+                      className=" text-20 flex h-5 w-5 items-center justify-center rounded-full bg-lime-500 text-[10px]  text-white duration-300 hover:bg-slate-400 md:h-7  md:w-20 md:text-[15px] lg:h-9 lg:w-18"
+                    >
+                      <IoIosEye />
                     </button>
-                  </Link>
+
+                    <Link
+                      href={{
+                        pathname: `product${item._id}`,
+                        query: { product: JSON.stringify(item) },
+                      }}
+                    >
+                      <button className="flex h-5 w-11 items-center justify-center  rounded-full bg-gray-50 text-[10px] text-Red duration-300 hover:bg-yellow-50 md:h-7 md:w-20 md:text-[15px] lg:h-9 lg:w-16">
+                        <IoIosCart />
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
