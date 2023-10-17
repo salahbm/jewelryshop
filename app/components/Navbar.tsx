@@ -51,7 +51,7 @@ const Navbar = () => {
 
   return (
     <div className=" z-[999] w-full  text-white  relative ">
-      <div className="flex items-center bg px-4 lg:justify-center justify-between rounded-2xl lg:bg-none">
+      <div className="flex items-center bg px-4 md:justify-center justify-between rounded-2xl md:bg-none">
         <Link href="/">
           <div className="logo italic font-mono">Mr.Joni</div>
         </Link>
@@ -71,19 +71,49 @@ const Navbar = () => {
         />
       </div>
       <div
-        className={`absolute justify-between items-center  gap-1 px-3 rounded-2xl w-full navBg ${
+        className={`absolute  flex  flex-col  px-3  rounded-2xl w-full navBg ${
           state.menu === "menu" ? "  opacity-100" : " opacity-0 hidden"
-        }  lg:h-30  duration-700 lg:static lg:z-auto lg:mx-auto lg:flex lg:w-auto lg:items-center lg:justify-between lg:gap-10 lg:px-5 lg:opacity-100`}
+        }  lg:h-30  duration-300 md:static md:z-auto md:mx-auto md:flex md:w-auto md:flex-row  md:px-5 md:opacity-100 md:justify-between md:items-center`}
       >
-        <Link className="navBarHover" href={"/Shop"}>
-          <CiShop className="text-2xl" />
-          <p className="text-base font-semibold">Shop</p>
-        </Link>
-        <div className="navBarHover">
-          <PiNewspaper className="text-2xl" />
-          <p className="text-base font-semibold">About</p>
+        <div className="flex flex-col md:flex-row md:w-1/4 md:items-center md:justify-between ">
+          <Link href={"/Shop"}>
+            <div className="navBarHover gap-1">
+              <CiShop className="text-2xl" />
+              <p className="text-base font-semibold">Shop</p>
+            </div>
+          </Link>
+          <div className="navBarHover gap-1">
+            <PiNewspaper className="text-2xl" />
+            <p className="text-base font-semibold">About</p>
+          </div>
+
+          <Link href={"/LikedProducts"}>
+            <div className="navBarHover relative gap-1">
+              <CiHeart className="text-2xl" />
+              <span
+                className={` absolute left-4 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-gYellow text-[8px] text-Red md:text-xs lg:left-4 lg:top-0 `}
+              >
+                {likedItems.length > 0 ? likedItems.length : 0}
+              </span>
+
+              <h1 className=" text-base font-semibold">Liked items</h1>
+            </div>
+          </Link>
+
+          <div className="relative flex h-12 flex-col gap-1 rounded-full  duration-300 lg:items-center lg:justify-center ">
+            <Link href={"/Cart"}>
+              <div className="navBarHover gap-1 ">
+                <CiShoppingCart className="text-2xl" />
+                <p className="text-base font-semibold">${totalAMT}</p>
+              </div>
+            </Link>
+
+            <span className="font-body  absolute  left-4 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-gYellow text-[8px] text-Red md:text-xs lg:top-2 md:right-3">
+              {productData.length > 0 ? productData.length : 0}
+            </span>
+          </div>
         </div>
-        <Link href={"/Account"} className="navBarHover ">
+        <Link href={"/Account"} className="navBarHover md:w-2/4 md:justify-end">
           {userInfo ? (
             <div>
               <Image
@@ -105,33 +135,7 @@ const Navbar = () => {
             </div>
           )}
         </Link>
-        <Link href={"/LikedProducts"}>
-          <div className="navBarHover relative gap-2">
-            <CiHeart className="text-2xl" />
-            <span
-              className={` absolute left-4 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-gYellow text-[8px] text-Red md:text-xs lg:left-4 lg:top-0 `}
-            >
-              {likedItems.length > 0 ? likedItems.length : 0}
-            </span>
-
-            <h1 className=" text-base font-semibold">Liked items</h1>
-          </div>
-        </Link>
-
-        <div className="relative flex h-12 flex-col gap-1 rounded-full  duration-300 lg:items-center lg:justify-center ">
-          <Link href={"/Cart"}>
-            <div className="navBarHover gap-2 ">
-              <CiShoppingCart className="text-2xl" />
-              <p className="text-base font-semibold">${totalAMT}</p>
-            </div>
-          </Link>
-
-          <span className="font-body  absolute  left-4 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-gYellow text-[8px] text-Red md:text-xs lg:top-2 md:right-3">
-            {productData.length > 0 ? productData.length : 0}
-          </span>
-        </div>
-
-        <div className="h-7 relative my-2 flex justify-end ">
+        {/* <div className="h-7 relative my-2 flex justify-end ">
           <input
             placeholder="Search everything here"
             type="text"
@@ -146,7 +150,7 @@ const Navbar = () => {
               }
             />
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
