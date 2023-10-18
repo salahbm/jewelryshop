@@ -62,8 +62,8 @@ const Products = () => {
 
       <div
         className={`${
-          open ? "w-2/6" : "xl:w-100px w-[40px]"
-        }  bg-yellow-500 rounded-lg p-1 z-[1] `}
+          open ? "w-2/6 " : "xl:w-100px w-[40px]"
+        }  bg-yellow-500 rounded-lg p-1   z-[1000] `}
       >
         <Toolbar
           sx={{
@@ -89,7 +89,7 @@ const Products = () => {
 
       {/* Products */}
       <div className={open ? "w-5/6 " : "w-full "}>
-        <div className="grid  xl:grid-cols-3  md:grid-cols-3 grid-cols-2 place-items-center ">
+        <div className="grid  xxl:grid-cols-5 lg:grid-cols-4  md:grid-cols-3 grid-cols-2 place-items-center ">
           {displayedProducts.map((item: any, index: number) => (
             <div
               key={index}

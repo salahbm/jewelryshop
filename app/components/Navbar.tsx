@@ -115,16 +115,21 @@ const Navbar = () => {
         </div>
         <Link href={"/Account"} className="navBarHover md:w-2/4 md:justify-end">
           {userInfo ? (
-            <div>
+            <div
+              className={`${
+                userInfo?.name
+                  ? " flex flex-row items-center gap-1"
+                  : "flex flex-col"
+              }`}
+            >
               <Image
                 src={userInfo?.image}
-                width={40}
-                height={40}
+                width={28}
+                height={28}
                 alt="user pic"
                 className="rounded-full"
               />
               <div className="flex flex-col items-center">
-                <p className="hidden sm:block">Welcome</p>
                 <p>{userInfo?.name}</p>
               </div>
             </div>
