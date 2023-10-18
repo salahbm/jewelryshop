@@ -96,7 +96,7 @@ const Navbar = () => {
                 {likedItems.length > 0 ? likedItems.length : 0}
               </span>
 
-              <h1 className=" text-base font-semibold">Liked items</h1>
+              <h1 className=" text-base font-semibold">Liked</h1>
             </div>
           </Link>
 

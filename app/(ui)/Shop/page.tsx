@@ -1,72 +1,29 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import { ProductData } from "@/app/constant/productData";
+import { useEffect, useState } from "react";
 
-import Image from "next/image";
-import { IoIosCart, IoIosEye } from "react-icons/io";
-import Link from "next/link";
-import { useDispatch, useSelector } from "react-redux";
-import toast, { Toaster } from "react-hot-toast";
-import { likedProducts, unlikeItem } from "../../redux/shopSlice";
-import { AiFillHeart } from "react-icons/ai";
-import { addToCart } from "@/app/redux/shopSlice";
-import { Card, Typography } from "@mui/material";
-import KeyboardDoubleArrowLeft from "@mui/icons-material/KeyboardDoubleArrowLeft";
-import KeyboardDoubleArrowRight from "@mui/icons-material/KeyboardDoubleArrowRight";
-import MainListItems from "../Admin/Dashboard/components/listItems";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
-import MuiDrawer from "@mui/material/Drawer";
-import Grid from "@mui/material/Grid";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import Paper from "@mui/material/Paper";
-import Toolbar from "@mui/material/Toolbar";
-import { styled } from "@mui/material/styles";
 import SearchView from "@/app/components/Search";
+import { addToCart } from "@/app/redux/shopSlice";
+import CssBaseline from "@mui/material/CssBaseline";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+import Image from "next/image";
+import Link from "next/link";
+import toast, { Toaster } from "react-hot-toast";
+import { AiFillFilter, AiFillHeart } from "react-icons/ai";
+import { IoIosCart } from "react-icons/io";
+import { useDispatch, useSelector } from "react-redux";
+import { likedProducts, unlikeItem } from "../../redux/shopSlice";
+import FilterDrawer from "./Filter";
 
-const drawerWidth: number = 240;
-
-const Drawer = styled(MuiDrawer, {
-  shouldForwardProp: (prop: string) => prop !== "open",
-})(({ theme, open }) => ({
-  "& .MuiDrawer-paper": {
-    position: "relative",
-
-    whiteSpace: "nowrap",
-    width: drawerWidth,
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    backgroundColor: "#900000",
-    boxSizing: "border-box",
-    ...(!open && {
-      overflowX: "hidden",
-      transition: theme.transitions.create("width", {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-      }),
-      width: theme.spacing(7),
-      [theme.breakpoints.up("sm")]: {
-        width: theme.spacing(7),
-      },
-    }),
-    borderRadius: 10,
-  },
-}));
 const Products = () => {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
-  const [drawerValue, setDrawerValue] = useState<string>("dashboard");
+
   const toggleDrawer = () => {
     setOpen(!open);
   };
-  const getDrawerName = (value: string) => {
-    setDrawerValue(value);
-  };
+
   const likedItems = useSelector((state: any) => state.shop.likedItem);
   // Define pagination state
   const [itemsPerPage, setItemsPerPage] = useState(12); // Initial number of items per page
@@ -115,33 +72,19 @@ const Products = () => {
 
   return (
     <div>
-      <SearchView />
-      <div className="flex flex-row  p-2 justify-between gap-2 min-h-screen ">
+      <div className="flex flex-row w-full items-center pr-16">
+        <SearchView />
+        <button className="text-white" onClick={toggleDrawer}>
+          <span>
+            Filter
+            <AiFillFilter />
+          </span>
+        </button>
+      </div>
+      <div className="flex md:flex-row  p-2 justify-between gap-2 min-h-screen flex-col ">
         {/* drawer */}
 
-        <Drawer variant="permanent" open={open} style={{}}>
-          <Toolbar
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-end",
-              ml: 3,
-            }}
-          >
-            <IconButton onClick={toggleDrawer}>
-              {open ? (
-                <KeyboardDoubleArrowLeft htmlColor="#FFFF" />
-              ) : (
-                <KeyboardDoubleArrowRight htmlColor="#FFFF" />
-              )}
-            </IconButton>
-          </Toolbar>
-          <Divider />
-          <List component="nav">
-            <MainListItems getDrawerName={getDrawerName} />
-            <Divider sx={{ my: 1 }} />
-          </List>
-        </Drawer>
+        <FilterDrawer open={open} toggleDrawer={toggleDrawer} />
 
         {/* Products */}
         <div>
