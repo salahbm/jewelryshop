@@ -72,11 +72,14 @@ const Products = () => {
 
   return (
     <div>
-      <div className="flex flex-row w-full items-center pr-16">
+      <div className="flex flex-row w-full items-center md:pr-16 pr-5">
         <SearchView />
-        <button className="text-white" onClick={toggleDrawer}>
+        <button
+          className="text-white flex flex-row items-center gap-1  text-xl"
+          onClick={toggleDrawer}
+        >
+          Filter
           <span>
-            Filter
             <AiFillFilter />
           </span>
         </button>
