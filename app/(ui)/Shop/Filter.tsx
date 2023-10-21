@@ -61,7 +61,7 @@ const FilterDrawer = ({ open, toggleDrawer }: FilterDrawerType) => {
     setFilter({ ...filter, cost: newValue });
   };
 
-  const handleCategoryChange = (event) => {
+  const handleCategoryChange = (event: any) => {
     setFilter({ ...filter, category: event.target.value });
   };
 
@@ -73,15 +73,15 @@ const FilterDrawer = ({ open, toggleDrawer }: FilterDrawerType) => {
     setFilter({ ...filter, ranking: newValue });
   };
 
-  const handleMaterialChange = (event) => {
+  const handleMaterialChange = (event: any) => {
     setFilter({ ...filter, material: event.target.value });
   };
 
-  const handleMadeChange = (event) => {
+  const handleMadeChange = (event: any) => {
     setFilter({ ...filter, made: event.target.value });
   };
 
-  const handleGenderChange = (event) => {
+  const handleGenderChange = (event: any) => {
     setFilter({ ...filter, gender: event.target.value });
   };
 
