@@ -58,7 +58,7 @@ const FilterDrawer = ({ open, toggleDrawer }: FilterDrawerType) => {
   const sliderCss = {
     width: useMediaQuery("(max-width: 600px)") ? "50%" : "25%",
     backgroundColor: "#F8F0E3",
-    padding: 3,
+    padding: 4,
     margin: 2,
     borderRadius: 5,
   };
@@ -100,7 +100,9 @@ const FilterDrawer = ({ open, toggleDrawer }: FilterDrawerType) => {
         </span>
       </button>
 
-      <Typography variant="h6">Cost</Typography>
+      <Typography variant="h6" fontWeight={"bold"} color={"#900000"}>
+        Cost
+      </Typography>
 
       <Slider
         step={50}
@@ -113,8 +115,10 @@ const FilterDrawer = ({ open, toggleDrawer }: FilterDrawerType) => {
         max={10000}
         min={100}
       />
-      <div className=" border-b-[1px] border-[#D9D9D9] ml-2" />
-      <Typography variant="h6">Type</Typography>
+      <div className=" border-b-2 border-[#D9D9D9] m-1" />
+      <Typography variant="h6" fontWeight={"bold"} color={"#900000"}>
+        Type
+      </Typography>
 
       <div>
         <FormControlLabel
@@ -139,16 +143,47 @@ const FilterDrawer = ({ open, toggleDrawer }: FilterDrawerType) => {
         />
         <FormControlLabel value="error" label="All" control={<Radio />} />
       </div>
-      <div className=" border-b-[1px] border-[#D9D9D9] ml-2" />
+      <div className=" border-b-2 border-[#D9D9D9] m-1" />
+      <Typography variant="h6" fontWeight={"bold"} color={"#900000"}>
+        Stone
+      </Typography>
 
-      <Typography variant="h6">Size</Typography>
-      {/* Add radio buttons for Size */}
+      <div>
+        <FormControlLabel
+          value="primary"
+          control={<Radio color="error" />}
+          label="Diamonds"
+        />
+        <FormControlLabel
+          value="secondary"
+          control={<Radio color="error" />}
+          label="Gem Stone"
+        />
+        <FormControlLabel
+          value="success"
+          label="Chain"
+          control={<Radio color="error" />}
+        />
+        <FormControlLabel
+          value="success"
+          label="No Gem"
+          control={<Radio color="error" />}
+        />
+        <FormControlLabel
+          value="success"
+          label="Pearls"
+          control={<Radio color="error" />}
+        />
+        <FormControlLabel value="error" label="All" control={<Radio />} />
+      </div>
+      <div className=" border-b-2 border-[#D9D9D9] m-1" />
 
-      <div className=" border-b-[1px] border-[#D9D9D9] ml-2" />
-      <Typography variant="h6">Ranking</Typography>
+      <Typography variant="h6" fontWeight={"bold"} color={"#900000"}>
+        Ranking
+      </Typography>
       <Slider
         step={1}
-        color="success"
+        color="warning"
         marks={ranks}
         defaultValue={3}
         valueLabelDisplay="on"
@@ -157,35 +192,82 @@ const FilterDrawer = ({ open, toggleDrawer }: FilterDrawerType) => {
         max={5}
         min={1}
       />
-      <div className=" border-b-[1px] border-[#D9D9D9] ml-2" />
-      <Typography variant="h6">Material</Typography>
-      {/* Add radio buttons for Material */}
+      <div className=" border-b-2 border-[#D9D9D9] m-1" />
+      <Typography variant="h6" fontWeight={"bold"} color={"#900000"}>
+        Material
+      </Typography>
+      <div>
+        <FormControlLabel
+          value="primary"
+          control={<Radio color="error" />}
+          label="White Gold"
+        />
+        <FormControlLabel
+          value="secondary"
+          control={<Radio color="error" />}
+          label="Yellow Gold"
+        />
+        <FormControlLabel
+          value="success"
+          label="Rose Gold"
+          control={<Radio color="error" />}
+        />
+        <FormControlLabel
+          value="success"
+          label="Silver"
+          control={<Radio color="error" />}
+        />
+        <FormControlLabel
+          value="success"
+          label="Sterling Silver"
+          control={<Radio color="error" />}
+        />
+        <FormControlLabel value="error" label="All" control={<Radio />} />
+      </div>
+      <div className=" border-b-2 border-[#D9D9D9] m-1" />
 
-      <Typography variant="h6">Material Details</Typography>
-      {/* Add options for material details */}
+      <Typography variant="h6" fontWeight={"bold"} color={"#900000"}>
+        Made
+      </Typography>
+      <div>
+        <FormControlLabel
+          value="success"
+          label="Handmade"
+          control={<Radio color="error" />}
+        />
+        <FormControlLabel
+          value="success"
+          label="Manufacture"
+          control={<Radio color="error" />}
+        />
+        <FormControlLabel value="error" label="All" control={<Radio />} />
+      </div>
+      <div className=" border-b-2 border-[#D9D9D9] m-1" />
 
-      <Typography variant="h6">Handmade</Typography>
-      <FormControlLabel
-        control={
-          <Radio
-            checked={handmadeFilter}
-            onChange={() => setHandmadeFilter(!handmadeFilter)}
-          />
-        }
-        label="Handmade"
-      />
-
-      <Typography variant="h6">Gender</Typography>
+      <Typography variant="h6" fontWeight={"bold"} color={"#900000"}>
+        Gender
+      </Typography>
       <RadioGroup
         aria-label="gender"
         name="gender"
         value={genderFilter}
         onChange={(e) => setGenderFilter(e.target.value)}
       >
-        <FormControlLabel value="male" control={<Radio />} label="Male" />
-        <FormControlLabel value="female" control={<Radio />} label="Female" />
-        <FormControlLabel value="both" control={<Radio />} label="Both" />
+        <div>
+          <FormControlLabel
+            value="male"
+            control={<Radio color="error" />}
+            label="Male"
+          />
+          <FormControlLabel
+            value="female"
+            control={<Radio color="error" />}
+            label="Female"
+          />
+          <FormControlLabel value="both" control={<Radio />} label="Both" />
+        </div>
       </RadioGroup>
+      <div className=" border-b-2 border-[#D9D9D9] m-1" />
     </Drawer>
   );
 };
