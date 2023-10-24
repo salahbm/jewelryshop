@@ -115,36 +115,46 @@ const Account: React.FC = () => {
         )}
       </div>
       <div className="md:w-4/5 px-1 gap-2 flex-col flex">
-        <div className="flex flex-row justify-between gap-3 items-center">
+        <div className="flex flex-row justify-between gap-2 items-center">
           <div
-            className=" bg-lime-500 hover:bg-lime-600 h-14 w-full rounded-2xl flex items-center justify-center"
+            className=" bg-lime-500 hover:bg-lime-600 h-14 w-full rounded-2xl flex items-center justify-center px-1"
             onClick={() => setValue("Delivering")}
           >
-            <p className="text-white  text-center">Delivering 2344234</p>
+            <p className="text-white  text-center text-[10px] md:text-lg">
+              Delivering 2344234
+            </p>
           </div>
           <div
-            className=" bg-red-800 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center"
+            className=" bg-red-800 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
             onClick={() => setValue("Delivered")}
           >
-            <p className="text-white text-center">Delivered 2344234</p>
+            <p className="text-white text-center text-[10px] md:text-lg">
+              Delivered 2344234
+            </p>
           </div>
           <div
-            className=" bg-red-800 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center"
+            className=" bg-red-800 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
             onClick={() => setValue("Total")}
           >
-            <p className="text-white text-center">Total 2344234</p>
+            <p className="text-white text-center text-[10px] md:text-lg">
+              Total 2344234
+            </p>
           </div>
           <div
-            className=" bg-red-800 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center"
+            className=" bg-red-800 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
             onClick={() => setValue("Canceled")}
           >
-            <p className="text-white text-center">Canceled 2344234</p>
+            <p className="text-white text-center text-[10px] md:text-lg">
+              Canceled 2344234
+            </p>
           </div>
           <div
-            className=" bg-red-800 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center"
+            className=" bg-red-800 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
             onClick={() => setValue("Return")}
           >
-            <p className="text-white text-center">Return 2344234</p>
+            <p className="text-white text-center text-[10px] md:text-lg">
+              Return 2344234
+            </p>
           </div>
         </div>
         <div className="w-full rounded-2xl flex items-center justify-center ">
