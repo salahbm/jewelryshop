@@ -1,5 +1,5 @@
 "use client";
-import { MouseEvent, useCallback, useState } from "react";
+import { MouseEvent, useState } from "react";
 
 // ** Next Imports
 import Link from "next/link";
@@ -20,7 +20,6 @@ import CardContent from "@mui/material/CardContent";
 import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
-import { SelectChangeEvent } from "@mui/material/Select";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
@@ -84,11 +83,9 @@ const RowOptions = ({ id }: { id: number | string }) => {
         </IconButton>
       </Tooltip>
       <Dialog open={rowOptionsOpen} onClose={handleRowOptionsClose}>
-        <DialogTitle>회원 아이디 삭제</DialogTitle>
+        <DialogTitle>Do want to cancel?</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            Do you want to cancel {id} order?
-          </DialogContentText>
+          <DialogContentText>Order: {id} ?</DialogContentText>
         </DialogContent>
         <DialogActions
           style={{ justifyContent: "center", alignItems: "center" }}
@@ -111,30 +108,6 @@ const RowOptions = ({ id }: { id: number | string }) => {
 
 const columns: GridColDef[] = [
   {
-    flex: 0.1,
-    minWidth: 50,
-    field: "number",
-    headerName: "Id",
-    renderCell: ({ row }: CellType) => {
-      return (
-        <Box sx={{ display: "flex", alignItems: "center" }}>
-          {/* {renderClient(row)} */}
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "flex-start",
-              flexDirection: "column",
-            }}
-          >
-            <Typography noWrap variant="body1">
-              {row?.id}
-            </Typography>
-          </Box>
-        </Box>
-      );
-    },
-  },
-  {
     flex: 0.15,
     minWidth: 180,
     field: "name",
@@ -150,6 +123,44 @@ const columns: GridColDef[] = [
           >
             {row?.name}
           </LinkStyled>
+        </Box>
+      );
+    },
+  },
+  {
+    flex: 0.15,
+    minWidth: 100,
+    field: "Process",
+    headerName: "Process",
+    renderCell: ({ row }: CellType) => {
+      return (
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          {/* {renderClient(row)} */}
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "flex-start",
+              flexDirection: "column",
+            }}
+          >
+            <Typography
+              noWrap
+              variant="body1"
+              className={
+                row?.process === "Delivering"
+                  ? "text-lime-400"
+                  : row?.process === "Canceled"
+                  ? "text-red-600"
+                  : row?.process === "Delivered"
+                  ? "text-lime-600"
+                  : row?.process === "Return"
+                  ? "text-orange-400"
+                  : "text-black"
+              }
+            >
+              {row?.process}
+            </Typography>
+          </Box>
         </Box>
       );
     },
@@ -287,50 +298,13 @@ const columns: GridColDef[] = [
       );
     },
   },
-  {
-    flex: 0.15,
-    minWidth: 100,
-    field: "Process",
-    headerName: "Process",
-    renderCell: ({ row }: CellType) => {
-      return (
-        <Box sx={{ display: "flex", alignItems: "center" }}>
-          {/* {renderClient(row)} */}
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "flex-start",
-              flexDirection: "column",
-            }}
-          >
-            <Typography
-              noWrap
-              variant="body1"
-              className={
-                row?.process === "Delivering"
-                  ? "text-lime-400"
-                  : row?.process === "Canceled"
-                  ? "text-red-600"
-                  : row?.process === "Delivered"
-                  ? "text-lime-600"
-                  : row?.process === "Return"
-                  ? "text-orange-400"
-                  : "text-black"
-              }
-            >
-              {row?.process}
-            </Typography>
-          </Box>
-        </Box>
-      );
-    },
-  },
+
   {
     flex: 0.12,
     minWidth: 100,
     field: "Cancel",
     headerName: "Cancel",
-    renderCell: ({ row }: CellType) => <RowOptions id={row?.id} />,
+    renderCell: ({ row }: CellType) => <RowOptions id={row?.name} />,
   },
 ];
 
@@ -390,7 +364,6 @@ const UserOrders = ({ val }: { val: string }) => {
         autoHeight
         rows={filteredOrders}
         columns={columns}
-        checkboxSelection
         disableRowSelectionOnClick
         pageSizeOptions={[10, 25, 50]}
         paginationModel={paginationModel}

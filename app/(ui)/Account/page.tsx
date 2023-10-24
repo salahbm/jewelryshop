@@ -125,7 +125,7 @@ const Account: React.FC = () => {
             </p>
           </div>
           <div
-            className=" bg-red-800 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
+            className=" bg-red-700 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
             onClick={() => setValue("Delivered")}
           >
             <p className="text-white text-center text-[10px] md:text-lg">
@@ -133,7 +133,7 @@ const Account: React.FC = () => {
             </p>
           </div>
           <div
-            className=" bg-red-800 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
+            className=" bg-red-700 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
             onClick={() => setValue("Total")}
           >
             <p className="text-white text-center text-[10px] md:text-lg">
@@ -141,7 +141,7 @@ const Account: React.FC = () => {
             </p>
           </div>
           <div
-            className=" bg-red-800 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
+            className=" bg-red-700 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
             onClick={() => setValue("Canceled")}
           >
             <p className="text-white text-center text-[10px] md:text-lg">
@@ -149,7 +149,7 @@ const Account: React.FC = () => {
             </p>
           </div>
           <div
-            className=" bg-red-800 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
+            className=" bg-red-700 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
             onClick={() => setValue("Return")}
           >
             <p className="text-white text-center text-[10px] md:text-lg">
