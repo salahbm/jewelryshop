@@ -32,7 +32,7 @@ const Account: React.FC = () => {
     <div
       className="w-full flex 
      md:flex-row  flex-col
-      my-5 gap-8"
+      my-5 gap-8 min-h-screen"
     >
       <div
         className={`md:w-1/5 bg-red-900 flex-col flex items-center rounded-2xl gap-2  py-3 relative  ${
@@ -147,7 +147,7 @@ const Account: React.FC = () => {
             <p className="text-white text-center">Return 2344234</p>
           </div>
         </div>
-        <div className="w-full h-full rounded-2xl flex items-center justify-center ">
+        <div className="w-full rounded-2xl flex items-center justify-center ">
           <UserOrders val={value} />
         </div>
       </div>

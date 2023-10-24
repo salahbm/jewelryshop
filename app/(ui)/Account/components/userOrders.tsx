@@ -26,6 +26,7 @@ import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import Image from "next/image";
+import { IoMdEye } from "react-icons/io";
 
 interface CellType {
   row: any;
@@ -65,11 +66,18 @@ const RowOptions = ({ id }: { id: number | string }) => {
 
   return (
     <Box sx={{ display: "flex", alignItems: "center" }}>
-      {/* <Tooltip title='보기'>
-        <IconButton size='small' component={Link} href={`/apps/user/account/${id}`}>
-          <Icon icon='mdi:eye-outline' fontSize={20} />
+      <Tooltip title="보기">
+        <IconButton
+          size="small"
+          component={Link}
+          href={{
+            pathname: `product${id}`,
+            query: { product: JSON.stringify(id) },
+          }}
+        >
+          <IoMdEye fontSize={20} />
         </IconButton>
-      </Tooltip> */}
+      </Tooltip>
       <Tooltip title="삭제">
         <IconButton size="small" onClick={handleRowOptionsClick}>
           <Delete />
@@ -136,8 +144,8 @@ const columns: GridColDef[] = [
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <LinkStyled
             href={{
-              pathname: `/apps/user/account/${row?.id}`,
-              query: { userInfo: JSON.stringify(row) },
+              pathname: `product${row?.id}`,
+              query: { product: JSON.stringify(row?.id) },
             }}
           >
             {row?.name}
@@ -161,7 +169,7 @@ const columns: GridColDef[] = [
   },
   {
     flex: 0.1,
-    minWidth: 50,
+    minWidth: 80,
     field: "count",
     headerName: "Count",
     renderCell: ({ row }: CellType) => {
@@ -184,8 +192,8 @@ const columns: GridColDef[] = [
     },
   },
   {
-    flex: 0.2,
-    minWidth: 120,
+    flex: 0.15,
+    minWidth: 100,
     field: "Price",
     headerName: "Price",
     renderCell: ({ row }: CellType) => {
@@ -209,7 +217,7 @@ const columns: GridColDef[] = [
   },
   {
     flex: 0.1,
-    minWidth: 160,
+    minWidth: 100,
     field: "Total",
     headerName: "Total",
     renderCell: ({ row }: CellType) => {
@@ -256,8 +264,32 @@ const columns: GridColDef[] = [
     },
   },
   {
-    flex: 0.2,
-    minWidth: 150,
+    flex: 0.1,
+    minWidth: 100,
+    field: "Time",
+    headerName: "Expected time",
+    renderCell: ({ row }: CellType) => {
+      return (
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          {/* {renderClient(row)} */}
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "flex-start",
+              flexDirection: "column",
+            }}
+          >
+            <Typography noWrap variant="body1">
+              {row?.time}
+            </Typography>
+          </Box>
+        </Box>
+      );
+    },
+  },
+  {
+    flex: 0.15,
+    minWidth: 100,
     field: "Process",
     headerName: "Process",
     renderCell: ({ row }: CellType) => {
@@ -271,7 +303,21 @@ const columns: GridColDef[] = [
               flexDirection: "column",
             }}
           >
-            <Typography noWrap variant="body1">
+            <Typography
+              noWrap
+              variant="body1"
+              className={
+                row?.process === "Delivering"
+                  ? "text-lime-400"
+                  : row?.process === "Canceled"
+                  ? "text-red-600"
+                  : row?.process === "Delivered"
+                  ? "text-lime-600"
+                  : row?.process === "Return"
+                  ? "text-orange-400"
+                  : "text-black"
+              }
+            >
               {row?.process}
             </Typography>
           </Box>
@@ -280,8 +326,8 @@ const columns: GridColDef[] = [
     },
   },
   {
-    flex: 0.1,
-    minWidth: 50,
+    flex: 0.12,
+    minWidth: 100,
     field: "Cancel",
     headerName: "Cancel",
     renderCell: ({ row }: CellType) => <RowOptions id={row?.id} />,
@@ -298,6 +344,12 @@ const UserOrders = ({ val }: { val: string }) => {
     pageSize: 10,
   });
 
+  const filteredOrders = jewelryData.filter((order) => {
+    if (val === "Total") {
+      return jewelryData;
+    }
+    return order.process.toLowerCase().includes(val.toLowerCase());
+  });
   // fetch user data from database
 
   // async function fetchData() {
@@ -336,7 +388,7 @@ const UserOrders = ({ val }: { val: string }) => {
 
       <DataGrid
         autoHeight
-        rows={data}
+        rows={filteredOrders}
         columns={columns}
         checkboxSelection
         disableRowSelectionOnClick
@@ -358,6 +410,7 @@ const jewelryData = [
     address: "123 Pearl Street",
     process: "Delivering",
     image: "https://picsum.photos//id/789/780/420",
+    time: "13.12.2024",
   },
   {
     id: 2,
@@ -367,6 +420,7 @@ const jewelryData = [
     address: "456 Gem Avenue",
     process: "Delivered",
     image: "https://picsum.photos//id/789/780/420",
+    time: "13.12.2024",
   },
   {
     id: 3,
@@ -376,6 +430,7 @@ const jewelryData = [
     address: "789 Ruby Road",
     process: "Canceled",
     image: "https://picsum.photos//id/789/780/420",
+    time: "13.12.2024",
   },
   {
     id: 4,
@@ -385,6 +440,7 @@ const jewelryData = [
     address: "101 Jewel Lane",
     process: "Return",
     image: "https://picsum.photos//id/789/780/420",
+    time: "13.12.2024",
   },
   {
     id: 5,
@@ -392,8 +448,9 @@ const jewelryData = [
     count: 2,
     price: 300,
     address: "202 Opal Circle",
-    process: "Total",
+    process: "Delivering",
     image: "https://picsum.photos//id/789/780/420",
+    time: "13.12.2024",
   },
   {
     id: 6,
@@ -403,6 +460,7 @@ const jewelryData = [
     address: "303 Crystal Way",
     process: "Delivering",
     image: "https://picsum.photos//id/789/780/420",
+    time: "13.12.2024",
   },
   {
     id: 7,
@@ -412,6 +470,7 @@ const jewelryData = [
     address: "404 Jade Street",
     process: "Return",
     image: "https://picsum.photos//id/789/780/420",
+    time: "13.12.2024",
   },
   {
     id: 8,
@@ -419,8 +478,9 @@ const jewelryData = [
     count: 2,
     price: 700,
     address: "505 Topaz Avenue",
-    process: "Total",
+    process: "Delivering",
     image: "https://picsum.photos//id/789/780/420",
+    time: "13.12.2024",
   },
   {
     id: 9,
@@ -430,6 +490,7 @@ const jewelryData = [
     address: "606 Onyx Road",
     process: "Delivered",
     image: "https://picsum.photos//id/789/780/420",
+    time: "13.12.2024",
   },
   {
     id: 10,
@@ -439,6 +500,7 @@ const jewelryData = [
     address: "707 Garnet Lane",
     process: "Delivering",
     image: "https://picsum.photos//id/789/780/420",
+    time: "13.12.2024",
   },
   {
     id: 11,
@@ -446,8 +508,9 @@ const jewelryData = [
     count: 1,
     price: 180,
     address: "808 Amber Circle",
-    process: "Total",
+    process: "Delivering",
     image: "https://picsum.photos//id/789/780/420",
+    time: "13.12.2024",
   },
   {
     id: 12,
@@ -457,6 +520,7 @@ const jewelryData = [
     address: "909 Quartz Way",
     process: "Canceled",
     image: "https://picsum.photos//id/789/780/420",
+    time: "13.12.2024",
   },
   {
     id: 13,
@@ -466,6 +530,7 @@ const jewelryData = [
     address: "1010 Malachite Street",
     process: "Canceled",
     image: "https://picsum.photos//id/789/780/420",
+    time: "13.12.2024",
   },
   {
     id: 14,
@@ -475,6 +540,7 @@ const jewelryData = [
     address: "1111 Lapis Avenue",
     process: "Delivered",
     image: "https://picsum.photos//id/789/780/420",
+    time: "13.12.2024",
   },
   {
     id: 15,
@@ -484,5 +550,6 @@ const jewelryData = [
     address: "1212 Coral Road",
     process: "Return",
     image: "https://picsum.photos//id/789/780/420",
+    time: "13.12.2024",
   },
 ];
