@@ -6,7 +6,9 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
+import UserOrders from "./components/userOrders";
 const Account: React.FC = () => {
+  const [value, setValue] = useState<string>("Delivering");
   const dispatch = useDispatch();
   const { data: session } = useSession();
   useEffect(() => {
@@ -23,7 +25,7 @@ const Account: React.FC = () => {
     }
   }, [dispatch, session]);
   const userInfo = useSelector((state: any) => state.shop.userInfo);
-  const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(false);
   const isMdScreen = useMediaQuery("(min-width:960px)");
 
   return (
@@ -102,10 +104,11 @@ const Account: React.FC = () => {
         )}
         {!isMdScreen && (
           <Button
+            size="small"
             onClick={() => setIsCollapsed(!isCollapsed)}
             variant="contained"
             color={isCollapsed ? "warning" : "error"}
-            className={`${isCollapsed ? "absolute -top-3" : "fixed"}`}
+            className={`${isCollapsed ? "absolute -top-3" : "fixed"} `}
           >
             {isCollapsed ? "Open" : "Close"}
           </Button>
@@ -113,21 +116,39 @@ const Account: React.FC = () => {
       </div>
       <div className="md:w-4/5 px-1 gap-2 flex-col flex">
         <div className="flex flex-row justify-between gap-3 items-center">
-          <div className=" bg-red-800 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center">
-            <p className="text-white">Total Orders: 2344234</p>
+          <div
+            className=" bg-lime-500 hover:bg-lime-600 h-14 w-full rounded-2xl flex items-center justify-center"
+            onClick={() => setValue("Delivering")}
+          >
+            <p className="text-white  text-center">Delivering 2344234</p>
           </div>
-          <div className=" bg-red-800 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center">
-            <p className="text-white">Delivering : 2344234</p>
+          <div
+            className=" bg-red-800 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center"
+            onClick={() => setValue("Delivered")}
+          >
+            <p className="text-white text-center">Delivered 2344234</p>
           </div>
-          <div className=" bg-red-800 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center">
-            <p className="text-white">Canceled: 2344234</p>
+          <div
+            className=" bg-red-800 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center"
+            onClick={() => setValue("Total")}
+          >
+            <p className="text-white text-center">Total 2344234</p>
           </div>
-          <div className=" bg-red-800 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center">
-            <p className="text-white">Return: 2344234</p>
+          <div
+            className=" bg-red-800 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center"
+            onClick={() => setValue("Canceled")}
+          >
+            <p className="text-white text-center">Canceled 2344234</p>
+          </div>
+          <div
+            className=" bg-red-800 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center"
+            onClick={() => setValue("Return")}
+          >
+            <p className="text-white text-center">Return 2344234</p>
           </div>
         </div>
-        <div className="bg-gray-300 w-full h-full rounded-2xl flex items-center justify-center ">
-          information here
+        <div className="w-full h-full rounded-2xl flex items-center justify-center ">
+          <UserOrders val={value} />
         </div>
       </div>
     </div>

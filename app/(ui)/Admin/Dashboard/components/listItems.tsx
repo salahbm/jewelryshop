@@ -18,7 +18,7 @@ function MainListItems({
   }
   return (
     <React.Fragment>
-      <div className="flex md:flex-col flex-row">
+      <div className="">
         <ListItemButton
           style={{ color: "white" }}
           onClick={() => passDrawerName("dashboard")}
