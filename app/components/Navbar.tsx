@@ -82,10 +82,12 @@ const Navbar = () => {
               <p className="text-base font-semibold">Shop</p>
             </div>
           </Link>
-          <div className="navBarHover gap-1">
-            <PiNewspaper className="text-2xl" />
-            <p className="text-base font-semibold">About</p>
-          </div>
+          <Link href={"/About"}>
+            <div className="navBarHover gap-1">
+              <PiNewspaper className="text-2xl" />
+              <p className="text-base font-semibold">About</p>
+            </div>
+          </Link>
 
           <Link href={"/LikedProducts"}>
             <div className="navBarHover relative gap-1">
