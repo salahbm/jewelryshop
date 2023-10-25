@@ -1,20 +1,18 @@
 "use client";
-import * as React from "react";
-import CssBaseline from "@mui/material/CssBaseline";
-import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
-import Toolbar from "@mui/material/Toolbar";
+import Link from "@mui/material/Link";
 import Paper from "@mui/material/Paper";
-import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
-import Button from "@mui/material/Button";
-import Link from "@mui/material/Link";
+import Stepper from "@mui/material/Stepper";
 import Typography from "@mui/material/Typography";
+import * as React from "react";
 import AddressForm from "./components/AddressForm";
 import PaymentForm from "./components/PaymentForm";
 import Review from "./components/Review";
+import { Grid } from "@mui/material";
 
 function Copyright() {
   return (
@@ -57,22 +55,6 @@ export default function Checkout() {
 
   return (
     <React.Fragment>
-      <CssBaseline />
-      <AppBar
-        position="absolute"
-        color="default"
-        elevation={0}
-        sx={{
-          position: "relative",
-          borderBottom: (t) => `1px solid ${t.palette.divider}`,
-        }}
-      >
-        <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
-            Company name
-          </Typography>
-        </Toolbar>
-      </AppBar>
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
         <Paper
           variant="outlined"
@@ -89,16 +71,26 @@ export default function Checkout() {
             ))}
           </Stepper>
           {activeStep === steps.length ? (
-            <React.Fragment>
-              <Typography variant="h5" gutterBottom>
-                Thank you for your order.
-              </Typography>
-              <Typography variant="subtitle1">
-                Your order number is #2001539. We have emailed your order
-                confirmation, and will send you an update when your order has
-                shipped.
-              </Typography>
-            </React.Fragment>
+            <div>
+              <React.Fragment>
+                <Typography variant="h5" gutterBottom>
+                  Thank you for your order.
+                </Typography>
+                <Typography variant="subtitle1">
+                  Your order number is #2001539. We have emailed your order
+                  confirmation, and will send you an update when your order has
+                  shipped.
+                </Typography>
+              </React.Fragment>
+              <Link
+                href={"../Account"}
+                className="flex items-center justify-center "
+              >
+                <Button variant="contained" color="error">
+                  Check the Orders
+                </Button>
+              </Link>
+            </div>
           ) : (
             <React.Fragment>
               {getStepContent(activeStep)}
