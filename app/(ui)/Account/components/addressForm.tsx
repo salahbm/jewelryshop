@@ -4,10 +4,11 @@ import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
+import { Button } from "@mui/material";
 
 export default function AddressView() {
   return (
-    <div className="bg-white rounded-2xl p-1">
+    <div className="bg-white rounded-2xl p-2">
       <Typography variant="h6" gutterBottom>
         Your address
       </Typography>
@@ -104,6 +105,11 @@ export default function AddressView() {
             }
             label="Use this address for payment details"
           />
+        </Grid>
+        <Grid item xs={12}>
+          <Button variant="contained" color="error">
+            Save
+          </Button>
         </Grid>
       </Grid>
     </div>

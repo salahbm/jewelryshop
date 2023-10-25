@@ -4,10 +4,11 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
+import { Button } from "@mui/material";
 
 export default function CardInfo() {
   return (
-    <div className="bg-white rounded-2xl p-1">
+    <div className="bg-white rounded-2xl p-2">
       <Typography variant="h6" gutterBottom>
         Payment method
       </Typography>
@@ -58,6 +59,11 @@ export default function CardInfo() {
             control={<Checkbox color="error" name="saveCard" value="yes" />}
             label="Remember credit card details for next time"
           />
+        </Grid>
+        <Grid item xs={12}>
+          <Button variant="contained" color="error">
+            Save
+          </Button>
         </Grid>
       </Grid>
     </div>

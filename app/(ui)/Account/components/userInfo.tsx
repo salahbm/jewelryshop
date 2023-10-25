@@ -4,12 +4,13 @@ import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-
+import { Button } from "@mui/material";
+import AiOutlineSave from "react-icons";
 export default function UserInfo() {
   return (
-    <div className="bg-white rounded-2xl p-1">
+    <div className="bg-white rounded-2xl p-2">
       <Typography variant="h6" gutterBottom>
-        Your address
+        Your Information
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
@@ -104,6 +105,11 @@ export default function UserInfo() {
             }
             label="Use this address for payment details"
           />
+        </Grid>
+        <Grid item xs={12}>
+          <Button variant="contained" color="error">
+            Save
+          </Button>
         </Grid>
       </Grid>
     </div>
