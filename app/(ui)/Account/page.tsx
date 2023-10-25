@@ -7,7 +7,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import UserOrders from "./components/userOrders";
+import SwitchViews from "./components/SwitchViews";
+import AddressView from "./components/addressForm";
 const Account: React.FC = () => {
+  const [view, setView] = useState<string>("orders");
   const [value, setValue] = useState<string>("Delivering");
   const dispatch = useDispatch();
   const { data: session } = useSession();
@@ -64,21 +67,46 @@ const Account: React.FC = () => {
                 Admin Page
               </Typography>
             </Link>
-            <Typography variant="body1" color="white" fontWeight={"bold"}>
+            <Typography
+              variant="body1"
+              color="white"
+              fontWeight={"bold"}
+              onClick={() => setView("Profile")}
+            >
               Profile Information
             </Typography>
-            <Typography variant="body1" color="white" fontWeight={"bold"}>
+            <Typography
+              variant="body1"
+              color="white"
+              fontWeight={"bold"}
+              onClick={() => setView("Card")}
+            >
               Card Information
             </Typography>
-            <Typography variant="body1" color="white" fontWeight={"bold"}>
+            <Typography
+              variant="body1"
+              color="white"
+              fontWeight={"bold"}
+              onClick={() => setView("Address")}
+            >
               Address Information
             </Typography>
 
             <div className=" border-b-[1px] my-2 border-gray-300 w-[90%]" />
-            <Typography variant="body1" color="white" fontWeight={"bold"}>
+            <Typography
+              variant="body1"
+              color="white"
+              fontWeight={"bold"}
+              onClick={() => setView("Privacy")}
+            >
               Privacy and Policy
             </Typography>
-            <Typography variant="body1" color="white" fontWeight={"bold"}>
+            <Typography
+              variant="body1"
+              color="white"
+              fontWeight={"bold"}
+              onClick={() => setView("Terms")}
+            >
               Terms and Conditions
             </Typography>
             <div className=" border-b-[1px] my-2 border-gray-300 w-[90%]" />
@@ -118,7 +146,10 @@ const Account: React.FC = () => {
         <div className="flex flex-row justify-between gap-2 items-center">
           <div
             className=" bg-lime-500 hover:bg-lime-600 h-14 w-full rounded-2xl flex items-center justify-center px-1"
-            onClick={() => setValue("Delivering")}
+            onClick={() => {
+              setValue("Delivering");
+              setView("orders");
+            }}
           >
             <p className="text-white  text-center text-[10px] md:text-lg">
               Delivering 2344234
@@ -126,7 +157,10 @@ const Account: React.FC = () => {
           </div>
           <div
             className=" bg-red-700 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
-            onClick={() => setValue("Delivered")}
+            onClick={() => {
+              setValue("Delivered");
+              setView("orders");
+            }}
           >
             <p className="text-white text-center text-[10px] md:text-lg">
               Delivered 2344234
@@ -134,7 +168,10 @@ const Account: React.FC = () => {
           </div>
           <div
             className=" bg-red-700 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
-            onClick={() => setValue("Total")}
+            onClick={() => {
+              setValue("Total");
+              setView("orders");
+            }}
           >
             <p className="text-white text-center text-[10px] md:text-lg">
               Total 2344234
@@ -142,7 +179,10 @@ const Account: React.FC = () => {
           </div>
           <div
             className=" bg-red-700 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
-            onClick={() => setValue("Canceled")}
+            onClick={() => {
+              setValue("Canceled");
+              setView("orders");
+            }}
           >
             <p className="text-white text-center text-[10px] md:text-lg">
               Canceled 2344234
@@ -150,7 +190,10 @@ const Account: React.FC = () => {
           </div>
           <div
             className=" bg-red-700 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
-            onClick={() => setValue("Return")}
+            onClick={() => {
+              setValue("Return");
+              setView("orders");
+            }}
           >
             <p className="text-white text-center text-[10px] md:text-lg">
               Return 2344234
@@ -158,7 +201,11 @@ const Account: React.FC = () => {
           </div>
         </div>
         <div className="w-full rounded-2xl flex items-center justify-center ">
-          <UserOrders val={value} />
+          {view === "orders" ? (
+            <UserOrders val={value} />
+          ) : (
+            <SwitchViews value={view} />
+          )}
         </div>
       </div>
     </div>
