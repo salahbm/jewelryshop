@@ -2,6 +2,7 @@ import React from "react";
 import CardInfo from "./CardInfo";
 import AddressView from "./addressForm";
 import UserInfo from "./userInfo";
+import Terms from "./terms";
 
 const SwitchViews = ({ value }: { value: string }) => {
   console.log(value);
@@ -14,6 +15,8 @@ const SwitchViews = ({ value }: { value: string }) => {
         <CardInfo />
       ) : value === "Address" ? (
         <AddressView />
+      ) : value === "Terms" ? (
+        <Terms />
       ) : null}
     </div>
   );

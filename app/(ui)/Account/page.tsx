@@ -93,14 +93,7 @@ const Account: React.FC = () => {
             </Typography>
 
             <div className=" border-b-[1px] my-2 border-gray-300 w-[90%]" />
-            <Typography
-              variant="body1"
-              color="white"
-              fontWeight={"bold"}
-              onClick={() => setView("Privacy")}
-            >
-              Privacy and Policy
-            </Typography>
+
             <Typography
               variant="body1"
               color="white"
