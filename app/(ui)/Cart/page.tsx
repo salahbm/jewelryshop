@@ -24,11 +24,11 @@ const CartPage = () => {
   function eachTotalPrice(item: any) {
     return (item.price * item.quantity).toFixed(2);
   }
+  let price = 0;
   useEffect(() => {
-    let price = 0;
-
     productData.map((item: any) => {
       price += item.price * item.quantity;
+
       return price;
     });
     setTotalAMT(price.toFixed(2));

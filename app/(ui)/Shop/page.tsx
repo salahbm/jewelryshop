@@ -127,7 +127,7 @@ const Products = () => {
                     <Link
                       href={{
                         pathname: `product${item._id}`,
-                        query: { product: JSON.stringify(item) },
+                        query: { id: item._id },
                       }}
                     >
                       <div className="flex flex-col p-1  ">

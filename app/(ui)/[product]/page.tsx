@@ -13,34 +13,42 @@ import { useDispatch, useSelector } from "react-redux";
 import toast, { Toaster } from "react-hot-toast";
 import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
 import { StoreItem } from "@/app/type";
-
+import { ProductData } from "@/app/constant/productData";
+import Image from "next/image";
 const ProductsDetail = () => {
-  const pathme = useSearchParams();
+  const searchParams = useSearchParams();
   const dispatch = useDispatch();
-  const [product, setProduct] = useState<StoreItem | null>();
+  const [product, setProduct] = useState<any>();
 
   useEffect(() => {
-    const receivedItem = pathme.get("product");
+    const receivedItemId = searchParams.get("id");
 
-    if (receivedItem) {
+    if (receivedItemId) {
       try {
-        const parsedItem: StoreItem = JSON.parse(receivedItem);
-        setProduct(parsedItem);
+        const foundItem = ProductData.find(
+          (item) => item._id === receivedItemId
+        );
+        console.log(foundItem);
+
+        setProduct(foundItem);
       } catch (error) {
         console.error("Error parsing product:", error);
       }
     }
-  }, [pathme]);
+  }, [searchParams]);
 
   const productData = useSelector((state: any) => state.shop.productData);
   return (
-    <div className="">
+    <div className="min-h-screen">
       <div className="w-full mx-auto flex flex-col items-center py-2 md:flex-row h-1/2 ">
         <div className="   m-2   w-full rounded-md border border-gray-500 lg:w-2/4 md:w-2/4  ">
-          <img
+          <Image
+            width={1000}
+            height={1000}
             src={product?.image}
             alt="productIMage"
-            className="   w-full object-contain rounded-md"
+            className="   object-contain rounded-md"
+            loading="lazy"
           />
         </div>
         <div className="   m-2   w-1/3 rounded-md border border-gray-500 lg:w-1/12  h-full  ">
