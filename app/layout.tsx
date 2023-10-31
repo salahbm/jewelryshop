@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 import Loading from "./components/Loading";
 import Navbar from "./components/Navbar";
 import AuthProvider from "./context/AuthProvider";
-import NextProgress from "nextjs-progressbar";
+import NextTopLoader from "nextjs-toploader";
 import "./styles/globals.css";
 
 const open_sans = Open_Sans({
@@ -35,7 +35,7 @@ export default function RootLayout({
           <Provider store={store}>
             <PersistGate loading={<Loading />} persistor={persistor}>
               <Navbar />
-              <NextProgress color="white" startPosition={1} />
+              <NextTopLoader color="red" />
               <Suspense fallback={<Loading />}>{children}</Suspense>
               <Footer />
             </PersistGate>

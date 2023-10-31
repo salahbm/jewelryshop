@@ -151,71 +151,75 @@ const CartPage = () => {
             </Grid>
           </div>
 
-          <div className=" my-2 w-full ">
-            <div className=" p-4  border border-zinc-400 rounded-md flex flex-col gap-4 bg-yellow-50    ">
-              <div className="w-full flex flex-col gap-4 border-b border-b-zinc-200 pb-4">
-                {!userInfo.name && (
-                  <p className="text-lg text-center text-red-500 -mt-4 font-semibold">
-                    Please sign in for checkout
+          <div className="flex justify-center">
+            <div className=" my-2 w-2/4 ">
+              <div className=" p-4  border border-zinc-400 rounded-md flex flex-col gap-4 bg-yellow-50    ">
+                <div className="w-full flex flex-col gap-4 border-b border-b-zinc-200 pb-4">
+                  {!userInfo.name && (
+                    <p className="text-lg text-center text-red-500 -mt-4 font-semibold">
+                      Please sign in for checkout
+                    </p>
+                  )}
+                </div>
+                <div className="w-full flex flex-col gap-4 border-b border-b-zinc-200 pb-4 ">
+                  <div className="flex flex-col gap-1">
+                    <div className="text-md flex justify-between">
+                      <p className="font-semibold">
+                        Subtotal
+                        <span className="text-zinc-600 font-normal">
+                          ({productData.length} items)
+                        </span>
+                      </p>
+                      <p className="line-through text-zinc-500 text-base">
+                        <span>${totalAMT}</span>
+                      </p>
+                    </div>
+                    <div className="text-md flex justify-between">
+                      <p className="font-semibold">Savings</p>
+                      <p className="text-[#2a8703] font-bold bg-green-100 py-1 px-2 rounded-lg flex">
+                        -<span>$737.00</span>
+                      </p>
+                    </div>
+                    <div className="text-md flex justify-between">
+                      <p className="font-semibold">Total Amount</p>
+                      <p className="text-zinc-800 font-normal text-base">
+                        <span>${totalAMT}</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="w-full flex flex-col gap-4 border-b border-b-zinc-200 pb-4">
+                  <div className="flex flex-col gap-1">
+                    <div className="text-md flex justify-between">
+                      <p>Shipping</p>
+                      <p className="text-[#2a8703]">Free</p>
+                    </div>
+                    <div className="text-md flex justify-between">
+                      <p className="font-semibold">Taxes</p>
+                      <p className="text-zinc-800">Calculated at checkout</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <p>Estimated total</p>
+                  <p className="text-zinc-800 font-bold text-lg">
+                    <span>$2,758.99</span>
                   </p>
-                )}
-              </div>
-              <div className="w-full flex flex-col gap-4 border-b border-b-zinc-200 pb-4 ">
-                <div className="flex flex-col gap-1">
-                  <div className="text-md flex justify-between">
-                    <p className="font-semibold">
-                      Subtotal
-                      <span className="text-zinc-600 font-normal">
-                        ({productData.length} items)
-                      </span>
-                    </p>
-                    <p className="line-through text-zinc-500 text-base">
-                      <span>${totalAMT}</span>
-                    </p>
-                  </div>
-                  <div className="text-md flex justify-between">
-                    <p className="font-semibold">Savings</p>
-                    <p className="text-[#2a8703] font-bold bg-green-100 py-1 px-2 rounded-lg flex">
-                      -<span>$737.00</span>
-                    </p>
-                  </div>
-                  <div className="text-md flex justify-between">
-                    <p className="font-semibold">Total Amount</p>
-                    <p className="text-zinc-800 font-normal text-base">
-                      <span>${totalAMT}</span>
-                    </p>
-                  </div>
                 </div>
+                <Link href={"./Checkout"}>
+                  <button
+                    className={`${
+                      userInfo.name
+                        ? "text-lime-600 hover:text-lime-500"
+                        : " text-gray-500 cursor-not-allowed"
+                    } cursor-pointer w-full h-10 rounded-full font-semibold duration-300  text-2xl`}
+                  >
+                    Continue to checkout
+                  </button>
+                </Link>
               </div>
-              <div className="w-full flex flex-col gap-4 border-b border-b-zinc-200 pb-4">
-                <div className="flex flex-col gap-1">
-                  <div className="text-md flex justify-between">
-                    <p>Shipping</p>
-                    <p className="text-[#2a8703]">Free</p>
-                  </div>
-                  <div className="text-md flex justify-between">
-                    <p className="font-semibold">Taxes</p>
-                    <p className="text-zinc-800">Calculated at checkout</p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center justify-between">
-                <p>Estimated total</p>
-                <p className="text-zinc-800 font-bold text-lg">
-                  <span>$2,758.99</span>
-                </p>
-              </div>
-              <Link href={"./Checkout"}>
-                <button
-                  className={`${
-                    userInfo.name ? "text-lime-600" : " text-gray-500"
-                  } cursor-pointer w-full h-10 rounded-full font-semibold duration-300  text-2xl`}
-                >
-                  Continue to checkout
-                </button>
-              </Link>
+              {/* <CreditCardForm /> */}
             </div>
-            {/* <CreditCardForm /> */}
           </div>
         </div>
       ) : (

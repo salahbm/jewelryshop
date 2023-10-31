@@ -42,7 +42,12 @@ const Account: React.FC = () => {
           isCollapsed ? "h-[50px]" : "h-fit"
         }`}
       >
-        <Typography variant="h5" color="white" fontWeight={"bold"}>
+        <Typography
+          variant="h5"
+          color="white"
+          fontWeight={"bold"}
+          textAlign={"center"}
+        >
           Welcome {userInfo?.name ? userInfo?.name : "User"}
         </Typography>
         {isCollapsed ? null : (
