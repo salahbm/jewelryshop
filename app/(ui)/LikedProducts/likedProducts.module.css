@@ -165,15 +165,15 @@
 }
 .button,
 .button1 {
-  background: #ffffff;
-  border: 1px solid#9747FF;
+  background: tomato;
+  border: 1px solid tomato;
   border-radius: 15px;
   color: #9747ff;
   width: 170px;
   height: 32.77px;
 }
 .button1 {
-  background: #9747ff;
+  background: "tomato";
   color: #ffffff;
 }
 .contFooter {

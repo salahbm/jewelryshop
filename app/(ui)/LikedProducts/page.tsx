@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import classes from "./likedProducts.module.css";
-import { HiOutlineShoppingCart } from "react-icons/hi";
+import { HiHeart, HiOutlineShoppingCart } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 import Link from "next/link";
 import { useSelector, useDispatch } from "react-redux";
@@ -9,12 +9,13 @@ import { AiFillHeart } from "react-icons/ai";
 import { unlikeItem, resetLikedItems } from "@/app/redux/shopSlice";
 
 import { StoreItem } from "@/app/type";
+import Image from "next/image";
 const LikedProducts = () => {
   const dispatch = useDispatch();
   const likedItem = useSelector((state: any) => state.shop.likedItem);
 
   return (
-    <div className="w-full p-5 ">
+    <div className="w-full p-5 min-h-screen ">
       <div className=" my-5 flex flex-row items-center gap-2 w-1/2">
         <p className="rounded-md border border-gray-500 bg-yellow-500  px-2 text-white">
           Total: {likedItem.length}
@@ -38,10 +39,12 @@ const LikedProducts = () => {
                     query: { product: JSON.stringify(product) },
                   }}
                 >
-                  <img
-                    src={product.image}
+                  <Image
+                    src={product?.image}
                     alt="Product image"
                     className="object-fill w-full h-full rounded-md "
+                    width={200}
+                    height={200}
                   />
                 </Link>
                 <button onClick={() => dispatch(unlikeItem(product._id))}>
@@ -62,13 +65,17 @@ const LikedProducts = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            justifyContent: "center",
+            height: "90vh",
           }}
         >
-          <HiOutlineShoppingCart size={100} style={{ marginTop: "20%" }} />
-          <p className={classes.price}>It is empty</p>
+          <div className="flex flex-row items-center gap-2 my-2">
+            <p className="text-white">It is empty</p>
+            <HiHeart size={30} style={{ color: "yellow" }} />
+          </div>
 
           <Link href="/Shop">
-            <button className={classes.button1}>Shop more</button>
+            <button className={classes.button1}>Shop </button>
           </Link>
         </div>
       )}

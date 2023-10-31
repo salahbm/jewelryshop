@@ -7,7 +7,7 @@ import {
   plusQuantity,
   resetCart,
 } from "@/app/redux/shopSlice";
-import { Grid, Paper } from "@mui/material";
+import { Button, Grid, Paper } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { Toaster } from "react-hot-toast";
@@ -219,14 +219,24 @@ const CartPage = () => {
           </div>
         </div>
       ) : (
-        <div className="flex items-center  text-white flex-col justify-between gap-14">
-          <HiOutlineShoppingCart size={100} />
-          <p className="text-3xl">It is empty</p>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "90vh",
+          }}
+        >
+          <div className="flex flex-row items-center gap-2 my-2">
+            <p className="text-white">It is empty</p>
+            <HiOutlineShoppingCart size={30} style={{ color: "white" }} />
+          </div>
 
-          <Link href="/Shop" className="text-3xl">
-            <button className="bg-white hover:bg-yellow-300 text-Red font-bold py-2 px-4 rounded">
-              Shop more
-            </button>
+          <Link href="/Shop">
+            <Button variant="contained" color="warning">
+              Shop
+            </Button>
           </Link>
         </div>
       )}
