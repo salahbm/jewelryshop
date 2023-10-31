@@ -19,6 +19,7 @@ import ring3 from "./ring.jpeg";
 import ring1 from "./ring1.jpeg";
 import ring2 from "./ring2.jpeg";
 import collectionItems from "./collectionItems.jpg";
+import loading from "./loading.gif";
 
 export {
   coll1,
@@ -42,4 +43,5 @@ export {
   earring1,
   earring2,
   bracelet2,
+  loading,
 };

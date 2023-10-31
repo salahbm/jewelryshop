@@ -55,17 +55,17 @@ const ProductsDetail = () => {
           <p>gsdgsdfg</p>
         </div>
         <div className="flex h-2/3 w-full flex-col gap-1 px-4 lg:w-2/4 md:w-2/4">
-          <p className=" flex flex-col gap-6 rounded-md border border-gray-400 px-2 py-4 font-bold   ">
+          <p className=" flex flex-col gap-6 rounded-md border border-gray-400 px-2 py-4 font-bold  text-white  ">
             {product?.title}
           </p>
           <div className=" flex flex-col gap-6 rounded-md border border-gray-400 px-2 py-4">
             <div>
-              <h1 className=" to-black font-bold">Detail:</h1>
-              <p className=" text-[12px] font-normal text-gray-500">
+              <h1 className=" to-black font-bold text-white">Detail:</h1>
+              <p className=" text-[12px] font-normal  text-white">
                 {product?.description}
               </p>
             </div>
-            <div className="flex items-center justify-center gap-5">
+            <div className="flex items-center justify-center gap-5 text-white">
               <button>
                 <CiHeart
                   className={`text-2xl `}

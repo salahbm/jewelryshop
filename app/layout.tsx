@@ -1,13 +1,15 @@
 "use client";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import "./styles/globals.css";
+import { persistor, store } from "@/app/redux/store";
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
+import { Suspense } from "react";
 import { Provider } from "react-redux";
-import { store, persistor } from "@/app/redux/store";
 import { PersistGate } from "redux-persist/integration/react";
+import Footer from "./components/Footer";
+import Loading from "./components/Loading";
+import Navbar from "./components/Navbar";
 import AuthProvider from "./context/AuthProvider";
+import "./styles/globals.css";
 const open_sans = Open_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -29,9 +31,9 @@ export default function RootLayout({
       >
         <AuthProvider>
           <Provider store={store}>
-            <PersistGate loading={"loading"} persistor={persistor}>
+            <PersistGate loading={<Loading />} persistor={persistor}>
               <Navbar />
-              {children}
+              <Suspense fallback={<Loading />}>{children}</Suspense>
               <Footer />
             </PersistGate>
           </Provider>
