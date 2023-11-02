@@ -19,6 +19,7 @@ import Orders from "./components/Orders";
 import MainListItems from "./components/listItems";
 import ShopOrderList from "../shop/page";
 import UserList from "../userList/page";
+import AddProduct from "./components/AddProduct";
 
 const drawerWidth: number = 240;
 
@@ -139,7 +140,7 @@ export default function Dashboard() {
             <p>reports</p>
           ) : drawerValue === "webPhoto" ? (
             <p>Photo</p>
-          ) : null}
+          ) : drawerValue ==='addProduct' ? <AddProduct/> : null}
         </Container>
       </Box>
     </Box>
