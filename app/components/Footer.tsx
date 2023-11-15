@@ -23,9 +23,9 @@ const Footer = () => {
             placeholder="Your Email Here"
             className=" bg-neutral-600 outline-none text-neutral-700 w-full md:h-16 h-8 "
           />
-          <span className="text-neutral-800 hover:text-yellow-500 duration-500 bg-slate-100 md:w-14 md:h-14 w-8 h-6 rounded-3xl flex items-center justify-center" > 
+          <span className="text-md md:text-2xl hover:justify-end text-neutral-800 hover:text-yellow-500 duration-500 bg-slate-100 md:w-14 md:h-14 w-8 h-6 rounded-3xl flex items-center justify-center" > 
 
-          <FaChevronRight  size={30}/>
+          <FaChevronRight   />
           </span>
         </div>
       </div>

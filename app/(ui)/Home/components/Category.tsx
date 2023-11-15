@@ -58,6 +58,10 @@ const Category: FC = () => {
       <h1 className="text-neutral-700 font-extrabold lg:text-9xl tracking-[0.3em] md:text-8xl text-4xl text-center my-10">
         Category Look
       </h1>
+        <p className="lg:text-xl italic text-yellow-500 text-sm text-center">
+Select the category to see more items related to the desired category of your wish!
+
+        </p>
       <div className={styles.heroSection}>
         <div className={styles.cardGrid}>
           {cardsData.map((card) => (

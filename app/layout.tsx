@@ -35,7 +35,7 @@ export default function RootLayout({
           <Provider store={store}>
             <PersistGate loading={<Loading />} persistor={persistor}>
               <Navbar />
-              <NextTopLoader color="red" />
+              <NextTopLoader color="black" />
               <Suspense fallback={<Loading />}>{children}</Suspense>
               <Footer />
             </PersistGate>

@@ -94,22 +94,22 @@ const Products = () => {
           <Grid
             container
             spacing={{ xs: 0.5, md: 2 }}
-            columns={{ xs: 4, sm: 9, md: 9, lg: 12 }}
+            columns={{ xs: 4,  md: 9, }}
           >
             {displayedProducts.map((item: any, index: number) => (
               <Grid
                 item
                 xs={2}
-                sm={3}
+           
                 md={3}
-                lg={3}
+          
                 key={index}
                 className="group relative  "
               >
                 <Paper
                   elevation={2}
                   style={{
-                    padding: 1,
+                    padding: 3,
                     borderRadius: 10,
                     backgroundColor: "#FFFFF8",
                   }}
@@ -151,8 +151,8 @@ const Products = () => {
                         likedItems.some(
                           (product: any) => product._id === item._id
                         )
-                          ? "text-yellow-500-500"
-                          : "text-neutral-700"
+                          ? "text-yellow-500"
+                          : "text-lightText"
                       }`}
                     >
                       <AiFillHeart />

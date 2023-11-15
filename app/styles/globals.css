@@ -63,10 +63,10 @@
   background: linear-gradient(200deg, #FAF9F6 35%, #F9F6EE);
 }
 .navBg {
-  background: linear-gradient(90deg, #F9F6EE 15%, #D0C8BB);
+  background: linear-gradient(90deg, #F9F6EE 10%, #D0C8BB);
 }
 .homebg {
-  background: linear-gradient(90deg, #FFFFF0 55%, #FAF9F6);
+  background: linear-gradient(90deg, #E2DFD2 55%, #F9F6EE);
 }
 
 :root {
