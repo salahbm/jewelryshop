@@ -136,7 +136,7 @@ const FilterDrawer = ({ open, toggleDrawer }: FilterDrawerType) => {
           </span>
         </button>
         <button
-          className="text-Red outline hover:bg-red-100 rounded-lg self-center px-5 outline-1 flex flex-row items-center gap-1  text-md"
+          className="text-black outline hover:bg-red-100 rounded-lg self-center px-5 outline-1 flex flex-row items-center gap-1  text-md"
           onClick={() => setFilter(resetData)}
         >
           Clear

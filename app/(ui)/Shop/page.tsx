@@ -175,7 +175,7 @@ const Products = () => {
                               `${item.title.substring(0, 15)}... added`
                             )
                           }
-                          className="grid place-items-center max-h-10 md:w-24 w-10   rounded-full bg-lime-500 text-xl p-1 text-Red duration-300 hover:bg-yellow-200 "
+                          className="grid place-items-center max-h-10 md:w-24 w-10   rounded-full bg-lime-500 text-xl p-1 text-black duration-300 hover:bg-yellow-200 "
                         >
                           <IoIosCart />
                         </button>

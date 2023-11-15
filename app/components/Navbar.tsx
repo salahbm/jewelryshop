@@ -94,7 +94,7 @@ const Navbar = () => {
             <div className="navBarHover relative gap-1">
               <CiHeart className="text-2xl" />
               <span
-                className={` absolute left-4 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-gYellow text-[8px] text-Red md:text-xs lg:left-4 lg:top-0 `}
+                className={` absolute left-4 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-gYellow text-[8px] text-black md:text-xs lg:left-4 lg:top-0 `}
               >
                 {likedItems.length > 0 ? likedItems.length : 0}
               </span>
@@ -111,7 +111,7 @@ const Navbar = () => {
               </div>
             </Link>
 
-            <span className="font-body  absolute  left-4 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-gYellow text-[8px] text-Red md:text-xs md:top-2 md:right-3">
+            <span className="font-body  absolute  left-4 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-gYellow text-[8px] text-black md:text-xs md:top-2 md:right-3">
               {productData.length > 0 ? productData.length : 0}
             </span>
           </div>

@@ -25,13 +25,13 @@ const HomeBanner = () => {
               <div>
                 <button
                   onClick={() => route.push(slideImage?.button)}
-                  className="absolute bottom-7 h-5 md:h-10 rounded-2xl border-[1px] md:text-sm text-xs font-semibold text-Red md:bottom-7 md:w-24 w-20  hover:bg-Black transition duration-500 cursor-pointer md:left-10 left-4 hover:text-gYellow border-Red hover:border-gYellow"
+                  className="absolute bottom-7 h-5 md:h-10 rounded-2xl border-[1px] md:text-sm text-xs font-semibold text-black md:bottom-7 md:w-24 w-20  hover:bg-Black transition duration-500 cursor-pointer md:left-10 left-4 hover:text-gYellow border-black hover:border-gYellow"
                 >
                   Order Now
                 </button>
                 <button
                   onClick={() => route.push(slideImage?.button)}
-                  className="absolute bottom-7 h-5 md:h-10 rounded-2xl border-[1px] md:text-sm text-xs font-semibold text-Red md:bottom-7 md:w-24 w-20 hover:bg-Black transition duration-500 cursor-pointer md:left-36 left-28 hover:text-gYellow border-Red hover:border-gYellow"
+                  className="absolute bottom-7 h-5 md:h-10 rounded-2xl border-[1px] md:text-sm text-xs font-semibold text-black md:bottom-7 md:w-24 w-20 hover:bg-Black transition duration-500 cursor-pointer md:left-36 left-28 hover:text-gYellow border-black hover:border-gYellow"
                 >
                   Details
                 </button>
@@ -61,12 +61,12 @@ const slideImages = [
 const properties = {
   prevArrow: (
     <button className="md:hidden">
-      <BsChevronDoubleLeft className="text-Red" />
+      <BsChevronDoubleLeft className="text-black" />
     </button>
   ),
   nextArrow: (
     <button className=" md:hidden ">
-      <BsChevronDoubleRight className="text-Red" />
+      <BsChevronDoubleRight className="text-black" />
     </button>
   ),
 };

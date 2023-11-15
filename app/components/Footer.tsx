@@ -1,12 +1,11 @@
 
 import React from "react";
 import {
-  AiOutlineArrowRight,
   AiFillInstagram,
   AiFillFacebook,
   AiOutlineWhatsApp,
 } from "react-icons/ai";
-
+import {FaChevronRight } from 'react-icons/fa'
 const Footer = () => {
   return (
     <div className="p-2 w-full  ">
@@ -14,8 +13,8 @@ const Footer = () => {
         Get The Last Information From Us
       </h2>
       <div className="flex justify-between items-center lg:px-20 placeholder:px-3">
-        <span className=" w-1/2 md:w-1/3  lg:text-xl italic text-yellow-500-500  text-xs overflow-hidden ">
-          Be the first to know about exciting new design, speacial collections,
+        <span className=" w-1/2 md:w-1/3  lg:text-xl italic text-yellow-500  text-xs overflow-hidden ">
+          Be the first to know about exciting new design, special collections,
           store openings and much more ~~~
         </span>
         <div className="flex justify-between items-center bg-neutral-600  w-1/2 md:h-16 h-8 rounded-3xl pl-5 pr-2 mb-6">
@@ -24,7 +23,10 @@ const Footer = () => {
             placeholder="Your Email Here"
             className=" bg-neutral-600 outline-none text-neutral-700 w-full md:h-16 h-8 "
           />
-          <AiOutlineArrowRight className="text-Red hover:text-yellow-500-500 duration-500 bg-slate-100 md:w-14 md:h-14 w-8 h-6 rounded-3xl " />
+          <span className="text-neutral-800 hover:text-yellow-500 duration-500 bg-slate-100 md:w-14 md:h-14 w-8 h-6 rounded-3xl flex items-center justify-center" > 
+
+          <FaChevronRight  size={30}/>
+          </span>
         </div>
       </div>
 
@@ -64,7 +66,7 @@ const FooterSMBTN = ({
       onClick={Press}
       className={`group rounded-3xl flex justify-center items-center px-2 cursor-pointer gap-1 relative border-2 border-yellow-500 hover:border-0`}
     >
-      <p className="text-yellow-500-500 opacity-100 duration-300 group-hover:opacity-0">
+      <p className="text-yellow-500 opacity-100 duration-300 group-hover:opacity-0">
         {title}
       </p>
       <span

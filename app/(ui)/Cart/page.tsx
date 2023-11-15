@@ -123,7 +123,7 @@ const CartPage = () => {
 
                           <button
                             onClick={() => dispatch(deleteItem(item._id))}
-                            className="text-yellow-500-100 absolute top-5 right-1 rounded-full border-2 hover:bg-white hover:text-Red text-lg md:text-xl"
+                            className="text-yellow-500-100 absolute top-5 right-1 rounded-full border-2 hover:bg-white hover:text-black text-lg md:text-xl"
                           >
                             <IoMdClose />
                           </button>
