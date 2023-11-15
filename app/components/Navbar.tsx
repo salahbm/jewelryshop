@@ -1,6 +1,6 @@
 "use client";
+
 import React, { useState, useEffect } from "react";
-import { BsSearch } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import {
   CiUser,
@@ -14,11 +14,9 @@ import { useSelector } from "react-redux";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { PiNewspaper } from "react-icons/pi";
-import { Paper } from "@mui/material";
 const Navbar = () => {
   const [state, setState] = useState({
     menu: "close",
-    search: false,
   });
   const [totalAMT, setTotalAMT] = useState("");
   const location = usePathname();
@@ -52,7 +50,7 @@ const Navbar = () => {
 
   return (
     <nav className=" z-[999] w-full  text-black  relative  " >
-      <Paper elevation={2} style={{borderRadius:12}}> 
+
       <div className="flex items-center bg px-4 md:justify-center justify-between rounded-2xl md:bg-none">
         <Link href="/">
           <div className="logo italic font-mono">Mr.Joni</div>
@@ -71,8 +69,8 @@ const Navbar = () => {
           }`}
           onClick={toggleMenu}
         />
-      </div></Paper>
-      <Paper elevation={2} style={{borderRadius:12}}> 
+      </div>
+
       <div
         className={`absolute  flex  flex-col  px-3  rounded-xl w-full navBg ${
           state.menu === "menu" ? "  opacity-100" : " opacity-0 hidden"
@@ -145,26 +143,14 @@ const Navbar = () => {
             </div>
           )}
         </Link>
-        {/* <div className="h-7 relative my-2 flex justify-end ">
-          <input
-            placeholder="Search everything here"
-            type="text"
-            className={`mx-2  h-7 ${
-              state.search ? " w-full" : "w-0 "
-            } rounded-full border-[1px] border-black  px-4 text-base text-black outline-none duration-700  ease-in-out lg:h-full `}
-          />
-          <button className="absolute right-3 top-0.5  flex  h-6 w-6 items-center justify-center rounded-full  hover:text-gYellow lg:top-0.5 lg:h-6 lg:w-6 lg:text-xl cursor-pointer text-Red ">
-            <BsSearch
-              onClick={() =>
-                setState((prev) => ({ ...prev, search: !state.search }))
-              }
-            />
-          </button>
-        </div> */}
+
       </div>
-      </Paper>
+
     </nav>
   );
 };
 
 export default Navbar;
+
+
+

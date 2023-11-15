@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./component.module.css";
 import Image from "next/image";
+import { ring } from "@/public/assets";
 const TAGS = [
   { text: "John Doe", imageUrl: "https://picsum.photos/id/34/200/300" },
   { text: "Jane Smith", imageUrl: "https://picsum.photos/id/67/200/300" },
@@ -17,34 +18,18 @@ const TAGS = [
   { text: "Sara Wilson", imageUrl: "https://picsum.photos/id/2/200/300" },
   { text: "Tom Anderson", imageUrl: "https://picsum.photos/id/6/200/300" },
   { text: "Emily Clark", imageUrl: "https://picsum.photos/id/212/200/300" },
-  { text: "Daniel Lee", imageUrl: "https://picsum.photos/id/8/200/300" },
-  { text: "Olivia White", imageUrl: "https://picsum.photos/id/56/200/300" },
-  { text: "Olivia White", imageUrl: "https://picsum.photos/id/56/200/300" },
-  { text: "Mike Brown", imageUrl: "https://picsum.photos/id/237/200/300" },
-  { text: "Sara Wilson", imageUrl: "https://picsum.photos/id/2/200/300" },
-  { text: "Tom Anderson", imageUrl: "https://picsum.photos/id/6/200/300" },
-  { text: "Emily Clark", imageUrl: "https://picsum.photos/id/212/200/300" },
-  { text: "Daniel Lee", imageUrl: "https://picsum.photos/id/8/200/300" },
-  { text: "Olivia White", imageUrl: "https://picsum.photos/id/56/200/300" },
-  { text: "Olivia White", imageUrl: "https://picsum.photos/id/56/200/300" },
-  { text: "Mike Brown", imageUrl: "https://picsum.photos/id/237/200/300" },
-  { text: "Sara Wilson", imageUrl: "https://picsum.photos/id/2/200/300" },
-  { text: "Tom Anderson", imageUrl: "https://picsum.photos/id/6/200/300" },
-  { text: "Emily Clark", imageUrl: "https://picsum.photos/id/212/200/300" },
-  { text: "Daniel Lee", imageUrl: "https://picsum.photos/id/8/200/300" },
-  { text: "Olivia White", imageUrl: "https://picsum.photos/id/56/200/300" },
 ];
 
-const DURATION: number = 60000;
-const ROWS: number = 3;
-const TAGS_PER_ROW: number = 30;
+const DURATION = 60000;
+const ROWS = 3;
+const TAGS_PER_ROW = 30;
 
-const random = (min: number, max: number): number =>
+const random = (min, max) =>
   Math.floor(Math.random() * (max - min)) + min;
-const shuffle = (arr: string[]): string[] =>
+const shuffle = (arr) =>
   [...arr].sort(() => 0.5 - Math.random());
 
-const OnHand: React.FC = () => (
+const OnHand = () => (
   <div className={styles.app}>
     <header className="text-black">
       <h5 className="italic font-extrabold lg:text-7xl tracking-[0.2em] md:text-8xl text-4xl text-center mb-5 ">
@@ -63,14 +48,16 @@ const OnHand: React.FC = () => (
           key={i}
         >
           <div className={styles.inner}>
-            {shuffle(TAGS as any)
+            {shuffle(TAGS)
               .slice(0, TAGS_PER_ROW)
-              .map((item: any, index: number) => (
+              .map((item, index) => (
                 <div className={styles.tag} key={index}>
-                  <img
-                    src={item.imageUrl}
+                  <Image
+                    src={`${item?.imageUrl || ring}  `}
                     alt="image"
-                    className=" rounded-full w-[70px] h-[70px]"
+                    width={50}
+                    height={50}
+                    className=" rounded-full w-[60px] h-[60px]"
                   />
                   <span> {item.text}</span>
                 </div>

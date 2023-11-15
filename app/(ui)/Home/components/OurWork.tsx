@@ -21,7 +21,7 @@ const ourWork = [
 const OurWork = () => {
   return (
     <div>
-      <div className="text-black  items-center justify-center p-10">
+      <div className="text-white  items-center justify-center p-10">
         <h5 className="italic font-extrabold lg:text-7xl tracking-[0.2em] md:text-6xl text-4xl mb-5  ">
           Our Work in Process
         </h5>

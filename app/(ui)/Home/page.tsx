@@ -1,7 +1,6 @@
-import React from "react";
-import HomeBanner from "./components/HomeBanner";
-import Collection from "./components/Collection";
 import Category from "./components/Category";
+import Collection from "./components/Collection";
+import HomeBanner from "./components/HomeBanner";
 import Diamonds from "./components/OnHand";
 import OurWork from "./components/OurWork";
 const Home = () => {
@@ -10,8 +9,9 @@ const Home = () => {
       <HomeBanner />
       <Collection />
       <Category />
-      <OurWork />
+      <OurWork/>
       <Diamonds />
+
     </div>
   );
 };

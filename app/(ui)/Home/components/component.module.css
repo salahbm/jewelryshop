@@ -178,6 +178,7 @@
     /* animation-direction: alternate; */
     animation-duration: var(--duration);
     gap: 15px;
+
   }
 }
 
@@ -186,10 +187,11 @@
   min-width: 170px;
   align-items: center;
   gap: 10px;
-  color: #e2e8f0;
-  border-color: #ffd700;
+  color: black;
+  border-color: #353935;
   border-width: 1px;
   border-radius: 50px;
+  border-opacity:50%;
   box-shadow: 0 0.1rem 0.2rem rgb(0 0 0 / 20%), 0 0.1rem 0.5rem rgb(0 0 0 / 30%),
     0 0.2rem 1.5rem rgb(0 0 0 / 40%);
 }
