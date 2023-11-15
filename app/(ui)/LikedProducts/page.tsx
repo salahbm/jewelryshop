@@ -17,12 +17,12 @@ const LikedProducts = () => {
   return (
     <div className="w-full p-5 min-h-screen ">
       <div className=" my-5 flex flex-row items-center gap-2 w-1/2">
-        <p className="rounded-md border border-gray-500 bg-yellow-500  px-2 text-white">
+        <p className="rounded-md border border-gray-500 bg-yellow-500  px-2 text-black">
           Total: {likedItem.length}
         </p>
         <button
           onClick={() => dispatch(resetLikedItems())}
-          className="flex flex-row items-center text-white justify-center rounded-md border border-gray-500 bg-red-400 px-2"
+          className="flex flex-row items-center text-black justify-center rounded-md border border-gray-500 bg-red-400 px-2"
         >
           <h1>Clear</h1>
           <IoMdClose size={20} />
@@ -53,7 +53,7 @@ const LikedProducts = () => {
                   />
                 </button>
               </div>
-              <p className="  text-white text-center text-sm overflow-hidden whitespace-nowrap">
+              <p className="  text-black text-center text-sm overflow-hidden whitespace-nowrap">
                 {product.title}
               </p>
             </div>
@@ -70,7 +70,7 @@ const LikedProducts = () => {
           }}
         >
           <div className="flex flex-row items-center gap-2 my-2">
-            <p className="text-white">It is empty</p>
+            <p className="text-black">It is empty</p>
             <HiHeart size={30} style={{ color: "yellow" }} />
           </div>
 

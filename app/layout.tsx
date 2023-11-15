@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`homebg m-3  xxl:px-[250px]  xl:px-24  px-1 ${open_sans.variable} font-sans `}
+        className={`homebg m-3  xxl:px-[380px]  xl:px-[120px]  px-1 ${open_sans.variable} font-sans `}
       >
         <AuthProvider>
           <Provider store={store}>

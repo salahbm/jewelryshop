@@ -7,7 +7,7 @@ import Image from "next/image";
 const AboutPage = () => {
   return (
     <>
-      <div className="text-white min-h-screen">
+      <div className="text-black min-h-screen">
         <Container maxWidth="lg">
           <Grid container spacing={3} className="p-4 m-2">
             <Grid item xs={12} sm={6}>

@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { PiNewspaper } from "react-icons/pi";
+import { Paper } from "@mui/material";
 const Navbar = () => {
   const [state, setState] = useState({
     menu: "close",
@@ -50,7 +51,8 @@ const Navbar = () => {
   }, [productData, location]);
 
   return (
-    <div className=" z-[999] w-full  text-white  relative  ">
+    <nav className=" z-[999] w-full  text-black  relative  " >
+      <Paper elevation={2} style={{borderRadius:12}}> 
       <div className="flex items-center bg px-4 md:justify-center justify-between rounded-2xl md:bg-none">
         <Link href="/">
           <div className="logo italic font-mono">Mr.Joni</div>
@@ -69,9 +71,10 @@ const Navbar = () => {
           }`}
           onClick={toggleMenu}
         />
-      </div>
+      </div></Paper>
+      <Paper elevation={2} style={{borderRadius:12}}> 
       <div
-        className={`absolute  flex  flex-col  px-3  rounded-2xl w-full navBg ${
+        className={`absolute  flex  flex-col  px-3  rounded-xl w-full navBg ${
           state.menu === "menu" ? "  opacity-100" : " opacity-0 hidden"
         }  lg:h-30  duration-300 md:static md:z-auto md:mx-auto md:flex md:w-auto md:flex-row  md:px-5 md:opacity-100 md:justify-between md:items-center`}
       >
@@ -159,7 +162,8 @@ const Navbar = () => {
           </button>
         </div> */}
       </div>
-    </div>
+      </Paper>
+    </nav>
   );
 };
 

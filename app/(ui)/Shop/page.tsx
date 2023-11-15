@@ -75,7 +75,7 @@ const Products = () => {
       <div className="flex flex-row w-full items-center md:pr-16 pr-5">
         <SearchView />
         <button
-          className="text-white flex flex-row items-center gap-1  text-xl"
+          className="text-black flex flex-row items-center gap-1  text-xl"
           onClick={toggleDrawer}
         >
           Filter
@@ -152,7 +152,7 @@ const Products = () => {
                           (product: any) => product._id === item._id
                         )
                           ? "text-yellow-500"
-                          : "text-white"
+                          : "text-black"
                       }`}
                     >
                       <AiFillHeart />
@@ -199,23 +199,23 @@ const Products = () => {
             />
           </Grid>
           <div className="  items-center flex justify-center">
-            <div className="flex justify-between items-center mt-4 text-white ">
+            <div className="flex justify-between items-center mt-4 text-black ">
               {currentPage > 1 && (
                 <button
                   onClick={prevPage}
-                  className="xt-20 flex h-5 w-10 items-center justify-center rounded-full bg-yellow-500 text-[10px]  text-white duration-300 hover:bg-slate-400 md:h-7  md:w-20 md:text-[10px] lg:h-9 lg:w-24 "
+                  className="xt-20 flex h-5 w-10 items-center justify-center rounded-full bg-yellow-500 text-[10px]  text-black duration-300 hover:bg-slate-400 md:h-7  md:w-20 md:text-[10px] lg:h-9 lg:w-24 "
                 >
                   Back
                 </button>
               )}
-              <span className=" text-[10px] font-bold text-white  lg:text-lg mx-5">
+              <span className=" text-[10px] font-bold text-black  lg:text-lg mx-5">
                 {` ${currentPage}/${allPages} `}
               </span>
 
               {endIndex < ProductData.length && (
                 <button
                   onClick={nextPage}
-                  className="xt-20 flex h-5 w-10 items-center justify-center rounded-full bg-yellow-500 text-[10px]  text-white duration-300 hover:bg-slate-400 md:h-7  md:w-20 md:text-[15px] lg:h-9 lg:w-18"
+                  className="xt-20 flex h-5 w-10 items-center justify-center rounded-full bg-yellow-500 text-[10px]  text-black duration-300 hover:bg-slate-400 md:h-7  md:w-20 md:text-[15px] lg:h-9 lg:w-18"
                 >
                   Next
                 </button>

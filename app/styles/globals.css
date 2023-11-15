@@ -60,13 +60,13 @@
   animation: lights 4s 750ms linear infinite;
 }
 .bg {
-  background: linear-gradient(200deg, #000000 35%, #800000);
+  background: linear-gradient(200deg, #FAF9F6 35%, #F9F6EE);
 }
 .navBg {
-  background: linear-gradient(90deg, #800000 15%, #000000);
+  background: linear-gradient(90deg, #FAF9F6 15%, #F9F6EE);
 }
 .homebg {
-  background: linear-gradient(90deg, #000000 45%, #800000);
+  background: linear-gradient(90deg, #FAF9F6 45%, #F9F6EE);
 }
 
 :root {

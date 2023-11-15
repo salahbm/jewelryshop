@@ -55,17 +55,17 @@ const ProductsDetail = () => {
           <p>gsdgsdfg</p>
         </div>
         <div className="flex h-2/3 w-full flex-col gap-1 px-4 lg:w-2/4 md:w-2/4">
-          <p className=" flex flex-col gap-6 rounded-md border border-gray-400 px-2 py-4 font-bold  text-white  ">
+          <p className=" flex flex-col gap-6 rounded-md border border-gray-400 px-2 py-4 font-bold  text-black  ">
             {product?.title}
           </p>
           <div className=" flex flex-col gap-6 rounded-md border border-gray-400 px-2 py-4">
             <div>
-              <h1 className=" to-black font-bold text-white">Detail:</h1>
-              <p className=" text-[12px] font-normal  text-white">
+              <h1 className=" to-black font-bold text-black">Detail:</h1>
+              <p className=" text-[12px] font-normal  text-black">
                 {product?.description}
               </p>
             </div>
-            <div className="flex items-center justify-center gap-5 text-white">
+            <div className="flex items-center justify-center gap-5 text-black">
               <button>
                 <CiHeart
                   className={`text-2xl `}
@@ -81,7 +81,7 @@ const ProductsDetail = () => {
                 ${product?.oldPrice}
               </p>
             </div>
-            <div className="flex flex-row items-center justify-between text-2xl text-white">
+            <div className="flex flex-row items-center justify-between text-2xl text-black">
               <CiCirclePlus
                 onClick={() =>
                   dispatch(plusQuantity(product)) &&
@@ -103,7 +103,7 @@ const ProductsDetail = () => {
                   dispatch(addToCart(product)) &&
                   toast.success(`${product?.title.substring(0, 20)} is added`)
                 }
-                className=" h-8  w-[100px] rounded-xl bg-cyan-900 text-xs font-normal text-white"
+                className=" h-8  w-[100px] rounded-xl bg-cyan-900 text-xs font-normal text-black"
               >
                 Add to cart
               </button>

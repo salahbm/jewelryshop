@@ -12,7 +12,7 @@ const Collection = () => {
   };
   return (
     <div>
-      <div className="text-white  flex items-center justify-center relative mb-6 w-full flex-col md:flex-row">
+      <div className="text-black  flex items-center justify-center relative mb-6 w-full flex-col md:flex-row">
         <h5 className="animate-pulse font-extrabold lg:text-9xl tracking-[0.3em] md:text-8xl text-4xl">
           New <br />
           <span>Collection</span>
@@ -31,7 +31,7 @@ const Collection = () => {
           style={{ backgroundSize: "cover", backgroundPosition: "center" }}
         />
 
-        <div className="-right-0.5  text-center lg:text-left absolute w-5/12 md:w-4/12 bg-bgTransparent text-white max-h-full p-3 rounded-tr-2xl rounded-br-2xl overflow-y-scroll h-full">
+        <div className="-right-0.5  text-center lg:text-left absolute w-5/12 md:w-4/12 bg-bgTransparent text-black max-h-full p-3 rounded-tr-2xl rounded-br-2xl overflow-y-scroll h-full">
           <h2 className=" md:text-5xl text-center text-yellow-500 font-bold text-md">
             Gold Wiser
           </h2>

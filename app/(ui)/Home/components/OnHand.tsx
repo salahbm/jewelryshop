@@ -46,7 +46,7 @@ const shuffle = (arr: string[]): string[] =>
 
 const OnHand: React.FC = () => (
   <div className={styles.app}>
-    <header className="text-white">
+    <header className="text-black">
       <h5 className="italic font-extrabold lg:text-7xl tracking-[0.2em] md:text-8xl text-4xl text-center mb-5 ">
         Our Work
         <p className="lg:text-5xl text-3xl">on Customers Hands</p>

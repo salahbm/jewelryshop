@@ -233,7 +233,7 @@ const CartPage = () => {
           }}
         >
           <div className="flex flex-row items-center gap-2 my-2">
-            <p className="text-white">It is empty</p>
+            <p className="text-black">It is empty</p>
             <HiOutlineShoppingCart size={30} style={{ color: "white" }} />
           </div>
 
