@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import { banner3, diamond } from "../../../../public/assets/index";
+import { banner1, diamond } from "../../../../public/assets/index";
 import Image from "next/image";
 import { PiArrowFatLinesRightFill } from "react-icons/pi";
 const Collection = () => {
-  const collections = [banner3, diamond];
+  const collections = [diamond,banner1 ];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
@@ -36,7 +36,7 @@ const Collection = () => {
             Gold Wiser
           </h2>
 
-          <p className=" mt-1 lg:text-base text-xs  italic ">
+          <p className=" mt-1 lg:text-base text-xs  italic text-lightText ">
             <br />
             🔹 Diamond Embellishment: Adorning the chain are a stunning array of
             hand-set lab-created diamonds, expertly faceted to unleash an
@@ -47,16 +47,16 @@ const Collection = () => {
           </p>
         </div>
         <div className="absolute bottom-5 left-5  flex items-center justify-between gap-3  z-[2]">
-          <span className=" text-lightText text-xs lg:text-base">Next</span>
+          <span className=" text-black text-xs lg:text-base">Next</span>
           <button
             onClick={handleNext}
-            className="  rounded-2xl lg:w-14 lg:h-10  duration-300 hover:bg-Black outline outline-white ease-in grid place-content-center hover:text-gYellow text-lightText h-5 w-7"
+            className="  rounded-2xl lg:w-14 lg:h-10  duration-300 outline outline-black ease-in grid place-content-center hover:text-white text-lightText h-5 w-7 hover-bg-black"
           >
             <PiArrowFatLinesRightFill />
           </button>
         </div>
       </div>
-      <div></div>
+  
     </div>
   );
 };
