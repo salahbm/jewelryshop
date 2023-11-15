@@ -149,7 +149,7 @@ const Account: React.FC = () => {
               setView("orders");
             }}
           >
-            <p className="text-black  text-center text-[10px] md:text-lg">
+            <p className="text-neutral-700  text-center text-[10px] md:text-lg">
               Delivering 2344234
             </p>
           </div>
@@ -160,7 +160,7 @@ const Account: React.FC = () => {
               setView("orders");
             }}
           >
-            <p className="text-black text-center text-[10px] md:text-lg">
+            <p className="text-neutral-700 text-center text-[10px] md:text-lg">
               Delivered 2344234
             </p>
           </div>
@@ -171,7 +171,7 @@ const Account: React.FC = () => {
               setView("orders");
             }}
           >
-            <p className="text-black text-center text-[10px] md:text-lg">
+            <p className="text-neutral-700 text-center text-[10px] md:text-lg">
               Total 2344234
             </p>
           </div>
@@ -182,7 +182,7 @@ const Account: React.FC = () => {
               setView("orders");
             }}
           >
-            <p className="text-black text-center text-[10px] md:text-lg">
+            <p className="text-neutral-700 text-center text-[10px] md:text-lg">
               Canceled 2344234
             </p>
           </div>
@@ -193,7 +193,7 @@ const Account: React.FC = () => {
               setView("orders");
             }}
           >
-            <p className="text-black text-center text-[10px] md:text-lg">
+            <p className="text-neutral-700 text-center text-[10px] md:text-lg">
               Return 2344234
             </p>
           </div>

@@ -49,7 +49,7 @@ const Navbar = () => {
   }, [productData, location]);
 
   return (
-    <nav className=" z-[999] w-full  text-black  relative  " >
+    <nav className=" z-[999] w-full  text-neutral-700  relative  " >
 
       <div className="flex items-center bg px-4 md:justify-center justify-between rounded-2xl md:bg-none">
         <Link href="/">

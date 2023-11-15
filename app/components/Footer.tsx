@@ -10,11 +10,11 @@ import {
 const Footer = () => {
   return (
     <div className="p-2 w-full  ">
-      <h2 className="text-black font-mono font-extrabold w-full md:text-6xl lg:text-8xl  text-2xl mb-8 text-center">
+      <h2 className="text-neutral-700 font-mono font-extrabold w-full md:text-6xl lg:text-8xl  text-2xl mb-8 text-center">
         Get The Last Information From Us
       </h2>
       <div className="flex justify-between items-center lg:px-20 placeholder:px-3">
-        <span className=" w-1/2 md:w-1/3  lg:text-xl italic text-yellow-500  text-xs overflow-hidden ">
+        <span className=" w-1/2 md:w-1/3  lg:text-xl italic text-yellow-500-500  text-xs overflow-hidden ">
           Be the first to know about exciting new design, speacial collections,
           store openings and much more ~~~
         </span>
@@ -22,14 +22,14 @@ const Footer = () => {
           <input
             type="email"
             placeholder="Your Email Here"
-            className=" bg-neutral-600 outline-none text-black w-full md:h-16 h-8 "
+            className=" bg-neutral-600 outline-none text-neutral-700 w-full md:h-16 h-8 "
           />
-          <AiOutlineArrowRight className="text-Red hover:text-yellow-500 duration-500 bg-slate-100 md:w-14 md:h-14 w-8 h-6 rounded-3xl " />
+          <AiOutlineArrowRight className="text-Red hover:text-yellow-500-500 duration-500 bg-slate-100 md:w-14 md:h-14 w-8 h-6 rounded-3xl " />
         </div>
       </div>
 
       <div className="flex items-center justify-between flex-col md:flex-row py-5">
-        <p className="text-black  text-sm md:text-2xl mb-2">
+        <p className="text-neutral-700  text-sm md:text-2xl mb-2">
           MrJoni All Rights are Reserved
         </p>
         <div className="flex items-center justify-between gap-2 md:gap-10 ">
@@ -64,7 +64,7 @@ const FooterSMBTN = ({
       onClick={Press}
       className={`group rounded-3xl flex justify-center items-center px-2 cursor-pointer gap-1 relative border-2 border-yellow-500 hover:border-0`}
     >
-      <p className="text-yellow-500 opacity-100 duration-300 group-hover:opacity-0">
+      <p className="text-yellow-500-500 opacity-100 duration-300 group-hover:opacity-0">
         {title}
       </p>
       <span

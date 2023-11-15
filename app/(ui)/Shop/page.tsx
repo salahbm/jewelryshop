@@ -75,7 +75,7 @@ const Products = () => {
       <div className="flex flex-row w-full items-center md:pr-16 pr-5">
         <SearchView />
         <button
-          className="text-black flex flex-row items-center gap-1  text-xl"
+          className="text-neutral-700 flex flex-row items-center gap-1  text-xl"
           onClick={toggleDrawer}
         >
           Filter
@@ -131,7 +131,7 @@ const Products = () => {
                       }}
                     >
                       <div className="flex flex-col p-1  ">
-                        <p className=" line-clamp-2  text-[10px] font-bold text-black lg:w-full lg:text-lg whitespace-nowrap">
+                        <p className=" line-clamp-2  text-[10px] font-bold text-neutral-700 lg:w-full lg:text-lg whitespace-nowrap">
                           {item.title}
                         </p>
                         <p className="line-clamp-2  text-[10px] font-thin  text-gray-600 lg:w-full   lg:text-[12px] italic font-mono whitespace-nowrap">
@@ -151,8 +151,8 @@ const Products = () => {
                         likedItems.some(
                           (product: any) => product._id === item._id
                         )
-                          ? "text-yellow-500"
-                          : "text-black"
+                          ? "text-yellow-500-500"
+                          : "text-neutral-700"
                       }`}
                     >
                       <AiFillHeart />
@@ -199,23 +199,23 @@ const Products = () => {
             />
           </Grid>
           <div className="  items-center flex justify-center">
-            <div className="flex justify-between items-center mt-4 text-black ">
+            <div className="flex justify-between items-center mt-4 text-neutral-700 ">
               {currentPage > 1 && (
                 <button
                   onClick={prevPage}
-                  className="xt-20 flex h-5 w-10 items-center justify-center rounded-full bg-yellow-500 text-[10px]  text-black duration-300 hover:bg-slate-400 md:h-7  md:w-20 md:text-[10px] lg:h-9 lg:w-24 "
+                  className="xt-20 flex h-5 w-10 items-center justify-center rounded-full bg-yellow-500 text-[10px]  text-neutral-700 duration-300 hover:bg-slate-400 md:h-7  md:w-20 md:text-[10px] lg:h-9 lg:w-24 "
                 >
                   Back
                 </button>
               )}
-              <span className=" text-[10px] font-bold text-black  lg:text-lg mx-5">
+              <span className=" text-[10px] font-bold text-neutral-700  lg:text-lg mx-5">
                 {` ${currentPage}/${allPages} `}
               </span>
 
               {endIndex < ProductData.length && (
                 <button
                   onClick={nextPage}
-                  className="xt-20 flex h-5 w-10 items-center justify-center rounded-full bg-yellow-500 text-[10px]  text-black duration-300 hover:bg-slate-400 md:h-7  md:w-20 md:text-[15px] lg:h-9 lg:w-18"
+                  className="xt-20 flex h-5 w-10 items-center justify-center rounded-full bg-yellow-500 text-[10px]  text-neutral-700 duration-300 hover:bg-slate-400 md:h-7  md:w-20 md:text-[15px] lg:h-9 lg:w-18"
                 >
                   Next
                 </button>

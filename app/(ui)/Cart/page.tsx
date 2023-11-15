@@ -92,7 +92,7 @@ const CartPage = () => {
                         }}
                       >
                         <div className="flex flex-col p-1  ">
-                          <p className=" line-clamp-2  text-[10px] font-bold text-black lg:w-full lg:text-lg whitespace-nowrap">
+                          <p className=" line-clamp-2  text-[10px] font-bold text-neutral-700 lg:w-full lg:text-lg whitespace-nowrap">
                             {item.title}
                           </p>
                         </div>
@@ -111,7 +111,7 @@ const CartPage = () => {
                             <CiCirclePlus />
                           </button>
 
-                          <span className="mx-2 text-black">
+                          <span className="mx-2 text-neutral-700">
                             {item.quantity}
                           </span>
                           <button
@@ -123,7 +123,7 @@ const CartPage = () => {
 
                           <button
                             onClick={() => dispatch(deleteItem(item._id))}
-                            className="text-yellow-100 absolute top-5 right-1 rounded-full border-2 hover:bg-white hover:text-Red text-lg md:text-xl"
+                            className="text-yellow-500-100 absolute top-5 right-1 rounded-full border-2 hover:bg-white hover:text-Red text-lg md:text-xl"
                           >
                             <IoMdClose />
                           </button>
@@ -233,7 +233,7 @@ const CartPage = () => {
           }}
         >
           <div className="flex flex-row items-center gap-2 my-2">
-            <p className="text-black">It is empty</p>
+            <p className="text-neutral-700">It is empty</p>
             <HiOutlineShoppingCart size={30} style={{ color: "white" }} />
           </div>
 

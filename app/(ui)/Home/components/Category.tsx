@@ -55,7 +55,7 @@ const Category: FC = () => {
   };
   return (
     <div className="">
-      <h1 className="text-black font-extrabold lg:text-9xl tracking-[0.3em] md:text-8xl text-4xl text-center my-10">
+      <h1 className="text-neutral-700 font-extrabold lg:text-9xl tracking-[0.3em] md:text-8xl text-4xl text-center my-10">
         Category Look
       </h1>
       <div className={styles.heroSection}>

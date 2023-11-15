@@ -19,11 +19,11 @@ const hoveredImg = [
 const OurWork = () => {
   return (
     <div >
-      <div className="text-black items-center justify-center p-10">
+      <div className="text-neutral-700 items-center justify-center p-10">
         <h5 className="italic font-extrabold lg:text-7xl tracking-[0.2em] md:text-6xl text-4xl mb-5">
           Our Work in Process
         </h5>
-        <p className="lg:text-xl italic text-yellow-500 text-sm text-right">
+        <p className="lg:text-xl italic text-yellow-500-500 text-sm text-right">
           Dive into luxury with our new jewelry collection, where timeless elegance meets modern
           allure. Elevate your style today!
         </p>

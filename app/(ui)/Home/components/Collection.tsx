@@ -12,12 +12,12 @@ const Collection = () => {
   };
   return (
     <div>
-      <div className="text-black  flex items-center justify-center relative mb-6 w-full flex-col md:flex-row">
+      <div className="text-neutral-700  flex items-center justify-center relative mb-6 w-full flex-col md:flex-row">
         <h5 className="animate-pulse font-extrabold lg:text-9xl tracking-[0.3em] md:text-8xl text-4xl">
           New <br />
           <span>Collection</span>
         </h5>
-        <span className="md:absolute md:top-9  lg:text-xl italic text-yellow-500  top-1 right-[5%]  md:w-[400px] text-xs  lg:max-h-max text-center">
+        <span className="md:absolute md:top-9  lg:text-xl italic text-yellow-500-500  top-1 right-[5%]  md:w-[400px] text-xs  lg:max-h-max text-center">
           Dive into luxury with our new jewelry collection, where timeless
           elegance meets modern allure. Elevate your style today!
         </span>
@@ -31,8 +31,8 @@ const Collection = () => {
           style={{ backgroundSize: "cover", backgroundPosition: "center" }}
         />
 
-        <div className="-right-0.5  text-center lg:text-left absolute w-5/12 md:w-4/12 bg-bgTransparent text-black max-h-full p-3 rounded-tr-2xl rounded-br-2xl overflow-y-scroll h-full">
-          <h2 className=" md:text-5xl text-center text-yellow-500 font-bold text-md">
+        <div className="-right-0.5  text-center lg:text-left absolute w-5/12 md:w-4/12 bg-bgTransparent text-neutral-700 max-h-full p-3 rounded-tr-2xl rounded-br-2xl overflow-y-scroll h-full">
+          <h2 className=" md:text-5xl text-center text-yellow-500-500 font-bold text-md">
             Gold Wiser
           </h2>
 
@@ -47,7 +47,7 @@ const Collection = () => {
           </p>
         </div>
         <div className="absolute bottom-5 left-5  flex items-center justify-between gap-3  z-[2]">
-          <span className=" text-black text-xs lg:text-base">Next</span>
+          <span className=" text-neutral-700 text-xs lg:text-base">Next</span>
           <button
             onClick={handleNext}
             className="  rounded-2xl lg:w-14 lg:h-10  duration-300 outline outline-black ease-in grid place-content-center hover:text-white text-lightText h-5 w-7 hover-bg-black"

@@ -155,7 +155,7 @@ const columns: GridColDef[] = [
                   ? "text-lime-600"
                   : row?.process === "Return"
                   ? "text-orange-400"
-                  : "text-black"
+                  : "text-neutral-700"
               }
             >
               {row?.process}
