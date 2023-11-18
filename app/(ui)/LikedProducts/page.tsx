@@ -1,65 +1,80 @@
 "use client";
-import React from "react";
-import classes from "./likedProducts.module.css";
-import { HiHeart, HiOutlineShoppingCart } from "react-icons/hi";
-import { IoMdClose } from "react-icons/io";
-import Link from "next/link";
-import { useSelector, useDispatch } from "react-redux";
-import { AiFillHeart } from "react-icons/ai";
-import { unlikeItem, resetLikedItems } from "@/app/redux/shopSlice";
 
-import { StoreItem } from "@/app/type";
+import {
+  resetCart, unlikeItem
+} from "@/app/redux/shopSlice";
+import { Grid, Paper } from "@mui/material";
 import Image from "next/image";
-const LikedProducts = () => {
-  const dispatch = useDispatch();
-  const likedItem = useSelector((state: any) => state.shop.likedItem);
+import Link from "next/link";
+import { HiHeart } from "react-icons/hi";
+import { IoMdClose } from "react-icons/io";
+import { useDispatch, useSelector } from "react-redux";
+
+const LikedItems=()=>{
+const dispatch = useDispatch();
+const likedItem = useSelector((state: any) => state.shop.likedItem);
+
 
   return (
-    <div className="w-full p-5 min-h-screen ">
-      <div className=" my-5 flex flex-row items-center gap-2 w-1/2">
-        <p className="rounded-md border border-gray-500 bg-yellow-500  px-2 text-neutral-700">
-          Total: {likedItem.length}
-        </p>
-        <button
-          onClick={() => dispatch(resetLikedItems())}
-          className="flex flex-row items-center text-neutral-700 justify-center rounded-md border border-gray-500 bg-red-400 px-2"
-        >
-          <h1>Clear</h1>
-          <IoMdClose size={20} />
-        </button>
-      </div>
+    <div className=" w-full p-3 min-h-screen">
       {likedItem.length > 0 ? (
-        <div className=" grid  grid-cols-2 items-center gap-10 md:grid-cols-3 lg:grid-cols-4">
-          {likedItem.map((product: StoreItem, index: number) => (
-            <div key={index}>
-              <div className="  relative rounded-md border min-h-24 min-w-24 border-yellow-700">
-                <Link
-                  href={{
-                    pathname: `product${product._id}`,
-                    query: { product: JSON.stringify(product) },
-                  }}
+        <div>
+          <div className=" my-5 flex flex-row items-center gap-4 w-1/2 whitespace-nowrap">
+            <p className="rounded-md border border-gray-500 text-yellow-500  px-2 ">
+              Total: {likedItem.length}
+            </p>
+            <button
+              onClick={() => dispatch(resetCart())}
+              className="flex flex-row items-center  justify-center rounded-md border border-gray-500 text-red-700 px-2"
+            >
+              <h1>Clear</h1>
+              <IoMdClose size={20} />
+            </button>
+          </div>
+
+         
+            <Grid
+              container
+              spacing={{ xs: 1, md: 2 }}
+              columns={{ xs: 4,  md: 9,  }}
+            >
+              {likedItem.map((item: any, index: number) => (
+                <Grid
+                  item
+                  xs={2}
+                  md={3}
+                   key={index}
+                  className="group relative  "
                 >
-                  <Image
-                    src={product?.image}
-                    alt="Product image"
-                    className="object-fill w-full h-full rounded-md "
-                    width={200}
-                    height={200}
-                  />
-                </Link>
-                <button onClick={() => dispatch(unlikeItem(product._id))}>
-                  <AiFillHeart
-                    className={`text-2x  absolute right-1 top-1 text-xl md:text-3xl text-yellow-500-500 `}
+                  <Paper
+                    elevation={2}
+                    style={{
+                      borderRadius: 10,
+                      backgroundColor: "#FFFFF8",
+                    }}
+                  >
+                                 <Image
+                        width={300}
+                        height={500}
+                        src={item.image}
+                        alt="itemImage"
+                        className="h-full w-full scale-100 object-contain duration-300 group-hover:scale-105 rounded-lg"
+                      />
+                          <p className=" line-clamp-2  text-[10px] font-bold text-neutral-700 lg:w-full lg:text-lg whitespace-nowrap p-1">
+                            {item.title}
+                          </p>
+                  </Paper>
+                  <button onClick={() => dispatch(unlikeItem(item?._id))}>
+                  <HiHeart
+                    className={`text-2x  absolute right-1 top-5 text-xl md:text-3xl text-yellow-500 `}
                   />
                 </button>
-              </div>
-              <p className="  text-neutral-700 text-center text-sm overflow-hidden whitespace-nowrap">
-                {product.title}
-              </p>
-            </div>
-          ))}
-        </div>
-      ) : (
+                </Grid>
+                
+              ))}
+            </Grid>
+         </div>    
+      ): (
         <div
           style={{
             display: "flex",
@@ -75,12 +90,14 @@ const LikedProducts = () => {
           </div>
 
           <Link href="/Shop">
-            <button className={classes.button1}>Shop </button>
+            <button >Shop </button>
           </Link>
         </div>
       )}
     </div>
   );
 };
+export default LikedItems
 
-export default LikedProducts;
+
+

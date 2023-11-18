@@ -27,7 +27,7 @@ const CartPage = () => {
   let price = 0;
   useEffect(() => {
     productData.map((item: any) => {
-      price += item.price * item.quantity;
+      price += item?.price * item?.quantity;
 
       return price;
     });
@@ -39,12 +39,12 @@ const CartPage = () => {
       {productData.length > 0 ? (
         <div>
           <div className=" my-5 flex flex-row items-center gap-4 w-1/2 whitespace-nowrap">
-            <p className="rounded-md border border-gray-500 bg-yellow-300  px-2 ">
+            <p className="rounded-md border border-gray-500 text-yellow-500  px-2 ">
               Total: {productData.length}
             </p>
             <button
               onClick={() => dispatch(resetCart())}
-              className="flex flex-row items-center  justify-center rounded-md border border-gray-500 bg-red-400 px-2"
+              className="flex flex-row items-center  justify-center rounded-md border border-gray-500 text-red-700 px-2"
             >
               <h1>Clear</h1>
               <IoMdClose size={20} />
@@ -54,16 +54,16 @@ const CartPage = () => {
           <div className="relative">
             <Grid
               container
-              spacing={{ xs: 0.5, md: 2 }}
-              columns={{ xs: 4, sm: 9, md: 9, lg: 12 }}
+              spacing={{ xs: 1, md: 2 }}
+              columns={{ xs: 4,  md: 9,  }}
             >
               {productData.map((item: any, index: number) => (
                 <Grid
                   item
                   xs={2}
-                  sm={3}
+      
                   md={3}
-                  lg={3}
+ 
                   key={index}
                   className="group relative  "
                 >
@@ -123,7 +123,7 @@ const CartPage = () => {
 
                           <button
                             onClick={() => dispatch(deleteItem(item._id))}
-                            className="text-yellow-500-100 absolute top-5 right-1 rounded-full border-2 hover:bg-white hover:text-black text-lg md:text-xl"
+                            className=" text-orange-800 absolute top-5 right-1 rounded-full border-[1px] border-orange-700 hover:bg-white hover:text-black text-lg md:text-xl"
                           >
                             <IoMdClose />
                           </button>
@@ -155,7 +155,7 @@ const CartPage = () => {
             <div className=" my-2 w-2/4 ">
               <div className=" p-4  border border-zinc-400 rounded-md flex flex-col gap-4 bg-yellow-50    ">
                 <div className="w-full flex flex-col gap-4 border-b border-b-zinc-200 pb-4">
-                  {!userInfo.name && (
+                  {!userInfo?.name && (
                     <p className="text-lg text-center text-red-500 -mt-4 font-semibold">
                       Please sign in for checkout
                     </p>
@@ -209,7 +209,7 @@ const CartPage = () => {
                 <Link href={"./Checkout"}>
                   <button
                     className={`${
-                      userInfo.name
+                      userInfo?.name
                         ? "text-lime-600 hover:text-lime-500"
                         : " text-gray-500 cursor-not-allowed"
                     } cursor-pointer w-full h-10 rounded-full font-semibold duration-300  text-2xl`}
