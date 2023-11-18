@@ -1,4 +1,5 @@
 "use client";
+import React, { useState } from 'react';
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
@@ -8,24 +9,11 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Stepper from "@mui/material/Stepper";
 import Typography from "@mui/material/Typography";
-import * as React from "react";
 import AddressForm from "./components/AddressForm";
 import PaymentForm from "./components/PaymentForm";
 import Review from "./components/Review";
 import { Grid } from "@mui/material";
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
 const steps = ["Shipping address", "Payment details", "Review your order"];
 
@@ -43,7 +31,7 @@ function getStepContent(step: number) {
 }
 
 export default function Checkout() {
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] =useState(0);
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
@@ -54,11 +42,10 @@ export default function Checkout() {
   };
 
   return (
-    <React.Fragment>
-      <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
-        <Paper
-          variant="outlined"
-          sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
+    <>
+      <Container component="main" maxWidth="lg" sx={{ mb: 4 }} className='min-h-screen '>
+        <Container 
+          sx={{ my: { xs: 3, md: 12 }, p: { xs: 2, md: 3 } }}
         >
           <Typography component="h1" variant="h4" align="center">
             Checkout
@@ -86,7 +73,7 @@ export default function Checkout() {
                 href={"../Account"}
                 className="flex items-center justify-center "
               >
-                <Button variant="contained" color="error">
+                <Button variant="contained" color="success">
                   Check the Orders
                 </Button>
               </Link>
@@ -110,9 +97,9 @@ export default function Checkout() {
               </Box>
             </React.Fragment>
           )}
-        </Paper>
-        <Copyright />
+        </Container>
+
       </Container>
-    </React.Fragment>
+    </>
   );
 }
