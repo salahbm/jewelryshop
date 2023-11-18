@@ -1,17 +1,19 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import { addUser, removeUser } from "@/app/redux/shopSlice";
 import { Button, Typography, useMediaQuery } from "@mui/material";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import UserOrders from "./components/userOrders";
 import SwitchViews from "./components/SwitchViews";
-import AddressView from "./components/addressForm";
+import UserOrders from "./components/userOrders";
 const Account: React.FC = () => {
   const [view, setView] = useState<string>("orders");
   const [value, setValue] = useState<string>("Delivering");
+  const userInfo = useSelector((state: any) => state.shop.userInfo);
+  const isMdScreen = useMediaQuery("(min-width:960px)");
+  const [isCollapsed, setIsCollapsed] = useState(false);
   const dispatch = useDispatch();
   const { data: session } = useSession();
   useEffect(() => {
@@ -26,11 +28,10 @@ const Account: React.FC = () => {
     } else {
       dispatch(removeUser());
     }
-  }, [dispatch, session]);
-  const userInfo = useSelector((state: any) => state.shop.userInfo);
-  const [isCollapsed, setIsCollapsed] = useState(false);
-  const isMdScreen = useMediaQuery("(min-width:960px)");
 
+  }, [dispatch, session, ]);
+
+const text = ' text-center text-[10px] md:text-lg text-white'
   return (
     <div
       className="w-full flex 
@@ -38,13 +39,13 @@ const Account: React.FC = () => {
       my-5 gap-8 min-h-screen"
     >
       <div
-        className={`md:w-1/5 bg-red-900 flex-col flex items-center rounded-2xl gap-2  py-3 relative  ${
+        className={`md:w-1/5 bg-white flex-col flex items-center rounded-2xl gap-2  py-3 relative  ${
           isCollapsed ? "h-[50px]" : "h-fit"
         }`}
       >
         <Typography
           variant="h5"
-          color="white"
+          color="black"
           fontWeight={"bold"}
           textAlign={"center"}
         >
@@ -74,7 +75,7 @@ const Account: React.FC = () => {
             </Link>
             <Typography
               variant="body1"
-              color="white"
+              color="black"
               fontWeight={"bold"}
               onClick={() => setView("Profile")}
             >
@@ -82,7 +83,7 @@ const Account: React.FC = () => {
             </Typography>
             <Typography
               variant="body1"
-              color="white"
+              color="black"
               fontWeight={"bold"}
               onClick={() => setView("Card")}
             >
@@ -90,7 +91,7 @@ const Account: React.FC = () => {
             </Typography>
             <Typography
               variant="body1"
-              color="white"
+              color="black"
               fontWeight={"bold"}
               onClick={() => setView("Address")}
             >
@@ -101,7 +102,7 @@ const Account: React.FC = () => {
 
             <Typography
               variant="body1"
-              color="white"
+              color="black"
               fontWeight={"bold"}
               onClick={() => setView("Terms")}
             >
@@ -113,7 +114,7 @@ const Account: React.FC = () => {
               <Button
                 onClick={() => signOut()}
                 variant="contained"
-                color="warning"
+                color="error"
               >
                 Log Out
               </Button>
@@ -133,14 +134,14 @@ const Account: React.FC = () => {
             size="small"
             onClick={() => setIsCollapsed(!isCollapsed)}
             variant="contained"
-            color={isCollapsed ? "warning" : "error"}
+            color={isCollapsed ? "success" : "warning"}
             className={`${isCollapsed ? "absolute -top-3" : "fixed"} `}
           >
             {isCollapsed ? "Open" : "Close"}
           </Button>
         )}
       </div>
-      <div className="md:w-4/5 px-1 gap-2 flex-col flex">
+      <div className="md:w-4/5 px-1 gap-2 flex-col flex ">
         <div className="flex flex-row justify-between gap-2 items-center">
           <div
             className=" bg-lime-500 hover:bg-lime-600 h-14 w-full rounded-2xl flex items-center justify-center px-1"
@@ -154,46 +155,46 @@ const Account: React.FC = () => {
             </p>
           </div>
           <div
-            className=" bg-red-700 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
+            className=" bg-neutral-600 hover:bg-gray-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
             onClick={() => {
               setValue("Delivered");
               setView("orders");
             }}
           >
-            <p className="text-neutral-700 text-center text-[10px] md:text-lg">
+            <p className={text}>
               Delivered 2344234
             </p>
           </div>
           <div
-            className=" bg-red-700 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
+            className=" bg-neutral-600 hover:bg-gray-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
             onClick={() => {
               setValue("Total");
               setView("orders");
             }}
           >
-            <p className="text-neutral-700 text-center text-[10px] md:text-lg">
+            <p className={text}>
               Total 2344234
             </p>
           </div>
           <div
-            className=" bg-red-700 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
+            className=" bg-neutral-600 hover:bg-gray-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
             onClick={() => {
               setValue("Canceled");
               setView("orders");
             }}
           >
-            <p className="text-neutral-700 text-center text-[10px] md:text-lg">
+            <p className={text}>
               Canceled 2344234
             </p>
           </div>
           <div
-            className=" bg-red-700 hover:bg-red-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
+            className=" bg-neutral-600 hover:bg-gray-900 h-14 w-full rounded-2xl flex items-center justify-center px-1"
             onClick={() => {
               setValue("Return");
               setView("orders");
             }}
           >
-            <p className="text-neutral-700 text-center text-[10px] md:text-lg">
+            <p className={text}>
               Return 2344234
             </p>
           </div>

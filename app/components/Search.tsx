@@ -8,8 +8,9 @@ const SearchView = () => {
         <input
           className=" bg-inherit w-full border-inherit outline-none"
           type="search"
+          placeholder='Search the product'
         />
-        <SearchIcon className="text-lg " />
+        <SearchIcon className="text-lg text-gray" />
       </div>
     </div>
   );

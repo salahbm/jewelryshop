@@ -21,7 +21,7 @@ const HomeBanner = () => {
               width={1000}
               height={250}
               loading="lazy"
-              className="h-[250px] w-full  md:h-[500px] lg:h-[600px] bg-no-repeat bg-cover pointer-events-none"
+              className="h-[250px] w-full  md:h-[550px] lg:h-[650px] bg-no-repeat bg-cover pointer-events-none"
             />
 
             {slideImage?.button.length > 1 && (

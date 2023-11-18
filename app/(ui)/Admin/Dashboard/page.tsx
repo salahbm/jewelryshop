@@ -33,7 +33,7 @@ const Drawer = styled(MuiDrawer, {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    backgroundColor: "#900000",
+    backgroundColor: "white",
     boxSizing: "border-box",
     ...(!open && {
       overflowX: "hidden",
@@ -74,9 +74,9 @@ export default function Dashboard() {
         >
           <IconButton onClick={toggleDrawer}>
             {open ? (
-              <KeyboardDoubleArrowLeft htmlColor="#FFFF" />
+              <KeyboardDoubleArrowLeft htmlColor="gray" />
             ) : (
-              <KeyboardDoubleArrowRight htmlColor="#FFFF" />
+              <KeyboardDoubleArrowRight htmlColor="gray" />
             )}
           </IconButton>
         </Toolbar>

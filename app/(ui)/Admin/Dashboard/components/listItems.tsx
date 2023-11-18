@@ -20,50 +20,50 @@ function MainListItems({
     <React.Fragment>
       <div className="">
         <ListItemButton
-          style={{ color: "white" }}
+      
           onClick={() => passDrawerName("dashboard")}
         >
           <ListItemIcon>
-            <DashboardIcon htmlColor="#FFFF" />
+            <DashboardIcon htmlColor="gray" />
           </ListItemIcon>
           <ListItemText primary="Dashboard" />
         </ListItemButton>
 
         <ListItemButton
-          style={{ color: "white" }}
+      
           onClick={() => passDrawerName("orders")}
         >
           <ListItemIcon>
-            <ShoppingCartIcon htmlColor="#FFFF" />
+            <ShoppingCartIcon htmlColor="gray" />
           </ListItemIcon>
           <ListItemText primary="Orders" />
         </ListItemButton>
 
         <ListItemButton
-          style={{ color: "white" }}
+      
           onClick={() => passDrawerName("customers")}
         >
           <ListItemIcon>
-            <PeopleIcon htmlColor="#FFFF" />
+            <PeopleIcon htmlColor="gray" />
           </ListItemIcon>
           <ListItemText primary="Customers" />
         </ListItemButton>
 
         <ListItemButton
-          style={{ color: "white" }}
+      
           onClick={() => passDrawerName("reports")}
         >
           <ListItemIcon>
-            <BarChartIcon htmlColor="#FFFF" />
+            <BarChartIcon htmlColor="gray" />
           </ListItemIcon>
           <ListItemText primary="Reports" />
         </ListItemButton>
         <ListItemButton
-          style={{ color: "white" }}
+      
           onClick={() => passDrawerName("webPhoto")}
         >
           <ListItemIcon>
-            <Wallpaper htmlColor="#FFFF" />
+            <Wallpaper htmlColor="gray" />
           </ListItemIcon>
           <ListItemText primary="Website photos" />
         </ListItemButton>

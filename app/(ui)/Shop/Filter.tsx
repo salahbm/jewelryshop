@@ -147,13 +147,13 @@ const FilterDrawer = ({ open, toggleDrawer }: FilterDrawerType) => {
       </div>
 
       <div className="border-b-2 border-[#D9D9D9] m-1" />
-      <Typography variant="h6" fontWeight="bold" color="#900000">
+      <Typography variant="h6" fontWeight="bold" color="gray">
         Cost
       </Typography>
 
       <Slider
         step={50}
-        color="error"
+        color="success"
         marks={marks}
         value={filter.cost}
         valueLabelDisplay="on"
@@ -164,7 +164,7 @@ const FilterDrawer = ({ open, toggleDrawer }: FilterDrawerType) => {
 
       <div className="border-b-2 border-[#D9D9D9] m-1" />
 
-      <Typography variant="h6" fontWeight="bold" color="#900000">
+      <Typography variant="h6" fontWeight="bold" color="gray">
         Category
       </Typography>
 
@@ -203,7 +203,7 @@ const FilterDrawer = ({ open, toggleDrawer }: FilterDrawerType) => {
       </RadioGroup>
       <div className="border-b-2 border-[#D9D9D9] m-1" />
 
-      <Typography variant="h6" fontWeight="bold" color="#900000">
+      <Typography variant="h6" fontWeight="bold" color="gray">
         Stone
       </Typography>
 
@@ -242,7 +242,7 @@ const FilterDrawer = ({ open, toggleDrawer }: FilterDrawerType) => {
       </RadioGroup>
       <div className="border-b-2 border-[#D9D9D9] m-1" />
 
-      <Typography variant="h6" fontWeight="bold" color="#900000">
+      <Typography variant="h6" fontWeight="bold" color="gray">
         Ranking
       </Typography>
 
@@ -259,7 +259,7 @@ const FilterDrawer = ({ open, toggleDrawer }: FilterDrawerType) => {
 
       <div className="border-b-2 border-[#D9D9D9] m-1" />
 
-      <Typography variant="h6" fontWeight="bold" color="#900000">
+      <Typography variant="h6" fontWeight="bold" color="gray">
         Material
       </Typography>
 
@@ -298,7 +298,7 @@ const FilterDrawer = ({ open, toggleDrawer }: FilterDrawerType) => {
       </RadioGroup>
       <div className="border-b-2 border-[#D9D9D9] m-1" />
 
-      <Typography variant="h6" fontWeight="bold" color="#900000">
+      <Typography variant="h6" fontWeight="bold" color="gray">
         Made
       </Typography>
 
@@ -322,7 +322,7 @@ const FilterDrawer = ({ open, toggleDrawer }: FilterDrawerType) => {
       </RadioGroup>
       <div className="border-b-2 border-[#D9D9D9] m-1" />
 
-      <Typography variant="h6" fontWeight="bold" color="#900000">
+      <Typography variant="h6" fontWeight="bold" color="gray">
         Gender
       </Typography>
 
