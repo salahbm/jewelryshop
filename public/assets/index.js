@@ -18,7 +18,7 @@ import earring2 from "./earring2.jpg";
 import bracelet2 from "./bracelet3.jpg";
 import ring3 from "./ring.jpeg";
 import ring1 from "./ring1.jpeg";
-
+import banner2 from './banner2.png'
 import collectionItems from "./collectionItems.jpg";
 import loading from "./loading.gif";
 
@@ -33,7 +33,7 @@ export {
   handmade,
   collectionItems,
 
-
+banner2,
   banner3,
   bracelet,
   bracelet1,

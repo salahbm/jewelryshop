@@ -4,9 +4,9 @@ import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { useRouter } from "next/navigation";
 import { BsChevronDoubleLeft, BsChevronDoubleRight } from "react-icons/bs";
-import { banner1, banner2, banner3 } from "@/public/assets/index";
+import { banner1,  banner2,  banner3 } from "@/public/assets/index";
 import Image from "next/image";
-import { url } from "inspector";
+
 const HomeBanner = () => {
   const route = useRouter();
 
@@ -15,9 +15,12 @@ const HomeBanner = () => {
       <Slide {...properties} cssClass="w-full rounded-lg my-4 ">
         {slideImages.map((slideImage, index) => (
           <div key={index} className="relative  ">
-            <img
+            <Image
               src={slideImage.url}
               alt="image"
+              width={1000}
+              height={250}
+              loading="lazy"
               className="h-[250px] w-full  md:h-[500px] lg:h-[600px] bg-no-repeat bg-cover pointer-events-none"
             />
 
@@ -29,12 +32,7 @@ const HomeBanner = () => {
                 >
                   Order Now
                 </button>
-                <button
-                  onClick={() => route.push(slideImage?.button)}
-                  className="absolute bottom-7 h-5 md:h-10 rounded-2xl border-[1px] md:text-sm text-xs font-semibold text-black md:bottom-7 md:w-24 w-20 hover:bg-Black transition duration-500 cursor-pointer md:left-36 left-28 hover:text-gYellow border-black hover:border-gYellow"
-                >
-                  Details
-                </button>
+
               </div>
             )}
           </div>
@@ -45,17 +43,17 @@ const HomeBanner = () => {
 };
 const slideImages = [
   {
-    url: "https://theartofpandora.com/wp-content/uploads/2020/06/HK-summer-sale.jpg",
+    url: banner3,
 
-    button: "/",
+    button: "/Shop",
   },
   {
-    url: "https://i0.wp.com/davidcraigjewelers.com/wp-content/uploads/2014/08/soak-up-summer-jewelry-sale.jpg?fit=1000%2C400&ssl=1",
-    button: "/34234",
+    url: banner1,
+    button: "/Shop",
   },
   {
-    url: "https://hips.hearstapps.com/hmg-prod/images/heidi-horten-jewelry-6422129ac1c2b.jpg",
-    button: "/fsdfsdfsd",
+    url: banner2,
+    button: "/Shop",
   },
 ];
 const properties = {
