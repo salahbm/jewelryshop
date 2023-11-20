@@ -223,54 +223,7 @@ const columns: GridColDef[] = [
       );
     },
   },
-  {
-    flex: 0.2,
-    minWidth: 100,
-    field: "joinType",
-    headerName: "로그인구분",
-    renderCell: ({ row }: CellType) => {
-      return (
-        <Box sx={{ display: "flex", alignItems: "center" }}>
-          {/* {renderClient(row)} */}
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "flex-start",
-              flexDirection: "column",
-            }}
-          >
-            <Typography noWrap variant="body1">
-              {row?.ur_join_type}
-            </Typography>
-          </Box>
-        </Box>
-      );
-    },
-  },
-  {
-    flex: 0.2,
-    minWidth: 230,
-    field: "agreeMarketing",
-    headerName: "마케팅수신동의",
-    renderCell: ({ row }: CellType) => {
-      return (
-        <Box sx={{ display: "flex", alignItems: "center" }}>
-          {/* {renderClient(row)} */}
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "flex-start",
-              flexDirection: "column",
-            }}
-          >
-            <Typography noWrap variant="body1">
-              {row?.ur_join_type ? "동의" : "미동의"}
-            </Typography>
-          </Box>
-        </Box>
-      );
-    },
-  },
+
   {
     flex: 0.4,
     minWidth: 140,
@@ -353,7 +306,7 @@ const ShopOrderList = () => {
 
   return (
     <Grid container>
-      <Grid item lg={13}>
+      <Grid item lg={12}>
         <Card>
           <CardContent>
             <Grid item>
