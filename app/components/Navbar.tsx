@@ -53,7 +53,7 @@ const Navbar = () => {
 
       <div className="flex items-center bg px-4 md:justify-center justify-between rounded-2xl md:bg-none">
         <Link href="/">
-          <div className="logo italic font-mono">Mr.Joni</div>
+          <div className="logo italic font-mono">Shop Jewelry </div>
         </Link>
 
         <CiMenuFries

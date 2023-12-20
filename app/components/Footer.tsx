@@ -1,11 +1,10 @@
-
 import React from "react";
 import {
   AiFillInstagram,
   AiFillFacebook,
   AiOutlineWhatsApp,
 } from "react-icons/ai";
-import {FaChevronRight } from 'react-icons/fa'
+import { FaChevronRight } from "react-icons/fa";
 const Footer = () => {
   return (
     <div className="p-2 w-full  ">
@@ -23,16 +22,15 @@ const Footer = () => {
             placeholder="Your Email Here"
             className=" bg-neutral-600 outline-none text-neutral-700 w-full md:h-16 h-8 "
           />
-          <span className="text-md md:text-2xl hover:justify-end text-neutral-800 hover:text-yellow-500 duration-500 bg-slate-100 md:w-14 md:h-14 w-8 h-6 rounded-3xl flex items-center justify-center" > 
-
-          <FaChevronRight   />
+          <span className="text-md md:text-2xl hover:justify-end text-neutral-800 hover:text-yellow-500 duration-500 bg-slate-100 md:w-14 md:h-14 w-8 h-6 rounded-3xl flex items-center justify-center">
+            <FaChevronRight />
           </span>
         </div>
       </div>
 
       <div className="flex items-center justify-between flex-col md:flex-row py-5">
         <p className="text-neutral-700  text-sm md:text-2xl mb-2">
-          MrJoni All Rights are Reserved
+          Shop Jewelry All Rights are Reserved
         </p>
         <div className="flex items-center justify-between gap-2 md:gap-10 ">
           <FooterSMBTN Press={() => console.log("insta")} title="Facebook">
