@@ -1,7 +1,7 @@
 import coll1 from "./coll1.jpg";
 import coll2 from "./coll2.jpg";
 import fColl from "./fColl.jpg";
-import fColl1 from "./fColl1.jpg";
+import fColl1 from "./fcoll1.jpg";
 import diamond from "./diamond.jpg";
 import necklace from "./necklace.jpg";
 import ring from "./ring.jpg";
@@ -33,7 +33,7 @@ export {
   handmade,
   collectionItems,
 
-banner2,
+  banner2,
   banner3,
   bracelet,
   bracelet1,
