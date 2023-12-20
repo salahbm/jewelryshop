@@ -26,7 +26,7 @@ const PaymentForm = () => {
           preview={true}
           cvc={formData.cvc}
           expiry={formData.expiry}
-          focused={formData.focus}
+          // focused={formData.focus}
           name={formData.name}
           number={formData.number}
         />
