@@ -56,7 +56,7 @@ const TabAccount = ({ user }: Props) => {
     }
   }, [user]);
 
-  const [formData, setFormData] = useState<any[]>(user);
+  const [formData, setFormData] = useState<any>(user);
 
   return (
     <Grid container spacing={6}>

@@ -57,7 +57,7 @@ const FilterDrawer = ({ open, toggleDrawer }: FilterDrawerType) => {
   };
 
   // Event handlers for filter changes
-  const handleCostChange = (event: any, newValue: number) => {
+  const handleCostChange = (newValue: number) => {
     setFilter({ ...filter, cost: newValue });
   };
 
@@ -69,7 +69,7 @@ const FilterDrawer = ({ open, toggleDrawer }: FilterDrawerType) => {
     setFilter({ ...filter, stone: event.target.value });
   };
 
-  const handleRankingChange = (event: any, newValue: number) => {
+  const handleRankingChange = (newValue: number) => {
     setFilter({ ...filter, ranking: newValue });
   };
 
@@ -157,7 +157,7 @@ const FilterDrawer = ({ open, toggleDrawer }: FilterDrawerType) => {
         marks={marks}
         value={filter.cost}
         valueLabelDisplay="on"
-        onChange={handleCostChange}
+        onChange={() => handleCostChange(21)}
         max={10000}
         min={100}
       />
@@ -252,7 +252,7 @@ const FilterDrawer = ({ open, toggleDrawer }: FilterDrawerType) => {
         marks={ranks}
         value={filter.ranking}
         valueLabelDisplay="on"
-        onChange={handleRankingChange}
+        onChange={(e: null | any) => handleRankingChange(e.target.value)}
         max={5}
         min={1}
       />

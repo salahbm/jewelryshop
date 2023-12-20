@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, MouseEvent, useCallback } from "react";
+import { useState, MouseEvent, useCallback } from "react";
 
 // ** Next Imports
 import Link from "next/link";
@@ -11,7 +11,6 @@ import Grid from "@mui/material/Grid";
 import Tooltip from "@mui/material/Tooltip";
 import Divider from "@mui/material/Divider";
 import { styled } from "@mui/material/styles";
-import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import {
@@ -22,17 +21,16 @@ import {
   DialogTitle,
   Button,
 } from "@mui/material";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
+
 import CardContent from "@mui/material/CardContent";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { SelectChangeEvent } from "@mui/material/Select";
 import Delete from "@mui/icons-material/Delete";
 
 import ShopHeader from "../components/shopHeader";
 
 interface CellType {
-  row: any[];
+  row: any;
 }
 
 const LinkStyled = styled(Link)(({ theme }) => ({

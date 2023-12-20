@@ -11,7 +11,7 @@ const PaymentForm = () => {
     number: "",
   });
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: any) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
